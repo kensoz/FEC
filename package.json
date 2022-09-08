@@ -1,9 +1,11 @@
 {
   "name": "fec",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "renhou",
+  "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8011",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,11 +16,20 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@types/node": "18.7.15",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.8",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.8.2"
   }
 }
