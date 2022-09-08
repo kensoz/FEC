@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   console.log('index')
   return (
     <section>
-      <h1 className='text-3xl'>test</h1>
+      <h1 className='text-3xl'>testtest</h1>
       <div>
         <FontAwesomeIcon icon={faUser} size={'lg'} />
         <FontAwesomeIcon icon={faTwitter} />
