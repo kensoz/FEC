@@ -1,16 +1,24 @@
-// import Footer from './footer'
-// import Navbar from './navbar'
+import Footer from './layout/footer'
+import Header from './layout/header'
 
 type Props = {
   children: React.ReactNode
 }
 
-export default function Layout({ children }: Props) {
+const Layout = ({ children }: Props) => {
   return (
-    <main className='flex flex-col min-h-screen'>
-      <div>1</div>
+    <div className='flex flex-col grow min-h-screen overflow-y-auto p-3'>
+      {/* <div className='grid grid-rows-3 grid-flow-col'> */}
+      {/* ヘーダ */}
+      <Header />
+
+      {/* コンテンツ */}
       <div className='grow'>{children}</div>
-      <div>1</div>
-    </main>
+
+      {/* フッター */}
+      <Footer />
+    </div>
   )
 }
+
+export default Layout
