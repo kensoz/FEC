@@ -13,7 +13,8 @@
 
 - ⚡️ Next.js
 - ⚙️ TypeScript
-- 🎨 Tailwind CSS
+- 🎨 TailwindCSS
+- 📮 Recoil
 - 📑 ESLint + Prettier
 - 🔌 Jest + React Testing Library
 - 🔩 GitHub Actions
