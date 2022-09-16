@@ -2,6 +2,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { RecoilRoot } from 'recoil'
 import Layout from '../components/layout'
 import Nav from '../components/layout/nav'
 import '../styles/globals.css'
@@ -19,13 +20,15 @@ const App = ({ Component, pageProps }: AppProps) => {
       {/* ページレイアウト */}
 
       <main className='flex h-screen w-screen overflow-hidden'>
-        {/* ナビバー */}
-        <Nav />
+        <RecoilRoot>
+          {/* ナビバー */}
+          <Nav />
 
-        {/* コンテンツレイアウト */}
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+          {/* コンテンツレイアウト */}
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </RecoilRoot>
       </main>
     </>
   )

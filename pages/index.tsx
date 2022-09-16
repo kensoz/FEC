@@ -4,25 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import PubSub from 'pubsub-js'
 import { useEffect } from 'react'
+import { useRecoilValue } from 'recoil'
+import { themeState } from '../store'
 
 const Index: NextPage = () => {
   const { locale } = useRouter()
   const t = locale === 'ja' ? 'テスト' : 'test'
+  const isDark = useRecoilValue(themeState)
 
-  useEffect((): (() => void) => {
-    PubSub.subscribe('themeMode', (_, data: string): void => {
-      console.log(data)
-    })
-
-    return (): void => {
-      PubSub.unsubscribe('themeMode')
-    }
-  })
+  useEffect(() => {})
 
   return (
     <section>
+      <div>{isDark ? '黑色' : '白色'}</div>
+
       <div className='mb-5'>
         <h2>i18n</h2>
         <p className='text-3xl'>{t}</p>
