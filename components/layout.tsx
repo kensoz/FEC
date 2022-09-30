@@ -7,7 +7,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className='flex flex-col grow min-h-screen overflow-y-auto p-3'>
+    <div className='flex flex-col grow min-h-screen overflow-y-auto p-3 bg-slate-50'>
       {/* <div className='grid grid-rows-3 grid-flow-col'> */}
       {/* ヘーダ */}
       <Header />

@@ -25,6 +25,10 @@ const Index: NextPage = () => {
       </div>
 
       <div className='mb-5'>
+        <button onClick={() => {}}>IsMoblie</button>
+      </div>
+
+      <div className='mb-5'>
         <h2>icon</h2>
         <FontAwesomeIcon icon={faUser} size={'lg'} />
         <FontAwesomeIcon icon={faTwitter} />

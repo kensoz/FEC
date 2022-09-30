@@ -19,7 +19,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
       {/* ページレイアウト */}
 
-      <main className='flex h-screen w-screen overflow-hidden'>
+      <main className='main'>
         <RecoilRoot>
           {/* ナビバー */}
           <Nav />

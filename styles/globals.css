@@ -5,18 +5,20 @@
 @tailwind utilities;
 
 @layer base {
+  /* htmlベース */
   html,body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @apply flex justify-center items-center;
   }
 
+  /* セーフエリア距離 */
   main {
-    max-width: 1900px;
+    max-width: 1700px;
+
   }
 
-  a {
-    text-decoration: none;
+  /* commonスタイル */
+  .main {
+    @apply flex h-screen w-screen overflow-hidden text-sm;
   }
 }
