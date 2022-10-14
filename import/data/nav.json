@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "group": 1,
+    "groupNameZh": "全部",
+    "groupNameJa": "全て",
+    "url": "/"
+  },
+  {
+    "id": "2",
+    "group": 2,
+    "groupNameZh": "JS基本",
+    "groupNameJa": "JSの基本",
+    "url": "/js"
+  },
+  {
+    "id": "3",
+    "group": 3,
+    "groupNameZh": "JS框架",
+    "groupNameJa": "JSフレームワーク",
+    "url": "/jsfw"
+  }
+]

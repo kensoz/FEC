@@ -6,6 +6,7 @@ import { RecoilRoot } from 'recoil'
 import Layout from '../components/layout'
 import Nav from '../components/layout/nav'
 import '../styles/globals.css'
+import '../firebase/index'
 
 config.autoAddCss = false
 
