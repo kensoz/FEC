@@ -1,3 +1,7 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faLanguage, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 import { useRecoilState } from 'recoil'
 import { themeState } from '../../store'
 
@@ -6,15 +10,31 @@ const Header = () => {
 
   return (
     <div className='flex flex-row justify-between'>
-      <div>{isDark ? '黑色' : '白色'}</div>
+      <div>mobile logo</div>
 
-      <div>
-        <button
-          type='button'
-          onClick={() => setIsDark((e) => !e)}
-          className='px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
-        >
-          Button
+      <div className='flex flex-row'>
+        <div>
+          <button onClick={() => setIsDark((e) => !e)} className='header_btn'>
+            {isDark ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
+          </button>
+        </div>
+
+        <div className='relative inline mx-2'>
+          <button className='peer header_btn'>
+            <FontAwesomeIcon icon={faLanguage} />
+          </button>
+          <div className='absolute hidden peer-hover:block hover:block'>
+            <Link href='/' locale='zh' passHref>
+              中文
+            </Link>
+            <Link href='/' locale='ja' passHref>
+              日本語
+            </Link>
+          </div>
+        </div>
+
+        <button type='button' className='header_btn'>
+          <FontAwesomeIcon icon={faGithub} />
         </button>
       </div>
     </div>

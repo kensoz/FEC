@@ -1,5 +1,7 @@
 import Footer from './layout/footer'
 import Header from './layout/header'
+import Navbar from './layout/navbar'
+import Toolbar from './layout/toolbar'
 
 type Props = {
   children: React.ReactNode
@@ -8,9 +10,14 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <div className='flex flex-col grow min-h-screen overflow-y-auto p-3 bg-slate-50'>
-      {/* <div className='grid grid-rows-3 grid-flow-col'> */}
       {/* ヘーダ */}
       <Header />
+
+      {/*ツールバー */}
+      <Navbar />
+
+      {/*ツールバー */}
+      <Toolbar />
 
       {/* コンテンツ */}
       <div className='grow'>{children}</div>

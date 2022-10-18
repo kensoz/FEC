@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
 import Layout from '../components/layout'
-import Nav from '../components/layout/nav'
+import Nav from '../components/nav'
 import '../styles/globals.css'
 import '../firebase/index'
 
