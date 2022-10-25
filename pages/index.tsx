@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
@@ -29,9 +30,9 @@ const Index: NextPage = () => {
 
       {data.map((e) => (
         <div className='test' key={e.id}>
+          <Image src={e.img} layout='responsive' width={300} height={150} alt='brands' />
           <div>{e.groupNameJa}</div>
           <div>{e.name}</div>
-          <div>{e.urlJa}</div>
           <div>{e.url}</div>
         </div>
       ))}

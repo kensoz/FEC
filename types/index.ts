@@ -17,6 +17,6 @@ export interface IData {
   descriptionZh: string
   descriptionJa: string
   url: string
-  urlZh: string
-  urlJa: string
+  urlZh: string[]
+  urlJa: string[]
 }

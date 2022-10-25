@@ -18,7 +18,7 @@ const Nav = () => {
   return (
     <nav className='w-60 bg-slate-100 p-3'>
       <div>
-        <Image className='mt-6 rounded-lg shadow-xl' src='/logo-long.png' width={100} height={40} objectFit='contain' alt='logo' />
+        <Image src='/logo-long.png' objectFit='contain' width={100} height={40} alt='logo' />
       </div>
 
       {nav.map((e) => (
