@@ -39,4 +39,4 @@ yarn-error.log*
 *.code-workspace
 
 # firebase import
-/import/serviceAccount.json
+firebase/config
