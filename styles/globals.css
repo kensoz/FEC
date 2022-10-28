@@ -22,11 +22,7 @@
     @apply flex h-screen w-screen overflow-hidden text-sm;
   }
 
-  .header_btn {
-    @apply inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-nowrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none;
-  }
-
-  .test {
-    @apply bg-pink-50
+  .base-icon_btn {
+    @apply w-11 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-nowrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none;
   }
 }

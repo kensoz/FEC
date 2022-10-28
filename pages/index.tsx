@@ -23,19 +23,28 @@ const Index: NextPage = () => {
   }, [])
 
   return (
-    <section className='grid grid-cols-4 gap-4 p-5'>
-      {/* <div>
-        {isDark ? '黑色' : '白色'}-{locale === 'ja' ? 'テスト' : '测试'}
-      </div> */}
+    <section className='pt-5'>
+      {/* カード */}
+      <div className='grid grid-cols-5 gap-4'>
+        {data.map((e) => (
+          <div className='bg-white border border-gray-200 rounded-md shadow-sm font-medium text-gray-600' key={e.id}>
+            {/* 写真 */}
+            <Image src={e.img} layout='responsive' width={300} height={150} alt='brands' />
 
-      {data.map((e) => (
-        <div className='test' key={e.id}>
-          <Image src={e.img} layout='responsive' width={300} height={150} alt='brands' />
-          <div>{e.groupNameJa}</div>
-          <div>{e.name}</div>
-          <div>{e.url}</div>
-        </div>
-      ))}
+            {/* 紹介 */}
+            <div className='p-2'>
+              <div>{e.groupNameJa}</div>
+              <div>{e.name}</div>
+              <div>{e.url}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* インフォメーション */}
+      <div className='pt-3 text-center text-xs font-bold text-slate-400'>
+        {locale === 'ja' ? 'トータル' : '总计'}：{data.length}
+      </div>
     </section>
   )
 }

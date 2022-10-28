@@ -9,12 +9,12 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className='flex flex-col grow min-h-screen overflow-y-auto p-3 bg-slate-50'>
+    <div className='flex flex-col grow min-h-screen overflow-y-auto px-3 bg-slate-50'>
       {/* ヘーダ */}
       <Header />
 
-      {/*ツールバー */}
-      <Navbar />
+      {/*mobile ツールバー */}
+      {/* <Navbar /> */}
 
       {/*ツールバー */}
       <Toolbar />
