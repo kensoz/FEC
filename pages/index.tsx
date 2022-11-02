@@ -27,9 +27,9 @@ const Index: NextPage = () => {
       {/* カード */}
       <div className='grid grid-cols-5 gap-4'>
         {data.map((e) => (
-          <div className='bg-white border border-gray-200 rounded-md shadow-sm font-medium text-gray-600' key={e.id}>
+          <div className='border border-gray-200 rounded-md shadow-sm font-medium text-gray-600  bg-slate-100' key={e.id}>
             {/* 写真 */}
-            <Image src={e.img} layout='responsive' width={300} height={150} alt='brands' />
+            <Image className='border-b border-gray-200' src={e.img} layout='responsive' width={300} height={150} alt='brands' />
 
             {/* 紹介 */}
             <div className='p-2'>
