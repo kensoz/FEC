@@ -1,8 +1,9 @@
 import { faJs, faReact } from '@fortawesome/free-brands-svg-icons'
-import { faHouse, faXmark, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faXmark, IconDefinition, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { getNav } from '../firebase/nav'
 import type { INav } from '../types'
@@ -37,13 +38,23 @@ const Nav = () => {
       </div>
 
       <div className='flex flex-col mt-8 font-bold text-gray-600'>
+        <div className='py-2 flex flex-row'>
+          <div className='mr-3'>
+            <FontAwesomeIcon icon={faStar} />
+          </div>
+
+          <Link href='/' passHref>
+            test
+          </Link>
+        </div>
+
         {nav.map((e) => (
           <div key={e.id} className='py-2 flex flex-row'>
             <div className='mr-3'>
               <FontAwesomeIcon icon={getIcon(e.group)} />
             </div>
 
-            <Link href='/' passHref>
+            <Link as={`/group/${e.group}`} href='/group/[id]' passHref>
               {e.groupNameJa}
             </Link>
           </div>
