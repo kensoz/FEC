@@ -38,23 +38,13 @@ const Nav = () => {
       </div>
 
       <div className='flex flex-col mt-8 font-bold text-gray-600'>
-        <div className='py-2 flex flex-row'>
-          <div className='mr-3'>
-            <FontAwesomeIcon icon={faStar} />
-          </div>
-
-          <Link href='/' passHref>
-            test
-          </Link>
-        </div>
-
         {nav.map((e) => (
           <div key={e.id} className='py-2 flex flex-row'>
             <div className='mr-3'>
-              <FontAwesomeIcon icon={getIcon(e.group)} />
+              <FontAwesomeIcon icon={getIcon(e.groupId)} />
             </div>
 
-            <Link as={`/group/${e.group}`} href='/group/[id]' passHref>
+            <Link as={`/${e.url}`} href='/[index]' passHref>
               {e.groupNameJa}
             </Link>
           </div>

@@ -1,9 +1,9 @@
-import { collection, getDocs, getFirestore } from 'firebase/firestore'
+import { collection, getDocs, getFirestore, Firestore } from 'firebase/firestore'
 import type { INav } from '../types'
 
 export const getNav = async (): Promise<INav[]> => {
   let nav: INav[] = []
-  const db = getFirestore()
+  const db: Firestore = getFirestore()
 
   await getDocs(collection(db, '/nav'))
     .then((res): void => {

@@ -3,10 +3,12 @@ import { faLanguage, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useRecoilState } from 'recoil'
 import { themeState } from '../../store'
 
 const Header = () => {
+  const { asPath } = useRouter()
   const [isDark, setIsDark] = useRecoilState(themeState)
 
   return (
@@ -25,11 +27,11 @@ const Header = () => {
           <button className='peer base-icon_btn'>
             <FontAwesomeIcon icon={faLanguage} />
           </button>
-          <div className='absolute hidden peer-hover:block hover:block p-2 bg-slate-200 flex-col'>
-            <Link href='/' locale='zh' passHref>
+          <div className='absolute hidden z-10 peer-hover:block hover:block p-2 bg-slate-200 flex-col'>
+            <Link href={asPath === '/' ? 'home' : asPath} locale='zh' passHref>
               中文
             </Link>
-            <Link href='/' locale='ja' passHref>
+            <Link href={asPath === '/' ? 'home' : asPath} locale='ja' passHref>
               日本語
             </Link>
           </div>

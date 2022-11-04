@@ -1,9 +1,9 @@
-import { collection, getDocs, getFirestore } from 'firebase/firestore'
+import { collection, getDocs, getFirestore, Firestore } from 'firebase/firestore'
 import type { IData } from '../types'
 
 export const getData = async (): Promise<IData[]> => {
   let data: IData[] = []
-  const db = getFirestore()
+  const db: Firestore = getFirestore()
 
   await getDocs(collection(db, '/data'))
     .then((res): void => {

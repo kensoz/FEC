@@ -1,9 +1,15 @@
 export interface INav {
   id: string
-  group: number
+  groupId: number
   groupNameZh: string
   groupNameJa: string
   url: string
+}
+
+export interface INavStaticProps {
+  props: {
+    nav: INav[]
+  }
 }
 
 export interface IData {
@@ -19,4 +25,10 @@ export interface IData {
   url: string
   urlZh: string[]
   urlJa: string[]
+}
+
+export interface IDataStaticProps {
+  props: {
+    data: IData[]
+  }
 }

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Listbox, Transition } from '@headlessui/react'
 import { Fragment, useState, useEffect } from 'react'
 import { getNav } from '../../firebase/nav'
-import type { INav } from '../../types'
+import type { INav, INavStaticProps } from '../../types'
 
 const people = [
   { name: 'Wade Cooper' },
@@ -14,18 +14,7 @@ const people = [
   { name: 'Hellen Schmidt' },
 ]
 
-const Navbar = () => {
-  // ナビデータを取得
-  const [nav, setNav] = useState<INav[]>([])
-  const requestNav = async () => {
-    const nav = await getNav()
-    setNav(nav)
-  }
-
-  useEffect(() => {
-    requestNav()
-  }, [])
-
+const Navbar = ({ nav }: Record<'nav', INav[]>) => {
   const [selected, setSelected] = useState('全て')
 
   return (
@@ -64,6 +53,16 @@ const Navbar = () => {
       </Listbox>
     </div>
   )
+}
+
+export const getStaticProps = async (): Promise<INavStaticProps> => {
+  const nav: INav[] = await getNav()
+
+  return {
+    props: {
+      nav,
+    },
+  }
 }
 
 export default Navbar

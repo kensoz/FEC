@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -6,21 +5,11 @@ import { useState, useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
 import { getData } from '../firebase/data'
 import { themeState } from '../store'
-import type { IData } from '../types'
+import type { IData, IDataStaticProps } from '../types'
 
-const Index: NextPage = () => {
+const Index = ({ data }: Record<'data', IData[]>) => {
   const { locale } = useRouter()
-  const isDark = useRecoilValue(themeState)
-
-  const [data, setData] = useState<IData[]>([])
-  const requestData = async () => {
-    const data = await getData()
-    setData(data)
-  }
-
-  useEffect(() => {
-    requestData()
-  }, [])
+  // const isDark = useRecoilValue(themeState)
 
   return (
     <section className='pt-5'>
@@ -47,6 +36,30 @@ const Index: NextPage = () => {
       </div>
     </section>
   )
+}
+
+export const getStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { index: 'home' }, locale: 'ja' },
+      { params: { index: 'javascript' }, locale: 'ja' },
+      { params: { index: 'jsframework' }, locale: 'ja' },
+      { params: { index: 'home' }, locale: 'zh' },
+      { params: { index: 'javascript' }, locale: 'zh' },
+      { params: { index: 'jsframework' }, locale: 'zh' },
+    ],
+    fallback: false,
+  }
+}
+
+export const getStaticProps = async (): Promise<IDataStaticProps> => {
+  const data: IData[] = await getData()
+
+  return {
+    props: {
+      data,
+    },
+  }
 }
 
 export default Index
