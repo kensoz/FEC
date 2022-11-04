@@ -10,24 +10,6 @@ const nextConfig = withInterceptStdout(
       locales: ['zh', 'ja'],
       defaultLocale: 'ja',
     },
-    async rewrites() {
-      return [
-        {
-          source: '/',
-          destination: '/home',
-        },
-      ]
-      //   return {
-      //     beforeFiles: [
-      //       {
-      //         source: '/',
-      //         destination: '/home',
-      //       },
-      //     ],
-      //     fallback: [{ source: '/:path*', destination: '/_404/:path*' }],
-      //   }
-      // },
-    },
   },
 
   // https://github.com/facebookexperimental/Recoil/issues/733
