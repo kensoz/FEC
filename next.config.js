@@ -11,15 +11,22 @@ const nextConfig = withInterceptStdout(
       defaultLocale: 'ja',
     },
     async rewrites() {
-      return {
-        beforeFiles: [
-          {
-            source: '/',
-            destination: '/home',
-          },
-        ],
-        fallback: [{ source: '/:path*', destination: '/_404/:path*' }],
-      }
+      return [
+        {
+          source: '/',
+          destination: '/home',
+        },
+      ]
+      //   return {
+      //     beforeFiles: [
+      //       {
+      //         source: '/',
+      //         destination: '/home',
+      //       },
+      //     ],
+      //     fallback: [{ source: '/:path*', destination: '/_404/:path*' }],
+      //   }
+      // },
     },
   },
 
