@@ -1,4 +1,4 @@
-export const Custom404 = () => {
+const Custom404 = () => {
   return (
     <div>
       <div>404</div>

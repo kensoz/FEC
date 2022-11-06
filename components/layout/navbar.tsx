@@ -2,20 +2,12 @@ import { faChevronRight, faSort } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Listbox, Transition } from '@headlessui/react'
 import { Fragment, useState, useEffect } from 'react'
-import { getNav } from '../../firebase/nav'
-import type { INav, INavStaticProps } from '../../types'
+import { useRecoilState } from 'recoil'
+import { navState } from '../../store'
 
-const people = [
-  { name: 'Wade Cooper' },
-  { name: 'Arlene Mccoy' },
-  { name: 'Devon Webb' },
-  { name: 'Tom Cook' },
-  { name: 'Tanya Fox' },
-  { name: 'Hellen Schmidt' },
-]
-
-const Navbar = ({ nav }: Record<'nav', INav[]>) => {
+const Navbar = () => {
   const [selected, setSelected] = useState('全て')
+  const [nav] = useRecoilState(navState)
 
   return (
     <div className='flex'>
@@ -53,16 +45,6 @@ const Navbar = ({ nav }: Record<'nav', INav[]>) => {
       </Listbox>
     </div>
   )
-}
-
-export const getStaticProps = async (): Promise<INavStaticProps> => {
-  const nav: INav[] = await getNav()
-
-  return {
-    props: {
-      nav,
-    },
-  }
 }
 
 export default Navbar

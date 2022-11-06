@@ -3,11 +3,7 @@ import Header from './layout/header'
 import Navbar from './layout/navbar'
 import Toolbar from './layout/toolbar'
 
-type Props = {
-  children: React.ReactNode
-}
-
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: Record<'children', React.ReactNode>) => {
   return (
     <div className='flex flex-col grow min-h-screen overflow-y-auto px-3 bg-slate-50'>
       {/* ヘーダ */}

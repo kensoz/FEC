@@ -28,10 +28,10 @@ const Header = () => {
             <FontAwesomeIcon icon={faLanguage} />
           </button>
           <div className='absolute hidden z-10 peer-hover:block hover:block p-2 bg-slate-200 flex-col'>
-            <Link href={asPath === '/' ? 'home' : asPath} locale='zh' passHref>
+            <Link href={asPath} locale='zh' passHref>
               中文
             </Link>
-            <Link href={asPath === '/' ? 'home' : asPath} locale='ja' passHref>
+            <Link href={asPath} locale='ja' passHref>
               日本語
             </Link>
           </div>

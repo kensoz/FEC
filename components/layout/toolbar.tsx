@@ -1,7 +1,7 @@
 import { faArrowDownWideShort, faCloudArrowDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import Panel from '../base/panel'
+import Panel from '../core/panel'
 
 const Toolbar = () => {
   let [isOpen, setIsOpen] = useState(false)

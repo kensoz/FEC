@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
 import Layout from '../components/layout'
+import Main from '../components/layout/main'
 import Nav from '../components/nav'
 import '../styles/globals.css'
 import '../firebase/index'
@@ -19,9 +20,8 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
 
       {/* ページレイアウト */}
-
-      <main className='main'>
-        <RecoilRoot>
+      <RecoilRoot>
+        <Main>
           {/* ナビバー */}
           <Nav />
 
@@ -29,8 +29,8 @@ const App = ({ Component, pageProps }: AppProps) => {
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </RecoilRoot>
-      </main>
+        </Main>
+      </RecoilRoot>
     </>
   )
 }

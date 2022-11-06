@@ -4,28 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
-import { getNav } from '../firebase/nav'
-import type { INav } from '../types'
+import { useRecoilState } from 'recoil'
+import { navState } from '../store'
 
 const Nav = () => {
-  // ナビデータを取得
-  const [nav, setNav] = useState<INav[]>([])
-  const requestNav = async () => {
-    const nav = await getNav()
-    setNav(nav)
-  }
-
-  useEffect(() => {
-    requestNav()
-  }, [])
+  const { locale } = useRouter()
+  const [nav] = useRecoilState(navState)
 
   // icon判断
   const getIcon = (e: number): IconDefinition => {
     const icon = new Map<number, IconDefinition>([
-      [1, faHouse],
-      [2, faJs],
-      [3, faReact],
+      [1, faJs],
+      [2, faReact],
     ])
 
     return icon.get(e) || faXmark
@@ -38,13 +28,25 @@ const Nav = () => {
       </div>
 
       <div className='flex flex-col mt-8 font-bold text-gray-600'>
+        {/* ホームページ */}
+        <div className='py-2 flex flex-row'>
+          <div className='mr-3'>
+            <FontAwesomeIcon icon={faHouse} />
+          </div>
+
+          <Link href='/' passHref>
+            {locale === 'ja' ? 'ホームページ' : '首页'}
+          </Link>
+        </div>
+
+        {/* ナビリスト */}
         {nav.map((e) => (
           <div key={e.id} className='py-2 flex flex-row'>
             <div className='mr-3'>
               <FontAwesomeIcon icon={getIcon(e.groupId)} />
             </div>
 
-            <Link as={`/${e.url}`} href='/[index]' passHref>
+            <Link as={`/${e.url}`} href='/[group]' passHref>
               {e.groupNameJa}
             </Link>
           </div>
