@@ -7,15 +7,18 @@ import { useRouter } from 'next/router'
 import { useRecoilState } from 'recoil'
 import { themeState } from '../../store'
 
+// Header
 const Header = () => {
   const { asPath } = useRouter()
   const [isDark, setIsDark] = useRecoilState(themeState)
 
   return (
     <div className='flex flex-row justify-between items-center py-2'>
+      {/* モバイルロゴ */}
       {/* <Image src='/logo.png' objectFit='contain' width={30} height={30} alt='logo' /> */}
       <div>123</div>
 
+      {/* ボタングループ */}
       <div className='flex flex-row items-center'>
         <div>
           <button onClick={() => setIsDark((e) => !e)} className='base-icon_btn'>

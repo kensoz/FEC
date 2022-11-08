@@ -4,12 +4,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useRecoilState } from 'recoil'
-import { navState } from '../store'
+import { useEffect, useState } from 'react'
+import { useRecoilValue } from 'recoil'
+import { getNavCollection } from '../firebase/collections'
+import { themeState } from '../store/index'
+import type { INav } from '../types'
 
+// サイドナビバー
 const Nav = () => {
   const { locale } = useRouter()
-  const [nav] = useRecoilState(navState)
+  const isDark = useRecoilValue(themeState)
+
+  // nav取得
+  const [nav, setNav] = useState<INav[]>([])
+  const getNavData = async (): Promise<void> => {
+    const navRes = await getNavCollection()
+    setNav(navRes)
+  }
+
+  useEffect(() => {
+    getNavData()
+  }, [])
 
   // icon判断
   const getIcon = (e: number): IconDefinition => {
@@ -23,6 +38,7 @@ const Nav = () => {
 
   return (
     <nav className='w-60 bg-slate-100 pt-2 border-r border-gray-200 shadow-sm flex flex-col items-center'>
+      {/* ロゴ */}
       <div className='flex'>
         <Image src='/logo-long.png' objectFit='contain' width={100} height={40} alt='logo' />
       </div>
@@ -46,18 +62,14 @@ const Nav = () => {
               <FontAwesomeIcon icon={getIcon(e.groupId)} />
             </div>
 
-            <Link
-              as={`/${e.url}`}
-              href={{
-                pathname: '/[group]',
-                query: { slug: 1 },
-              }}
-              passHref
-            >
-              {e.groupNameJa}
+            <Link as={`/${e.groupName}`} href='/[group]' passHref>
+              {locale === 'ja' ? e.groupNameJa : e.groupNameZh}
             </Link>
           </div>
         ))}
+
+        {/* テスト */}
+        <div className='mt-5'>{isDark ? '是isDark' : '不是isDark'}</div>
       </div>
     </nav>
   )

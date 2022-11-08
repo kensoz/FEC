@@ -1,3 +1,4 @@
+// Firebase project configuration
 const firebaseConfig = {
   apiKey: 'AIzaSyA_Q8M8wmb8C-b22akmhDTf3R15qeJvovg',
   authDomain: 'fec-server.firebaseapp.com',

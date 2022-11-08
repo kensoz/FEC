@@ -1,9 +1,18 @@
+// * ------------------------------
+// *
+// * Type
+// *
+// * ------------------------------
+
+// ----- common -----
+
+// ----- nav collection -----
 export interface INav {
   id: string
   groupId: number
+  groupName: string
   groupNameZh: string
   groupNameJa: string
-  url: string
 }
 
 export interface INavStaticProps {
@@ -12,12 +21,14 @@ export interface INavStaticProps {
   }
 }
 
-export interface IData {
+// ----- list collection -----
+export interface IList {
   id: string
-  sort: number
-  group: number
+  groupId: number
+  groupName: string
   groupNameZh: string
   groupNameJa: string
+  sort: number
   name: string
   img: string
   descriptionZh: string
@@ -27,8 +38,21 @@ export interface IData {
   urlJa: string[]
 }
 
-export interface IDataStaticProps {
+export interface IListStaticProps {
   props: {
-    data: IData[]
+    list: IList[]
   }
+}
+
+// ----- ssg -----
+export interface IGroupSSGPath {
+  params: { group: string }
+  locale: string
+}
+
+// ----- コンポーネント -----
+// ダイアログPanel
+export interface IPanel {
+  isOpen: boolean
+  closePanel: () => void
 }

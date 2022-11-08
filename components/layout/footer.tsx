@@ -1,3 +1,4 @@
+// Footer
 const Footer = () => {
   return (
     <div className='text-xs font-medium flex justify-center text-slate-400 py-2'>

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import Panel from '../core/panel'
 
+// ツールバー
 const Toolbar = () => {
   let [isOpen, setIsOpen] = useState(false)
 
@@ -47,7 +48,7 @@ const Toolbar = () => {
         </span>
       </button>
 
-      {/* ダイアログPanel */}
+      {/* ダイアログPanelコンポーネント */}
       <Panel isOpen={isOpen} closePanel={closePanel} />
     </div>
   )

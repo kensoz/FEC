@@ -1,13 +1,19 @@
+// * ------------------------------
+// *
+// * ダイアログPanelコンポーネント
+// *
+// * ------------------------------
+
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
+import type { IPanel } from '../../types'
 
-// propsタイプ
-interface IProps {
-  isOpen: boolean
-  closePanel: () => void
-}
-
-const Panel = (props: IProps) => {
+/**
+ * ダイアログPanel
+ * @param {IPanel} props
+ * @return {JSX.Element}
+ */
+const Panel = (props: IPanel) => {
   return (
     <Transition appear show={props.isOpen} as={Fragment}>
       <Dialog as='div' className='relative z-10' onClose={() => {}}>

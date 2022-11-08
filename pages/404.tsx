@@ -1,3 +1,4 @@
+// 404ページ
 const Custom404 = () => {
   return (
     <div>

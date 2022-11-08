@@ -2,15 +2,15 @@
   {
     "id": "1",
     "groupId": 1,
+    "groupName": "javascript",
     "groupNameZh": "JS基本",
-    "groupNameJa": "JSの基本",
-    "url": "javascript"
+    "groupNameJa": "JSの基本"
   },
   {
     "id": "2",
     "groupId": 2,
+    "groupName": "jsframework",
     "groupNameZh": "JS框架",
-    "groupNameJa": "JSフレームワーク",
-    "url": "jsframework"
+    "groupNameJa": "JSフレームワーク"
   }
 ]

@@ -1,10 +1,16 @@
+// * ------------------------------
+// *
+// * FEC Next.js APP
+// * 2022-11-01 renhou　新規作成
+// *
+// * ------------------------------
+
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
 import Layout from '../components/layout'
-import Main from '../components/layout/main'
 import Nav from '../components/nav'
 import '../styles/globals.css'
 
@@ -20,7 +26,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
       {/* ページレイアウト */}
       <RecoilRoot>
-        <Main>
+        <main className='main'>
           {/* ナビバー */}
           <Nav />
 
@@ -28,7 +34,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </Main>
+        </main>
       </RecoilRoot>
     </>
   )

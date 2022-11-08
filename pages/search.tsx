@@ -3,17 +3,19 @@ import { useRecoilValue } from 'recoil'
 import Contents from '../components/core/content'
 import { getListCollection } from '../firebase/collections'
 import { themeState } from '../store/index'
-import type { IGroupSSGPath, IList, IListStaticProps } from '../types'
+import type { IList, IListStaticProps } from '../types'
 
-// 動的ルーティング
-const Group = ({ list }: Record<'list', IList[]>) => {
+// 検索ページ
+const Search = ({ list }: Record<'list', IList[]>) => {
+  const router = useRouter()
   const { locale } = useRouter()
+  const { key } = router.query
   const isDark = useRecoilValue(themeState)
 
   return (
     <section className='pt-5'>
       {/* コンテンツカードコンポーネント */}
-      <Contents list={list} />
+      <Contents list={list.filter((e) => e.name === key && e)} />
 
       {/* インフォメーション */}
       <div className='pt-3 text-center text-xs font-bold text-slate-400'>
@@ -26,21 +28,9 @@ const Group = ({ list }: Record<'list', IList[]>) => {
   )
 }
 
-// ----- SSGパス -----
-const paths: IGroupSSGPath[] = [
-  { params: { group: 'javascript' }, locale: 'ja' },
-  { params: { group: 'jsframework' }, locale: 'ja' },
-  { params: { group: 'javascript' }, locale: 'zh' },
-  { params: { group: 'jsframework' }, locale: 'zh' },
-]
-
-export const getStaticPaths = async () => {
-  return { paths, fallback: false }
-}
-
 // ----- SSGデータ取得 -----
-export const getStaticProps = async (path: IGroupSSGPath): Promise<IListStaticProps> => {
-  const list: IList[] = await getListCollection(path.params.group)
+export const getStaticProps = async (): Promise<IListStaticProps> => {
+  const list: IList[] = await getListCollection()
 
   return {
     props: {
@@ -49,4 +39,4 @@ export const getStaticProps = async (path: IGroupSSGPath): Promise<IListStaticPr
   }
 }
 
-export default Group
+export default Search

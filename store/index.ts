@@ -1,5 +1,4 @@
-import { atom, selector } from 'recoil'
-import type { INav, IData } from '../types/index'
+import { atom } from 'recoil'
 
 export const themeState = atom<boolean>({
   key: 'isDark',
@@ -11,17 +10,13 @@ export const themeState = atom<boolean>({
 //   default: true,
 // })
 
-export const navState = atom<INav[]>({
-  key: 'nav',
-  default: [],
-})
+// Next.js 慎用
+// export const navState = atom<INav[]>({
+//   key: 'nav',
+//   default: [],
+// })
 
-export const dataState = atom<IData[]>({
-  key: 'data',
-  default: [],
-})
-
-// export const dataSelector = selector<IData[]>({
-//   key: 'dataSelector',
-//   get: ({ get }) => get(dataState),
+// export const dataState = atom<IList[]>({
+//   key: 'data',
+//   default: [],
 // })

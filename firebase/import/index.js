@@ -7,11 +7,11 @@
 
 const admin = require('firebase-admin')
 const serviceAccount = require('../config/serviceAccount.json')
-// const json = require('./data/data.json')
+// const json = require('./data/list.json')
 const json = require('./data/nav.json')
 
 // コレクションとデータベース情報
-// const collectionKey = 'data'
+// const collectionKey = 'list'
 const collectionKey = 'nav'
 const databaseURL = 'https://fec-server.firebaseio.com'
 
