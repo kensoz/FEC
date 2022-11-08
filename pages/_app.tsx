@@ -7,7 +7,6 @@ import Layout from '../components/layout'
 import Main from '../components/layout/main'
 import Nav from '../components/nav'
 import '../styles/globals.css'
-import '../firebase/index'
 
 config.autoAddCss = false
 

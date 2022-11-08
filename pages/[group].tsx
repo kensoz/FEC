@@ -38,6 +38,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (): Promise<IDataStaticProps> => {
   const data: IData[] = await getData()
+  // console.log(path.params.group)
 
   return {
     props: {

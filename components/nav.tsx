@@ -46,7 +46,14 @@ const Nav = () => {
               <FontAwesomeIcon icon={getIcon(e.groupId)} />
             </div>
 
-            <Link as={`/${e.url}`} href='/[group]' passHref>
+            <Link
+              as={`/${e.url}`}
+              href={{
+                pathname: '/[group]',
+                query: { slug: 1 },
+              }}
+              passHref
+            >
               {e.groupNameJa}
             </Link>
           </div>
