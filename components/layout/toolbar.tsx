@@ -16,7 +16,7 @@ const Toolbar = () => {
   }
 
   return (
-    <div className='flex flex-row justify-between items-center p-1.5 bg-slate-100 border border-gray-200 rounded-md shadow-sm'>
+    <div className='base-box flex flex-row justify-between items-center p-1.5 bg-slate-100 dark:bg-slate-700'>
       <div className='flex flex-row'>
         {/* ソート順 */}
         <button className='base-icon_btn'>
@@ -25,12 +25,12 @@ const Toolbar = () => {
 
         {/* 検索 */}
         <div className='relative ml-2'>
-          <div className='flex absolute inset-y-0 left-0 items-center pl-2 pointer-events-none text-gray-600'>
+          <div className='flex absolute inset-y-0 left-0 items-center pl-2 pointer-events-none'>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </div>
           <input
             type='text'
-            className='text-gray-600 bg-white border border-gray-200 rounded-md shadow-sm font-medium pl-8 py-2 whitespace-nowrap'
+            className='border border-gray-200 dark:border-gray-400 rounded-md shadow-sm bg-white dark:bg-transparent font-normal pl-8 py-2 whitespace-nowrap'
             placeholder='検索'
             required
           ></input>
@@ -38,11 +38,11 @@ const Toolbar = () => {
       </div>
 
       {/* Panelのボタン */}
-      <button type='button' onClick={openPanel} className='w-24 px-4 py-2 relative rounded-md group font-medium text-white inline-block'>
-        <span className='absolute top-0 left-0 w-full h-full rounded-md opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500'></span>
-        <span className='h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded-md opacity-50 from-purple-600 to-blue-500'></span>
-        <span className='absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded-md shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500'></span>
-        <span className='absolute inset-0 w-full h-full transition duration-200 ease-out rounded-md bg-gradient-to-br to-purple-600 from-blue-500'></span>
+      <button type='button' onClick={openPanel} className='w-24 px-4 py-2 relative rounded-md group text-white inline-block'>
+        <span className='absolute top-0 left-0 w-full h-full rounded-md opacity-50 filter blur-sm bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400'></span>
+        <span className='h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded-md opacity-50 from-pink-600 via-purple-700 to-blue-400'></span>
+        <span className='absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded-md shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-pink-600 via-purple-700 to-blue-400'></span>
+        <span className='absolute inset-0 w-full h-full transition duration-200 ease-out rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='relative'>
           <FontAwesomeIcon icon={faCloudArrowDown} />
         </span>

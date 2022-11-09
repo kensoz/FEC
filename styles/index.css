@@ -1,0 +1,46 @@
+/*
+ *
+ * Common CSS (PostCSS) use TailwindCSS
+ * 2022-11-01 renhou　新規作成
+ *
+ * Style:
+ * base-round: rounded-md
+ * light-- base-bg: bg-slate-50, option-bg: bg-slate-100
+ * dark--  base-bg: bg-slate-800, option-bg: bg-slate-700
+ * btn: bg-white hover:bg-gray-50
+ * text: light&dark: text-gray-400
+ *
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* html,body */
+  html,body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    @apply flex justify-center items-center;
+  }
+
+  /* globalsスタイル */
+  .main {
+    max-width: 1700px;  /* セーフエリア距離 */
+    @apply flex h-screen w-screen overflow-hidden font-medium text-sm text-gray-600 dark:text-gray-200;
+  }
+
+  /* baseスタイル */
+  .base-box {
+    @apply border border-gray-200 dark:border-gray-600 rounded-md shadow-sm
+  }
+
+  .base-btn {
+    @apply border border-gray-200 dark:border-gray-400 rounded-md shadow-sm inline-flex items-center justify-center px-4 py-2 text-base leading-6 whitespace-nowrap bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-slate-600 focus:outline-none focus:shadow-none;
+  }
+
+  .base-icon_btn {
+    @apply w-11 base-btn;
+  }
+}

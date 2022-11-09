@@ -7,12 +7,13 @@
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
 import Layout from '../components/layout'
 import Nav from '../components/nav'
-import '../styles/globals.css'
+import '../styles/index.css'
 
 config.autoAddCss = false
 
@@ -25,17 +26,19 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
 
       {/* ページレイアウト */}
-      <RecoilRoot>
-        <main className='main'>
-          {/* ナビバー */}
-          <Nav />
+      <ThemeProvider attribute='class'>
+        <RecoilRoot>
+          <main className='main'>
+            {/* ナビバー */}
+            <Nav />
 
-          {/* コンテンツレイアウト */}
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </main>
-      </RecoilRoot>
+            {/* コンテンツレイアウト */}
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </main>
+        </RecoilRoot>
+      </ThemeProvider>
     </>
   )
 }

@@ -7,13 +7,11 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { useRecoilValue } from 'recoil'
 import { getNavCollection } from '../firebase/collections'
-import { themeState } from '../store/index'
 import type { INav } from '../types'
 
 // サイドナビバー
 const Nav = () => {
   const { locale } = useRouter()
-  const isDark = useRecoilValue(themeState)
 
   // nav取得
   const [nav, setNav] = useState<INav[]>([])
@@ -37,13 +35,13 @@ const Nav = () => {
   }
 
   return (
-    <nav className='w-60 bg-slate-100 pt-2 border-r border-gray-200 shadow-sm flex flex-col items-center'>
+    <nav className='min-w-max pt-2 px-6 border-r shadow-sm flex flex-col items-center bg-slate-100  dark:bg-slate-800 border-gray-200 dark:border-gray-600'>
       {/* ロゴ */}
       <div className='flex'>
         <Image src='/logo-long.png' objectFit='contain' width={100} height={40} alt='logo' />
       </div>
 
-      <div className='flex flex-col mt-8 font-bold text-gray-600'>
+      <div className='flex flex-col mt-8 font-bold'>
         {/* ホームページ */}
         <div className='py-2 flex flex-row'>
           <div className='mr-3'>
@@ -67,9 +65,6 @@ const Nav = () => {
             </Link>
           </div>
         ))}
-
-        {/* テスト */}
-        <div className='mt-5'>{isDark ? '是isDark' : '不是isDark'}</div>
       </div>
     </nav>
   )
