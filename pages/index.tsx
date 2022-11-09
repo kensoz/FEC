@@ -22,7 +22,7 @@ const Index = ({ list }: Record<'list', IList[]>) => {
       </div>
 
       {/* テスト */}
-      <div>{isDark ? '是isDark' : '不是isDark'}</div>
+      <div>来了{isDark ? '是isDark' : '不是isDark'}</div>
       <div>
         <Link
           href={{
