@@ -11,7 +11,7 @@ import Toolbar from './layout/toolbar'
 
 const Layout = ({ children }: Record<'children', React.ReactNode>) => {
   return (
-    <div className='flex flex-col grow min-h-screen overflow-y-auto px-3 bg-slate-50 dark:bg-slate-800'>
+    <div className='layout'>
       {/* ヘーダ */}
       <Header />
 

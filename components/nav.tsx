@@ -1,4 +1,4 @@
-import { faJs, faReact } from '@fortawesome/free-brands-svg-icons'
+import { faJs, faReact, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faHouse, faXmark, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
@@ -49,7 +49,7 @@ const Nav = () => {
         {/* ホームページ */}
         <div className='flex flex-row'>
           <Link href='/' passHref>
-            <a className='inline-flex items-center justify-center py-2 text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50'>
+            <a className='nav-list-btn'>
               <span className='mr-3'>
                 <FontAwesomeIcon icon={faHouse} />
               </span>
@@ -63,7 +63,7 @@ const Nav = () => {
         {nav.map((e: INav) => (
           <div key={e.id} className='flex flex-row'>
             <Link as={`/${e.groupName}`} href='/[group]' passHref>
-              <a className='inline-flex items-center justify-center py-2 text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50'>
+              <a className='nav-list-btn'>
                 <span className='mr-3'>
                   <FontAwesomeIcon icon={getIcon(e.groupId)} />
                 </span>
@@ -75,11 +75,24 @@ const Nav = () => {
         ))}
       </div>
 
+      {/* SNSコーナー */}
+      <div className='flex justify-center pb-2 border-b-2 border-gray-200 dark:border-gray-600'>
+        <Link href='/' passHref>
+          <a className='nav-list-btn'>
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+        </Link>
+      </div>
+
       {/* インフォメーション */}
-      <div className='flex justify-center pb-5 p-2'>
-        <div className='w-40 text-xs leading-3 indent-2 font-normal text-gray-400 break-all'>
+      <div className='flex flex-col justify-center py-5 px-2 text-gray-400 pointer-events-none'>
+        <div>
+          <h6>License</h6>
+        </div>
+        <div className='w-40 text-xs leading-3 font-normal break-all'>
           All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.
         </div>
+        <div className='text-xs font-light'>UPDATED: 2022-11</div>
       </div>
     </nav>
   )

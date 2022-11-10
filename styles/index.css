@@ -1,12 +1,12 @@
 /*
  *
- * Common CSS (PostCSS) use TailwindCSS
+ * Common CSS (PostCSS)
  * 2022-11-01 renhou　新規作成
  *
- * base style:
+ * ### base style
  * round: rounded-md
  *
- * color
+ * ### color
  * light-- base-bg: bg-slate-50, option-bg: bg-slate-100
  * dark--  base-bg: bg-slate-800, option-bg: bg-slate-700
  * light&dark-- text: text-gray-400
@@ -18,18 +18,22 @@
 @tailwind utilities;
 
 @layer base {
-  /* html,body */
+  /* ----- html,body ----- */
   html,body {
     @apply flex justify-center items-center;
   }
 
-  /* globalsスタイル */
+  /* ----- globalsスタイル ----- */
+  .layout {
+    @apply flex flex-col grow min-h-screen overflow-y-auto px-3 bg-slate-50 dark:bg-slate-800
+  }
+
   .main {
     max-width: 1700px;  /* セーフエリア距離 */
     @apply font-mPlusRound flex h-screen w-screen overflow-hidden font-medium text-sm text-gray-600 dark:text-gray-200;
   }
 
-  /* baseスタイル */
+  /* ----- baseスタイル ----- */
   .base-box {
     @apply border border-gray-200 dark:border-gray-600 rounded-md shadow-sm
   }
@@ -40,5 +44,9 @@
 
   .base-icon_btn {
     @apply w-11 base-btn;
+  }
+
+  .nav-list-btn {
+    @apply inline-flex items-center justify-center py-2 text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50
   }
 }
