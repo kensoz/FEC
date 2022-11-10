@@ -56,3 +56,10 @@ export interface IPanel {
   isOpen: boolean
   closePanel: () => void
 }
+
+// モバイルnavbar
+export interface INavBarValue {
+  nameJa: string
+  nameZh: string
+  value: string
+}

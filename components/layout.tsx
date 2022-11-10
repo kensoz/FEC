@@ -16,7 +16,7 @@ const Layout = ({ children }: Record<'children', React.ReactNode>) => {
       <Header />
 
       {/*mobile ツールバー */}
-      {/* <Navbar /> */}
+      <Navbar />
 
       {/*ツールバー */}
       <Toolbar />

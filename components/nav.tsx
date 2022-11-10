@@ -39,7 +39,7 @@ const Nav = () => {
       <div className='flex justify-center py-4 border-b-2 border-gray-200 dark:border-gray-600'>
         <Link href='/' passHref>
           <a>
-            <Image src='/logo-long.png' objectFit='contain' width={110} height={40} alt='logo' />
+            <Image src='/logo-long.png' objectFit='contain' width={115} height={40} alt='logo' />
           </a>
         </Link>
       </div>

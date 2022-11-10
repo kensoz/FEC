@@ -7,6 +7,7 @@ import Panel from '../core/panel'
 const Toolbar = () => {
   let [isOpen, setIsOpen] = useState(false)
 
+  // Panel
   const closePanel = () => {
     setIsOpen(false)
   }
@@ -16,7 +17,7 @@ const Toolbar = () => {
   }
 
   return (
-    <div className='base-box flex flex-row justify-between items-center p-1.5 bg-slate-100 dark:bg-slate-700'>
+    <div className='base-box flex flex-row justify-between items-center px-2 py-1.5 bg-slate-100 dark:bg-slate-700'>
       <div className='flex flex-row'>
         {/* ソート順 */}
         <button className='base-icon_btn'>
@@ -24,13 +25,13 @@ const Toolbar = () => {
         </button>
 
         {/* 検索 */}
-        <div className='relative ml-2'>
+        <div className='relative ml-2 w-44'>
           <div className='flex absolute inset-y-0 left-0 items-center pl-2 pointer-events-none'>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </div>
           <input
             type='text'
-            className='border border-gray-200 dark:border-gray-400 rounded-md shadow-sm bg-white dark:bg-transparent font-normal pl-8 py-2 whitespace-nowrap'
+            className='border border-gray-200 dark:border-gray-400 rounded-md shadow-sm  bg-white dark:bg-transparent font-normal pl-8 py-2 whitespace-nowrap focus:outline-none focus:ring-1 focus:ring-gray-500 dark:focus:ring-gray-100'
             placeholder='検索'
             required
           ></input>
