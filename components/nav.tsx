@@ -76,7 +76,7 @@ const Nav = () => {
       </div>
 
       {/* インフォメーション */}
-      <div className='flex justify-center pb-5'>
+      <div className='flex justify-center pb-5 p-2'>
         <div className='w-40 text-xs leading-3 indent-2 font-normal text-gray-400 break-all'>
           All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.
         </div>

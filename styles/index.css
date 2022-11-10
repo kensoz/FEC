@@ -3,15 +3,15 @@
  * Common CSS (PostCSS) use TailwindCSS
  * 2022-11-01 renhou　新規作成
  *
- * Style:
- * base-round: rounded-md
+ * base style:
+ * round: rounded-md
+ *
+ * color
  * light-- base-bg: bg-slate-50, option-bg: bg-slate-100
  * dark--  base-bg: bg-slate-800, option-bg: bg-slate-700
- * text: light&dark: text-gray-400
+ * light&dark-- text: text-gray-400
  *
  */
-
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,14 +20,13 @@
 @layer base {
   /* html,body */
   html,body {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
     @apply flex justify-center items-center;
   }
 
   /* globalsスタイル */
   .main {
     max-width: 1700px;  /* セーフエリア距離 */
-    @apply flex h-screen w-screen overflow-hidden font-medium text-sm text-gray-600 dark:text-gray-200;
+    @apply font-mPlusRound flex h-screen w-screen overflow-hidden font-medium text-sm text-gray-600 dark:text-gray-200;
   }
 
   /* baseスタイル */
