@@ -26,7 +26,7 @@ const Header = () => {
       <div className='flex flex-row items-center'>
         {/* ダークモードボタン */}
         <div>
-          <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className='base-icon_btn text-yellow-400'>
+          <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className='base-icon_btn text-yellow-300'>
             {mounted && <>{theme === 'dark' ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}</>}
           </button>
         </div>
