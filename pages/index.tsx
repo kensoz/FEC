@@ -1,24 +1,24 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Breadcrumb from '../components/base/breadcrumb'
 import Contents from '../components/core/content'
 import { getListCollection } from '../firebase/collections'
 import type { IList, IListStaticProps } from '../types'
 
 // ホームページ
 const Index = ({ list }: Record<'list', IList[]>) => {
-  const { locale } = useRouter()
+  // const { locale } = useRouter()
 
   return (
-    <section className='pt-5'>
+    <section className='py-2'>
+      {/* パンくずリスト */}
+      <Breadcrumb length={list.length} />
+
       {/* コンテンツカードコンポーネント */}
       <Contents list={list} />
 
-      {/* インフォメーション */}
-      <div className='pt-3 text-center text-xs font-bold text-gray-400'>
-        {locale === 'ja' ? 'トータル' : '总计'}：{list.length}
-      </div>
-
-      <div>
+      {/* テスト */}
+      {/* <div>
         <Link
           href={{
             pathname: '/search',
@@ -27,7 +27,7 @@ const Index = ({ list }: Record<'list', IList[]>) => {
         >
           search=TypeScript
         </Link>
-      </div>
+      </div> */}
     </section>
   )
 }

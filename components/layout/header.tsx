@@ -10,7 +10,8 @@ import Flag from 'react-world-flags'
 
 // Header
 const Header = () => {
-  const { asPath } = useRouter()
+  const { asPath, locale } = useRouter()
+  const router = useRouter()
   const gitHubURL: string = 'https://github.com/kensoz/FEC'
 
   // ダークモード
@@ -18,10 +19,17 @@ const Header = () => {
   const [mounted, setMounted] = useState<boolean>(false)
   useEffect((): void => setMounted(true), [])
 
+  // i18nブロック
+  const [isDisplay, setIsDisplay] = useState<boolean>(true)
+  const changeLanage = (str: 'zh' | 'ja'): void => {
+    router.push(asPath, undefined, { locale: str })
+    setIsDisplay(false)
+  }
+
   return (
-    <div className='flex flex-row justify-between items-center py-2'>
+    <div className='flex flex-row justify-between items-center py-2 px-3 mb-2 md:mb-0 border-b md:border-b-0 border-gray-200 dark:border-gray-600'>
       {/* モバイルロゴ */}
-      <Image className='invisible' src='/logo.png' objectFit='contain' width={30} height={30} alt='logo' />
+      <Image className='block md:invisible' src='/logo.png' objectFit='contain' width={90} height={40} alt='logo' />
 
       {/* ボタングループ */}
       <div className='flex flex-row items-center'>
@@ -32,31 +40,29 @@ const Header = () => {
 
         {/* i18nボタン */}
         <div className='relative inline mx-2'>
-          <button className='peer base-icon_btn text-slate-400'>
+          <button className='peer base-icon_btn text-slate-400' onClick={() => setIsDisplay(true)}>
             <FontAwesomeIcon icon={faEarthAsia} />
           </button>
 
-          <div className='absolute hidden z-10 peer-hover:block hover:block base-box bg-slate-100 dark:bg-slate-700'>
-            <div className='flex flex-col min-w-max'>
-              <Link href={asPath} locale='zh'>
-                <a className='py-1 px-3 border-b-2 inline-flex items-center border-gray-200 dark:border-gray-600 text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50'>
-                  <span className='mr-2'>
-                    <Flag code='cn' width={20} />
-                  </span>
-                  <span>中文</span>
-                </a>
-              </Link>
-
-              <Link href={asPath} locale='ja'>
-                <a className='py-1 px-3 inline-flex items-center text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50'>
+          {isDisplay && (
+            <div className='absolute right-0 hidden z-10 peer-hover:block hover:block base-box bg-slate-50 dark:bg-slate-800'>
+              <div className='flex flex-col w-32 p-2'>
+                <button className='p-2 inline-flex items-center rounded-md hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('ja')}>
                   <span className='mr-2'>
                     <Flag code='jp' width={20} />
                   </span>
-                  <span>日本語</span>
-                </a>
-              </Link>
+                  <span className={locale === 'ja' ? 'text-yellow-400' : ''}>日本語</span>
+                </button>
+
+                <button className='p-2 inline-flex items-center rounded-md hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('zh')}>
+                  <span className='mr-2'>
+                    <Flag code='cn' width={20} />
+                  </span>
+                  <span className={locale === 'zh' ? 'text-yellow-400' : ''}>中文</span>
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* GitHubボタン */}

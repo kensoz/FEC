@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Breadcrumb from '../components/base/breadcrumb'
 import Contents from '../components/core/content'
 import { getListCollection } from '../firebase/collections'
 import type { IList, IListStaticProps } from '../types'
@@ -6,18 +7,16 @@ import type { IList, IListStaticProps } from '../types'
 // 検索ページ
 const Search = ({ list }: Record<'list', IList[]>) => {
   const router = useRouter()
-  const { locale } = useRouter()
   const { key } = router.query
+  // const { locale } = useRouter()
 
   return (
-    <section className='pt-5'>
+    <section className='py-2'>
+      {/* パンくずリスト */}
+      <Breadcrumb length={list.length} />
+
       {/* コンテンツカードコンポーネント */}
       <Contents list={list.filter((e) => e.name === key && e)} />
-
-      {/* インフォメーション */}
-      <div className='pt-3 text-center text-xs font-bold text-gray-400'>
-        {locale === 'ja' ? 'トータル' : '总计'}：{list.length}
-      </div>
     </section>
   )
 }

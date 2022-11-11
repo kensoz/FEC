@@ -17,7 +17,7 @@ const Toolbar = () => {
   }
 
   return (
-    <div className='base-box flex flex-row justify-between items-center px-2 py-1.5 bg-slate-100 dark:bg-slate-700'>
+    <div className='base-box flex flex-row justify-between items-center px-2 mx-3 py-1.5 bg-slate-100 dark:bg-slate-700'>
       <div className='flex flex-row'>
         {/* ソート順 */}
         <button className='base-icon_btn'>

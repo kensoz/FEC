@@ -25,7 +25,7 @@
 
   /* ----- globalsスタイル ----- */
   .layout {
-    @apply flex flex-col grow min-h-screen overflow-y-auto px-3 bg-slate-50 dark:bg-slate-800
+    @apply flex flex-col grow min-h-screen overflow-y-auto bg-slate-50 dark:bg-slate-800
   }
 
   .main {

@@ -4,15 +4,16 @@ import { Listbox, Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
 import { Fragment, useState, useEffect } from 'react'
 import { getNavCollection } from '../../firebase/collections'
+import { defaultNavHome } from '../../scripts/defaultData'
 import type { INav, INavBarValue } from '../../types'
 
 // モバイルナビバー
 const Navbar = () => {
   const router = useRouter()
-  const { locale } = useRouter()
+  const { asPath, locale } = useRouter()
 
   // value処理
-  const [selected, setSelected] = useState<INavBarValue>({ nameJa: '全て', nameZh: '所有', value: '/' })
+  const [selected, setSelected] = useState<INavBarValue>({ nameJa: defaultNavHome.groupNameJa, nameZh: defaultNavHome.groupNameZh, value: '/' })
   const onChange = (e: INavBarValue): void => {
     setSelected(e)
     e.value === '/' ? router.push('/') : router.push('/[group]', `/${e.value}`)
@@ -22,13 +23,7 @@ const Navbar = () => {
   const [nav, setNav] = useState<INav[]>([])
   const getNavData = async (): Promise<void> => {
     const navRes = await getNavCollection()
-    navRes.unshift({
-      id: '0',
-      groupId: 0,
-      groupName: '/',
-      groupNameZh: '所有',
-      groupNameJa: '全て',
-    })
+    navRes.unshift(defaultNavHome)
     setNav(navRes)
   }
 
@@ -37,7 +32,7 @@ const Navbar = () => {
   }, [])
 
   return (
-    <div className='flex pb-2'>
+    <div className='md:hidden flex pb-2 px-3'>
       <Listbox value={selected} onChange={onChange}>
         <div className='relative mt-1 w-full'>
           {/* ボタン */}
@@ -57,7 +52,7 @@ const Navbar = () => {
                   className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
                   value={{ nameJa: e.groupNameJa, nameZh: e.groupNameZh, value: e.groupName }}
                 >
-                  {locale === 'ja' ? e.groupNameJa : e.groupNameZh}
+                  <span className={asPath === `/${e.groupName}/` ? 'text-yellow-400' : ''}>{locale === 'ja' ? e.groupNameJa : e.groupNameZh}</span>
                 </Listbox.Option>
               ))}
             </Listbox.Options>
