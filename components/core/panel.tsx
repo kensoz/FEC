@@ -40,7 +40,7 @@ const Panel = (props: IPanel) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className='base-box w-1/3 transform overflow-hidden bg-slate-50 dark:bg-slate-800 p-6 text-left align-middle transition-all'>
+              <Dialog.Panel className='base-box w-11/12 md:w-1/3 transform overflow-hidden bg-slate-50 dark:bg-slate-800 p-6 text-left align-middle transition-all'>
                 <Dialog.Title as='h3' className='text-lg leading-6'>
                   title
                 </Dialog.Title>

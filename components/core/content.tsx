@@ -14,7 +14,7 @@ import type { IList } from '../../types'
  */
 const Contents = ({ list }: Record<'list', IList[]>) => {
   return (
-    <div className='grid grid-cols-5 gap-4'>
+    <div className='grid grid-cols-2 gap-2 md:grid-cols-6 md:gap-3'>
       {list.map((e) => (
         <div className='base-box bg-slate-100 dark:bg-slate-700' key={e.id}>
           {/* 写真 */}

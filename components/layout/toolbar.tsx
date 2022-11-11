@@ -25,13 +25,13 @@ const Toolbar = () => {
         </button>
 
         {/* 検索 */}
-        <div className='relative ml-2 w-44'>
+        <div className='relative ml-2'>
           <div className='flex absolute inset-y-0 left-0 items-center pl-2 pointer-events-none'>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </div>
           <input
             type='text'
-            className='border border-gray-200 dark:border-gray-400 rounded-md shadow-sm  bg-white dark:bg-transparent font-normal pl-8 py-2 whitespace-nowrap focus:outline-none focus:ring-1 focus:ring-gray-500 dark:focus:ring-gray-100'
+            className='w-44 border border-gray-200 dark:border-gray-400 rounded-md shadow-sm  bg-white dark:bg-transparent font-normal pl-8 py-2 whitespace-nowrap focus:outline-none focus:ring-1 focus:ring-gray-500 dark:focus:ring-gray-100'
             placeholder='検索'
             required
           ></input>

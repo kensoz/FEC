@@ -27,7 +27,7 @@ const Header = () => {
   }
 
   return (
-    <div className='flex flex-row justify-between items-center py-2 px-3 mb-2 md:mb-0 border-b md:border-b-0 border-gray-200 dark:border-gray-600'>
+    <div className='flex flex-row justify-between items-center py-2 px-3'>
       {/* モバイルロゴ */}
       <Image className='block md:invisible' src='/logo.png' objectFit='contain' width={90} height={40} alt='logo' />
 

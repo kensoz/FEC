@@ -81,7 +81,6 @@ const Nav = () => {
         <div className='w-40 text-xs leading-3 font-normal break-all'>
           All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.
         </div>
-        <div className='text-xs font-light'>UPDATED: 2022-11</div>
       </div>
     </nav>
   )

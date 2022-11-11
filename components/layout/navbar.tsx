@@ -1,4 +1,4 @@
-import { faChevronRight, faSort } from '@fortawesome/free-solid-svg-icons'
+import { faList, faSort } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Listbox, Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
@@ -32,20 +32,29 @@ const Navbar = () => {
   }, [])
 
   return (
-    <div className='md:hidden flex pb-2 px-3'>
+    <div className='md:hidden flex flex-col pb-2 px-3 mb-3 border-b shadow-b-sm border-gray-200 dark:border-gray-600'>
+      {/* タイトル */}
+      <div className='font-bold text-xs text-gray-400'>
+        <h5>
+          <FontAwesomeIcon className='ml-1 mr-2' icon={faList} />
+          <span>{locale === 'ja' ? '技術分類' : '技术分类'}</span>
+        </h5>
+      </div>
+
+      {/* ナビリスト */}
       <Listbox value={selected} onChange={onChange}>
         <div className='relative mt-1 w-full'>
           {/* ボタン */}
           <Listbox.Button className='relative w-full base-box cursor-default py-2 pl-3 pr-10 text-left focus:outline-none bg-white dark:bg-transparent focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500'>
             <span className='block truncate'>{locale === 'ja' ? selected.nameJa : selected.nameZh}</span>
-            <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
+            <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400'>
               <FontAwesomeIcon icon={faSort} />
             </span>
           </Listbox.Button>
 
           {/* オプション */}
           <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-            <Listbox.Options className='z-10 absolute mt-1 max-h-60 w-full overflow-auto base-box bg-white dark:bg-slate-800 p-2'>
+            <Listbox.Options className='z-10 absolute max-h-60 w-full overflow-auto base-box bg-white dark:bg-slate-800 p-2'>
               {nav.map((e: INav) => (
                 <Listbox.Option
                   key={e.id}
