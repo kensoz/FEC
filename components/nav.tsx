@@ -1,39 +1,34 @@
-import { faJs, faReact, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faHouse, faXmark, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faXmark, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getNavCollection } from '../firebase/collections'
-import { defaultNavHome } from '../scripts/defaultData'
+import GET_LOCALS_TEXT from '../locales'
+import { defaultNavHome, defaultNavIconList } from '../scripts/defaultData'
 import type { INav } from '../types'
 
 // サイドナビバー
 const Nav = () => {
+  // router
   const { locale } = useRouter()
 
-  // nav取得
+  // navデータ取得
   const [nav, setNav] = useState<INav[]>([])
   const getNavData = async (): Promise<void> => {
     const navRes = await getNavCollection()
     navRes.unshift(defaultNavHome)
     setNav(navRes)
   }
-
   useEffect((): void => {
     getNavData()
   }, [])
 
   // icon判断
-  const getIcon = (e: number): IconDefinition => {
-    const icon = new Map<number, IconDefinition>([
-      [99, faHouse],
-      [1, faJs],
-      [2, faReact],
-    ])
-
-    return icon.get(e) || faXmark
+  const getIcon = (e: string): IconDefinition => {
+    return defaultNavIconList.get(e) ?? faXmark
   }
 
   return (
@@ -54,7 +49,7 @@ const Nav = () => {
             <Link as={e.groupName === '/' ? undefined : `/${e.groupName}`} href={e.groupName === '/' ? '/' : '/[group]'} passHref>
               <a className='nav-list-btn'>
                 <span className='mr-3'>
-                  <FontAwesomeIcon icon={getIcon(e.groupId)} />
+                  <FontAwesomeIcon icon={getIcon(e.groupName)} />
                 </span>
 
                 <span>{locale === 'ja' ? e.groupNameJa : e.groupNameZh}</span>
@@ -76,11 +71,9 @@ const Nav = () => {
       {/* インフォメーション */}
       <div className='flex flex-col justify-center py-5 px-2 text-gray-400 pointer-events-none'>
         <div>
-          <h6>License</h6>
+          <h6>{GET_LOCALS_TEXT(locale, 'license')}</h6>
         </div>
-        <div className='w-40 text-xs leading-3 font-normal break-all'>
-          All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.
-        </div>
+        <div className='w-40 text-xs leading-3 font-normal break-all'>{GET_LOCALS_TEXT(locale, 'licenseText')}</div>
       </div>
     </nav>
   )

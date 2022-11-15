@@ -10,6 +10,7 @@ import Flag from 'react-world-flags'
 
 // Header
 const Header = () => {
+  // router
   const { asPath, locale } = useRouter()
   const router = useRouter()
   const gitHubURL: string = 'https://github.com/kensoz/FEC'
@@ -19,7 +20,7 @@ const Header = () => {
   const [mounted, setMounted] = useState<boolean>(false)
   useEffect((): void => setMounted(true), [])
 
-  // i18nブロック
+  // i18nメニュー
   const [isDisplay, setIsDisplay] = useState<boolean>(true)
   const changeLanage = (str: 'zh' | 'ja'): void => {
     router.push(asPath, undefined, { locale: str })
@@ -58,7 +59,7 @@ const Header = () => {
                   <span className='mr-2'>
                     <Flag code='cn' width={20} />
                   </span>
-                  <span className={locale === 'zh' ? 'text-yellow-400' : ''}>中文</span>
+                  <span className={locale === 'zh' ? 'text-yellow-400' : ''}>简体中文</span>
                 </button>
               </div>
             </div>

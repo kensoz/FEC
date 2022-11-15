@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import Breadcrumb from '../components/base/breadcrumb'
 import Contents from '../components/core/content'
 import { getListCollection } from '../firebase/collections'
@@ -6,8 +5,6 @@ import type { IGroupSSGPath, IList, IListStaticProps } from '../types'
 
 // 動的ルーティング
 const Group = ({ list }: Record<'list', IList[]>) => {
-  // const { locale } = useRouter()
-
   return (
     <section className='py-2'>
       {/* パンくずリスト */}
@@ -19,7 +16,7 @@ const Group = ({ list }: Record<'list', IList[]>) => {
   )
 }
 
-// ----- SSGパス -----
+// ----- SSG動的パス -----
 const paths: IGroupSSGPath[] = [
   { params: { group: 'javascript' }, locale: 'ja' },
   { params: { group: 'jsframework' }, locale: 'ja' },

@@ -4,11 +4,13 @@ import { Listbox, Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
 import { Fragment, useState, useEffect } from 'react'
 import { getNavCollection } from '../../firebase/collections'
+import GET_LOCALS_TEXT from '../../locales'
 import { defaultNavHome } from '../../scripts/defaultData'
 import type { INav, INavBarValue } from '../../types'
 
 // モバイルナビバー
 const Navbar = () => {
+  // router
   const router = useRouter()
   const { asPath, locale } = useRouter()
 
@@ -19,14 +21,13 @@ const Navbar = () => {
     e.value === '/' ? router.push('/') : router.push('/[group]', `/${e.value}`)
   }
 
-  // nav取得
+  // navデータ取得
   const [nav, setNav] = useState<INav[]>([])
   const getNavData = async (): Promise<void> => {
     const navRes = await getNavCollection()
     navRes.unshift(defaultNavHome)
     setNav(navRes)
   }
-
   useEffect(() => {
     getNavData()
   }, [])
@@ -37,7 +38,7 @@ const Navbar = () => {
       <div className='font-bold text-xs text-gray-400'>
         <h5>
           <FontAwesomeIcon className='ml-1 mr-2' icon={faList} />
-          <span>{locale === 'ja' ? '技術分類' : '技术分类'}</span>
+          <span>{GET_LOCALS_TEXT(locale, 'skillType')}</span>
         </h5>
       </div>
 

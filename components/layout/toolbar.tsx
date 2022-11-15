@@ -1,17 +1,31 @@
 import { faArrowDownWideShort, faCloudArrowDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
+import GET_LOCALS_TEXT from '../../locales'
 import Panel from '../core/panel'
 
 // ツールバー
 const Toolbar = () => {
-  let [isOpen, setIsOpen] = useState(false)
+  // router
+  const router = useRouter()
+  const { locale } = useRouter()
+
+  // 検索フォーム
+  const [query, setQuery] = useState<string>('')
+  const sreach = (): void => {
+    if (query === '') return
+    router.push({
+      pathname: '/search',
+      query: { key: query },
+    })
+  }
 
   // Panel
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const closePanel = () => {
     setIsOpen(false)
   }
-
   const openPanel = () => {
     setIsOpen(true)
   }
@@ -32,7 +46,17 @@ const Toolbar = () => {
           <input
             type='text'
             className='w-44 border border-gray-200 dark:border-gray-400 rounded-md shadow-sm  bg-white dark:bg-transparent font-normal pl-8 py-2 whitespace-nowrap focus:outline-none focus:ring-1 focus:ring-gray-500 dark:focus:ring-gray-100'
-            placeholder='検索'
+            placeholder={GET_LOCALS_TEXT(locale, 'sreach')}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setQuery(e.target.value)
+            }}
+            onBlur={() => {
+              sreach()
+            }}
+            onKeyUp={(e) => {
+              e.key === 'Enter' && sreach()
+            }}
+            value={query}
             required
           ></input>
         </div>

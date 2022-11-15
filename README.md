@@ -20,14 +20,13 @@ Site:  [**🚧 LINK**]()
 
 ## スタック
 
-- ⚡️ Next.js / SSG
+- ⚡️ Next.js
 - ⚙️ TypeScript
 - 🎨 TailwindCSS
-- 📮 Recoil
 - 📑 ESLint + Prettier
-- 🔌 Jest + React Testing Library
+- 🔌 Vitest + React Testing Library
 - 🔩 GitHub Actions
-- 💽 Firebase: Cloud Firestore
+- 💽 Firebase Cloud Firestore
 - 🚀 Vercel
 - 📦 Yarn
 

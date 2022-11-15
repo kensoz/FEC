@@ -3,9 +3,12 @@
 // * パンくずリスト
 // *
 // * ------------------------------
-import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
+import GET_LOCALS_TEXT from '../../locales'
+import { defaultNavListZh, defaultNavListJa } from '../../scripts/defaultData'
 
 /**
  * パンくずリスト
@@ -13,34 +16,29 @@ import { useRouter } from 'next/router'
  * @return {JSX.Element}
  */
 const Breadcrumb = ({ length }: Record<'length', number>) => {
+  // router
   const { query, locale } = useRouter()
 
   // パンくずリストのテキスト
   const handleText = (q: string | string[] | undefined): string => {
-    if (Array.isArray(q) || q === undefined) return locale === 'ja' ? 'ホーム' : '首页'
-    const listZh = new Map<string, string>([
-      ['javascript', 'JS基本'],
-      ['jsframework', 'js框架'],
-    ])
-    const listJa = new Map<string, string>([
-      ['javascript', 'JSの基本'],
-      ['jsframework', 'JSフレームワーク'],
-    ])
-
-    return (locale === 'ja' ? listJa.get(q) : listZh.get(q)) || ''
+    if (Array.isArray(q) || q === undefined) return GET_LOCALS_TEXT(locale, 'homepage')
+    return (locale === 'ja' ? defaultNavListJa.get(q) : defaultNavListZh.get(q)) ?? ''
   }
 
   return (
     <div className='py-2 text-xs flex flex-row items-center text-gray-400'>
-      <div>
-        <FontAwesomeIcon className='mr-1' icon={faHome} />
-        <span>{handleText(query.group)}</span>
-      </div>
+      <Link href='/' passHref>
+        <a className='block'>
+          <FontAwesomeIcon className='mr-1' icon={faHome} />
+        </a>
+      </Link>
 
-      <div className='ml-1'>
-        <FontAwesomeIcon className='mr-1' icon={faChevronRight} />
+      <div className='mx-1'>{handleText(query.group)}</div>
+
+      <div>
+        <span className='mr-1 font-bold'>/</span>
         <span>
-          {locale === 'ja' ? 'トータル' : '总计'}：{length}
+          {GET_LOCALS_TEXT(locale, 'total')}：{length}
         </span>
       </div>
     </div>

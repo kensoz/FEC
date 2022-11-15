@@ -4,8 +4,6 @@
 // *
 // * ------------------------------
 
-// ----- common -----
-
 // ----- nav collection -----
 export interface INav {
   id: string
@@ -44,6 +42,23 @@ export interface IListStaticProps {
   }
 }
 
+// ----- panel -----
+export interface IpanelList {
+  groupId: number
+  groupName: string
+  groupNameZh: string
+  groupNameJa: string
+  name: string
+}
+
+// ----- layout -----
+// モバイルnavbar
+export interface INavBarValue {
+  nameJa: string
+  nameZh: string
+  value: string
+}
+
 // ----- ssg -----
 export interface IGroupSSGPath {
   params: { group: string }
@@ -57,9 +72,7 @@ export interface IPanel {
   closePanel: () => void
 }
 
-// モバイルnavbar
-export interface INavBarValue {
-  nameJa: string
-  nameZh: string
-  value: string
+// ----- i18n -----
+export interface Ii18n {
+  [key: string]: string
 }
