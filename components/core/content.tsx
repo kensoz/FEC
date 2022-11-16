@@ -49,7 +49,8 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
               <div>{e.name}</div>
               <div className='text-yellow-300'>
                 <button onClick={toggle}>
-                  <FontAwesomeIcon icon={isHeart ? faStar : faRStar} />
+                  {/* TODO */}
+                  <FontAwesomeIcon icon={faStar} />
                 </button>
               </div>
             </div>
