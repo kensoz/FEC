@@ -26,14 +26,13 @@ export interface IList {
   groupName: string
   groupNameZh: string
   groupNameJa: string
-  sort: number
   name: string
   img: string
   descriptionZh: string
   descriptionJa: string
   url: string
-  urlZh: string[]
-  urlJa: string[]
+  urlZh: string
+  urlJa: string
 }
 
 export interface IListStaticProps {

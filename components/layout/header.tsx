@@ -17,8 +17,8 @@ const Header = () => {
 
   // ダークモード
   const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState<boolean>(false)
-  useEffect((): void => setMounted(true), [])
+  const [isMounted, setIsMounted] = useState<boolean>(false)
+  useEffect((): void => setIsMounted(true), [])
 
   // i18nメニュー
   const [isDisplay, setIsDisplay] = useState<boolean>(true)
@@ -36,7 +36,7 @@ const Header = () => {
       <div className='flex flex-row items-center'>
         {/* ダークモードボタン */}
         <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className='base-icon_btn text-yellow-300'>
-          {mounted && <>{theme === 'dark' ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}</>}
+          {isMounted && <>{theme === 'dark' ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}</>}
         </button>
 
         {/* i18nボタン */}

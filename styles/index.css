@@ -20,12 +20,12 @@
 @layer base {
   /* ----- html,body ----- */
   html,body {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center  bg-slate-50 dark:bg-slate-800;
   }
 
   /* ----- globalsスタイル ----- */
   .layout {
-    @apply flex flex-col grow min-h-screen overflow-y-auto bg-slate-50 dark:bg-slate-800
+    @apply flex flex-col grow min-h-screen overflow-y-auto
   }
 
   .main {

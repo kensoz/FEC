@@ -32,7 +32,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className='min-w-max border-r shadow-sm hidden md:flex flex-col bg-slate-100  dark:bg-slate-800 border-gray-200 dark:border-gray-600'>
+    <nav className='my-2 ml-2 min-w-[14rem] border rounded-md shadow-sm hidden md:flex flex-col bg-slate-100 dark:bg-slate-800 border-gray-200 dark:border-gray-600'>
       {/* ロゴ */}
       <div className='flex justify-center py-4 border-b-2 border-gray-200 dark:border-gray-600'>
         <Link href='/' passHref>
@@ -43,7 +43,7 @@ const Nav = () => {
       </div>
 
       {/* ナビリスト */}
-      <div className='flex flex-col flex-grow p-6 font-bold text-sm'>
+      <div className='flex flex-col flex-grow p-5 font-bold text-sm'>
         {nav.map((e: INav) => (
           <div key={e.id} className='flex flex-row'>
             <Link as={e.groupName === '/' ? undefined : `/${e.groupName}`} href={e.groupName === '/' ? '/' : '/[group]'} passHref>
@@ -69,11 +69,9 @@ const Nav = () => {
       </div>
 
       {/* インフォメーション */}
-      <div className='flex flex-col justify-center py-5 px-2 text-gray-400 pointer-events-none'>
-        <div>
-          <h6>{GET_LOCALS_TEXT(locale, 'license')}</h6>
-        </div>
-        <div className='w-40 text-xs leading-3 font-normal break-all'>{GET_LOCALS_TEXT(locale, 'licenseText')}</div>
+      <div className='w-56 flex flex-col justify-center py-5 px-2.5 text-gray-400 text-xs pointer-events-none'>
+        <div className='font-bold'>{GET_LOCALS_TEXT(locale, 'license')}</div>
+        <div className='leading-3 font-normal break-all'>{GET_LOCALS_TEXT(locale, 'licenseText')}</div>
       </div>
     </nav>
   )

@@ -1,6 +1,7 @@
 import Breadcrumb from '../components/base/breadcrumb'
 import Contents from '../components/core/content'
 import { getListCollection } from '../firebase/collections'
+import { defaultNavPath } from '../scripts/defaultData'
 import type { IGroupSSGPath, IList, IListStaticProps } from '../types'
 
 // 動的ルーティング
@@ -17,15 +18,8 @@ const Group = ({ list }: Record<'list', IList[]>) => {
 }
 
 // ----- SSG動的パス -----
-const paths: IGroupSSGPath[] = [
-  { params: { group: 'javascript' }, locale: 'ja' },
-  { params: { group: 'jsframework' }, locale: 'ja' },
-  { params: { group: 'javascript' }, locale: 'zh' },
-  { params: { group: 'jsframework' }, locale: 'zh' },
-]
-
 export const getStaticPaths = async () => {
-  return { paths, fallback: false }
+  return { paths: defaultNavPath, fallback: false }
 }
 
 // ----- SSGデータ取得 -----

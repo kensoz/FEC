@@ -26,20 +26,19 @@ const Breadcrumb = ({ length }: Record<'length', number>) => {
   }
 
   return (
-    <div className='py-2 text-xs flex flex-row items-center text-gray-400'>
-      <Link href='/' passHref>
-        <a className='block'>
-          <FontAwesomeIcon className='mr-1' icon={faHome} />
-        </a>
-      </Link>
+    <div className='py-2 text-xs flex flex-row items-center justify-between text-gray-400'>
+      <div className='flex flex-row'>
+        <Link href='/' passHref>
+          <a className='block'>
+            <FontAwesomeIcon className='mr-1' icon={faHome} />
+          </a>
+        </Link>
 
-      <div className='mx-1'>{handleText(query.group)}</div>
+        <div className='mx-1'>{handleText(query.group)}</div>
+      </div>
 
       <div>
-        <span className='mr-1 font-bold'>/</span>
-        <span>
-          {GET_LOCALS_TEXT(locale, 'total')}：{length}
-        </span>
+        {GET_LOCALS_TEXT(locale, 'total')}：{length}
       </div>
     </div>
   )
