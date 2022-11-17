@@ -2,7 +2,9 @@ import { faArrowDownWideShort, faCloudArrowDown, faMagnifyingGlass } from '@fort
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
+import { sortState } from '../../scripts/recoil'
 import Panel from '../core/panel'
 
 // ツールバー
@@ -10,6 +12,9 @@ const Toolbar = () => {
   // router
   const router = useRouter()
   const { locale } = useRouter()
+
+  // recoil
+  const [isSort, setIsSort] = useRecoilState(sortState)
 
   // 検索フォーム
   const [query, setQuery] = useState<string>('')
@@ -34,7 +39,12 @@ const Toolbar = () => {
     <div className='base-box flex flex-row justify-between items-center px-2 mx-3 py-1.5 bg-slate-100 dark:bg-slate-700'>
       <div className='flex flex-row'>
         {/* ソート順 */}
-        <button className='base-icon_btn'>
+        <button
+          className='base-icon_btn'
+          onClick={() => {
+            setIsSort(!isSort)
+          }}
+        >
           <FontAwesomeIcon icon={faArrowDownWideShort} />
         </button>
 

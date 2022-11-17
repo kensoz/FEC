@@ -12,10 +12,7 @@ const Custom404 = () => {
         </div>
 
         <div>お探しのページは見つけることはできません</div>
-
-        <div>
-          无法找到指定页面 <span className='ml-1'>😥</span>
-        </div>
+        <div>无法找到指定页面</div>
 
         <div className='mt-3 text-xs'>
           <Link href='/' passHref>

@@ -1,11 +1,11 @@
-import { faList, faSort } from '@fortawesome/free-solid-svg-icons'
+import { faXmark, faList, faSort, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Listbox, Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
 import { Fragment, useState, useEffect } from 'react'
 import { getNavCollection } from '../../firebase/collections'
 import GET_LOCALS_TEXT from '../../locales'
-import { defaultNavHome } from '../../scripts/defaultData'
+import { defaultNavHome, defaultNavIconList } from '../../scripts/defaultData'
 import type { INav, INavBarValue } from '../../types'
 
 // モバイルナビバー
@@ -32,14 +32,17 @@ const Navbar = () => {
     getNavData()
   }, [])
 
+  // icon判断
+  const getIcon = (e: string): IconDefinition => {
+    return defaultNavIconList.get(e) ?? faXmark
+  }
+
   return (
     <div className='md:hidden flex flex-col pb-2 px-3 mb-3 border-b shadow-b-sm border-gray-200 dark:border-gray-600'>
       {/* タイトル */}
       <div className='font-bold text-xs text-gray-400'>
-        <h5>
-          <FontAwesomeIcon className='ml-1 mr-2' icon={faList} />
-          <span>{GET_LOCALS_TEXT(locale, 'skillType')}</span>
-        </h5>
+        <FontAwesomeIcon className='ml-1 mr-2' icon={faList} />
+        <span>{GET_LOCALS_TEXT(locale, 'skillType')}</span>
       </div>
 
       {/* ナビリスト */}
@@ -47,8 +50,11 @@ const Navbar = () => {
         <div className='relative mt-1 w-full'>
           {/* ボタン */}
           <Listbox.Button className='relative w-full base-box cursor-default py-2 pl-3 pr-10 text-left focus:outline-none bg-white dark:bg-transparent focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500'>
-            <span className='block truncate'>{locale === 'ja' ? selected.nameJa : selected.nameZh}</span>
-            <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400'>
+            <span className='pointer-events-none absolute inset-y-0 left-3 flex items-center'>
+              <FontAwesomeIcon icon={getIcon(selected.value)} />
+            </span>
+            <span className='pl-6 block truncate'>{locale === 'ja' ? selected.nameJa : selected.nameZh}</span>
+            <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
               <FontAwesomeIcon icon={faSort} />
             </span>
           </Listbox.Button>
@@ -62,7 +68,12 @@ const Navbar = () => {
                   className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
                   value={{ nameJa: e.groupNameJa, nameZh: e.groupNameZh, value: e.groupName }}
                 >
-                  <span className={asPath === `/${e.groupName}/` ? 'text-yellow-400' : ''}>{locale === 'ja' ? e.groupNameJa : e.groupNameZh}</span>
+                  <div className={asPath === `/${e.groupName}/` ? 'text-yellow-400' : ''}>
+                    <span className='mr-3'>
+                      <FontAwesomeIcon icon={getIcon(e.groupName)} />
+                    </span>
+                    {locale === 'ja' ? e.groupNameJa : e.groupNameZh}
+                  </div>
                 </Listbox.Option>
               ))}
             </Listbox.Options>
