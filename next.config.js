@@ -11,7 +11,7 @@ const nextConfig = withInterceptStdout(
       defaultLocale: 'ja',
     },
     images: {
-      domains: ['cdn.jsdelivr.net', 'cdn.simpleicons.org'],
+      domains: ['cdn.simpleicons.org'],
     },
   },
 
