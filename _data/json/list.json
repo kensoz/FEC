@@ -5,13 +5,13 @@
     "groupName": "javascript",
     "groupNameZh": "JavaScript与框架",
     "groupNameJa": "JSとフレームワーク",
-    "img":"",
-    "name": "TypeScript",
-    "descriptionZh": "JavaScript的超集",
-    "descriptionJa": "JavaScriptのスーパーセット",
-    "url": "https://www.typescriptlang.org/",
-    "urlZh": "https://typescript.bootcss.com/",
-    "urlJa": "https://typescriptbook.jp/"
+    "name": "JavaScript",
+    "color":"F7DF1E",
+    "descriptionZh": "为了使操作网页动起来的编程语言",
+    "descriptionJa": "ページを動かすためのプログラム言語",
+    "url": "",
+    "relatedZh": [],
+    "relatedJa": []
   },
   {
     "id": "2",
@@ -19,12 +19,26 @@
     "groupName": "javascript",
     "groupNameZh": "JavaScript与框架",
     "groupNameJa": "JSとフレームワーク",
-    "img":"",
+    "name": "TypeScript",
+    "color":"3178C6",
+    "descriptionZh": "JavaScript的超集",
+    "descriptionJa": "JavaScriptのスーパーセット",
+    "url": "https://www.typescriptlang.org/",
+    "relatedZh": ["https://typescript.bootcss.com/"],
+    "relatedJa": ["https://typescriptbook.jp/"]
+  },
+  {
+    "id": "3",
+    "groupId": 1,
+    "groupName": "javascript",
+    "groupNameZh": "JavaScript与框架",
+    "groupNameJa": "JSとフレームワーク",
     "name": "Vue.js",
+    "color":"4FC08D",
     "descriptionZh": "渐进式JavaScript框架",
     "descriptionJa": "Web UI構築のためのJSフレームワーク",
     "url": "https://vuejs.org/",
-    "urlZh": "https://cn.vuejs.org/",
-    "urlJa": "https://ja.vuejs.org/"
+    "relatedZh": ["https://cn.vuejs.org/"],
+    "relatedJa": ["https://ja.vuejs.org/"]
   }
 ]

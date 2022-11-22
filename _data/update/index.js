@@ -2,17 +2,14 @@
 // *
 // * Firestoreにデータをインポート
 // *
-// * nav更新、ほぼ固定データなので、必要なとき使う
+// * nav.json更新:ほぼ固定データなので、必要なとき使う
 // * import json from '../json/nav.json'
 // * const collectionKey = 'nav'
 // *
 // * ------------------------------
-import fs from 'node:fs/promises'
 import admin from 'firebase-admin'
 import json from '../json/list.json' assert { type: 'json' }
 import serviceAccount from './serviceAccount.json' assert { type: 'json' }
-
-// const json = await fs.readFile('./_data/json/list.json', 'utf8')
 
 // コレクションとデータベース情報
 const collectionKey = 'list'

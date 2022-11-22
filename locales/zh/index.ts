@@ -13,7 +13,7 @@ const zh: Ii18n = {
   sreach: '搜索',
   skillType: '技术分类',
   offical: '官网',
-  about: '相关',
+  about: '相关：',
   license: 'License:',
   licenseText: 'All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.',
 }

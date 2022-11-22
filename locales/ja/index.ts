@@ -13,7 +13,7 @@ const ja: Ii18n = {
   sreach: '検索',
   skillType: '技術分類',
   offical: '公式',
-  about: '関連',
+  about: '関連：',
   license: 'License:',
   licenseText: 'All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.',
 }

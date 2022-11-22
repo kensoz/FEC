@@ -27,12 +27,12 @@ export interface IList {
   groupNameZh: string
   groupNameJa: string
   name: string
-  img: string
+  color: string
   descriptionZh: string
   descriptionJa: string
   url: string
-  urlZh: string
-  urlJa: string
+  relatedZh: string[]
+  relatedJa: string[]
 }
 
 export interface IListStaticProps {

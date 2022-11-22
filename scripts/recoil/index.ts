@@ -8,8 +8,12 @@ import { atom } from 'recoil'
 import type { IpanelList } from '../../types/index'
 
 // ソート順
-export const sortState = atom<boolean>({
-  key: 'isSort',
+export const sortIDState = atom<boolean>({
+  key: 'isSortID',
+  default: false,
+})
+export const sortAZState = atom<boolean>({
+  key: 'isSortAZ',
   default: false,
 })
 

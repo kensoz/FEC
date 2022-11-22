@@ -1,10 +1,10 @@
-import { faArrowDownWideShort, faCloudArrowDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUpZA, faArrowUpAZ, faArrowDownWideShort, faArrowUpShortWide, faStar, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
-import { sortState } from '../../scripts/recoil'
+import { sortIDState, sortAZState } from '../../scripts/recoil'
 import Panel from '../core/panel'
 
 // ツールバー
@@ -14,7 +14,8 @@ const Toolbar = () => {
   const { locale } = useRouter()
 
   // recoil
-  const [isSort, setIsSort] = useRecoilState(sortState)
+  const [isSortID, setIsSortID] = useRecoilState(sortIDState)
+  const [isSortAZ, setIsSortAZ] = useRecoilState(sortAZState)
 
   // 検索フォーム
   const [query, setQuery] = useState<string>('')
@@ -38,15 +39,25 @@ const Toolbar = () => {
   return (
     <div className='base-box flex flex-row justify-between items-center px-2 mx-3 py-1.5 bg-slate-100 dark:bg-slate-700'>
       <div className='flex flex-row'>
-        {/* ソート順 */}
+        {/* ソート順ID */}
         <button
           className='base-icon_btn'
           onClick={() => {
-            setIsSort(!isSort)
+            setIsSortID(!isSortID)
           }}
         >
-          <FontAwesomeIcon icon={faArrowDownWideShort} />
+          <FontAwesomeIcon icon={isSortID ? faArrowDownWideShort : faArrowUpShortWide} />
         </button>
+
+        {/* ソート順AZ */}
+        {/* <button
+          className='base-icon_btn ml-1'
+          onClick={() => {
+            setIsSortAZ(!isSortAZ)
+          }}
+        >
+          <FontAwesomeIcon icon={isSortAZ ? faArrowUpZA : faArrowUpAZ} />
+        </button> */}
 
         {/* 検索 */}
         <div className='relative ml-2'>
@@ -78,8 +89,8 @@ const Toolbar = () => {
         <span className='h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded-md opacity-50 from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded-md shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='absolute inset-0 w-full h-full transition duration-200 ease-out rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400'></span>
-        <span className='relative'>
-          <FontAwesomeIcon icon={faCloudArrowDown} />
+        <span className='relative text-yellow-300'>
+          <FontAwesomeIcon icon={faStar} />
         </span>
       </button>
 
