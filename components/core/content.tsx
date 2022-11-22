@@ -51,7 +51,14 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
       {list.map((e: IList) => (
         <div className='flex flex-col base-box bg-slate-100 dark:bg-slate-700' key={e.id}>
           {/* カード写真 */}
-          <Image className='flex border-b rounded-t-md border-gray-400 ' src={e.img} width={300} height={150} alt='brands' />
+
+          <Image
+            className='flex border-b rounded-t-md border-gray-400 '
+            src='https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/simpleicons.svg'
+            width={100}
+            height={50}
+            alt='brands'
+          />
 
           {/* カード情報 */}
           <div className='flex flex-col flex-grow'>

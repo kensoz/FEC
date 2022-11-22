@@ -38,5 +38,5 @@ yarn-error.log*
 # editor
 *.code-workspace
 
-# firebase import
-firebase/config/serviceAccount.json
+# _data
+_data/update/serviceAccount.json

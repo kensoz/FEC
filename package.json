@@ -8,7 +8,9 @@
     "dev": "next dev -p 8011",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update-firebase": "node ./_data/update/index.js",
+    "add-list": "node ./_data/index.js"
   },
   "dependencies": {
     "firebase": "^9.12.0",
@@ -34,6 +36,7 @@
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "^8.5.0",
     "fuse.js": "^6.6.2",
+    "inquirer": "^9.1.4",
     "next-intercept-stdout": "^1.0.1",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.16",
