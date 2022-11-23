@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
-import { sortIDState, sortAZState } from '../../scripts/recoil'
+import { sortIDState } from '../../scripts/recoil'
 import Panel from '../core/panel'
 
 // ツールバー
@@ -15,7 +15,6 @@ const Toolbar = () => {
 
   // recoil
   const [isSortID, setIsSortID] = useRecoilState(sortIDState)
-  const [isSortAZ, setIsSortAZ] = useRecoilState(sortAZState)
 
   // 検索フォーム
   const [query, setQuery] = useState<string>('')
@@ -48,16 +47,6 @@ const Toolbar = () => {
         >
           <FontAwesomeIcon icon={isSortID ? faArrowDownWideShort : faArrowUpShortWide} />
         </button>
-
-        {/* ソート順AZ */}
-        {/* <button
-          className='base-icon_btn ml-1'
-          onClick={() => {
-            setIsSortAZ(!isSortAZ)
-          }}
-        >
-          <FontAwesomeIcon icon={isSortAZ ? faArrowUpZA : faArrowUpAZ} />
-        </button> */}
 
         {/* 検索 */}
         <div className='relative ml-2'>

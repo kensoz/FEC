@@ -42,12 +42,10 @@ export interface IListStaticProps {
 }
 
 // ----- panel -----
-export interface IpanelList {
-  groupId: number
-  groupName: string
-  groupNameZh: string
-  groupNameJa: string
+export interface IGlobalList {
+  id: string
   name: string
+  groupName: string
 }
 
 // ----- layout -----

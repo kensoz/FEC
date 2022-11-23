@@ -12,12 +12,6 @@ const nextConfig = withInterceptStdout(
     },
     images: {
       unoptimized: true,
-      // remotePatterns: [
-      //   {
-      //     protocol: 'https',
-      //     hostname: 'icons.ly',
-      //   },
-      // ],
     },
   },
 

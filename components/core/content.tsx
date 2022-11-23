@@ -10,10 +10,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import { useRecoilValue } from 'recoil'
+import { useRecoilValue, useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
-import { sortIDState, sortAZState } from '../../scripts/recoil'
-import type { IList } from '../../types'
+import { sortIDState, listState } from '../../scripts/recoil'
+import type { IList, IGlobalList } from '../../types'
 
 /**
  * ダイアログPanel
@@ -26,24 +26,35 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
 
   // recoil
   const isSortID = useRecoilValue(sortIDState)
-  const isSortAZ = useRecoilValue(sortAZState)
+  const [globalList, setListState] = useRecoilState(listState)
 
   // ソート順
-  // const [sortList, setSortList] = useState<IList[]>(list)
-  useEffect(() => {
+  useEffect((): void => {
     isSortID ? list.sort((a, b) => Number(a.id) - Number(b.id)) : list.sort((a, b) => Number(b.id) - Number(a.id))
+  })
+
+  // 選択
+  // TODO 排序问题
+  const onClick = (e: IGlobalList): void => {
+    setListState((old: IGlobalList[]): IGlobalList[] => {
+      const index = old.findIndex((i): boolean => i.id === e.id)
+
+      if (index !== -1) {
+        // TODO 研究一下咋回事
+        return [...globalList.slice(0, index), ...globalList.slice(index + 1)]
+      }
+
+      return [...old, e]
+    })
+  }
+
+  useEffect((): void => {
+    console.log(globalList)
   })
 
   // JSXレンダリング判定用
   const checkRelatedURL = (ja: string[], zh: string[]): string[] => {
     return locale === 'ja' ? ja : zh
-  }
-
-  // heart
-  // TODO
-  const [isHeart, setisHeart] = useState<boolean>(false)
-  const toggle = (): void => {
-    setisHeart(!isHeart)
   }
 
   return list.length === 0 ? (
@@ -63,7 +74,7 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
             <a className='block' target='_blank'>
               <div className='py-5 flex flex-row justify-center items-center border-b border-gray-200 dark:border-gray-500 bg-gray-50 dark:bg-gray-700'>
                 <Image
-                  loader={() => `https://cdn.simpleicons.org/${e.name}`}
+                  loader={(): string => `https://cdn.simpleicons.org/${e.name}`}
                   src={`https://cdn.simpleicons.org/${e.name}`}
                   width={40}
                   height={40}
@@ -89,8 +100,8 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
               </Link>
 
               <div className='text-yellow-300 text-xl absolute right-2 top-[-10px] bg-white dark:bg-slate-700 border border-gray-200 dark:border-gray-500 shadow-sm py-0.5 px-1 rounded-full'>
-                <button onClick={toggle}>
-                  <FontAwesomeIcon icon={isHeart ? faStar : faRStar} />
+                <button onClick={() => onClick({ id: e.id, name: e.name, groupName: e.groupName })}>
+                  <FontAwesomeIcon icon={globalList.findIndex((i): boolean => i.id === e.id) !== -1 ? faStar : faRStar} />
                 </button>
               </div>
             </div>
