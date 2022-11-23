@@ -12,11 +12,15 @@ const nextConfig = withInterceptStdout(
     },
     images: {
       remotePatterns: [
+        // {
+        //   protocol: 'https',
+        //   hostname: 'cdn.simpleicons.org',
+        //   port: '',
+        //   pathname: '/**',
+        // },
         {
           protocol: 'https',
-          hostname: 'cdn.simpleicons.org',
-          port: '',
-          pathname: '/**',
+          hostname: 'icons.ly',
         },
       ],
     },
