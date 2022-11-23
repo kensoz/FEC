@@ -46,6 +46,11 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
     setisHeart(!isHeart)
   }
 
+  // const myLoader = (src: string, width: string, quality: string):string => {
+  //   return `https://cdn.simpleicons.org/${src}?w=${width}&q=${quality || 75}`
+  // }
+  // src={`https://cdn.simpleicons.org/${e.name}`}
+
   return list.length === 0 ? (
     // データなしの場合
     <div className='flex justify-center items-center pt-20'>

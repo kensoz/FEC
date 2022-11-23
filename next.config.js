@@ -11,6 +11,7 @@ const nextConfig = withInterceptStdout(
       defaultLocale: 'ja',
     },
     images: {
+      unoptimized: true,
       remotePatterns: [
         // {
         //   protocol: 'https',
