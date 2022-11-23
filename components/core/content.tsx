@@ -46,11 +46,6 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
     setisHeart(!isHeart)
   }
 
-  // const myLoader = (src: string, width: string, quality: string):string => {
-  //   return `https://cdn.simpleicons.org/${src}?w=${width}&q=${quality || 75}`
-  // }
-  // src={`https://cdn.simpleicons.org/${e.name}`}
-
   return list.length === 0 ? (
     // データなしの場合
     <div className='flex justify-center items-center pt-20'>
@@ -82,8 +77,6 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
 
           {/* カード情報 */}
           <div className='flex flex-col flex-grow'>
-            {/* <Image loader={()=>} src='https://icons.ly/Wantedly' width={20} height={20} alt={e.name} /> */}
-            {/* <Image src='https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/simpleicons.svg' width={20} height={20} alt={e.name} /> */}
             {/* 技術名 */}
             <div className='relative px-2 py-2 font-medium text-gray-400'>
               <Link href={e.url} passHref>
