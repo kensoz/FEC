@@ -10,9 +10,9 @@ const nextConfig = withInterceptStdout(
       locales: ['zh', 'ja'],
       defaultLocale: 'ja',
     },
-    images: {
-      domains: ['cdn.simpleicons.org', 'cdn.jsdelivr.net'],
-    },
+    // images: {
+    //   domains: ['cdn.simpleicons.org', 'cdn.jsdelivr.net'],
+    // },
   },
 
   // https://github.com/facebookexperimental/Recoil/issues/733
