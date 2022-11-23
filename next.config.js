@@ -15,6 +15,8 @@ const nextConfig = withInterceptStdout(
         {
           protocol: 'https',
           hostname: 'cdn.simpleicons.org',
+          port: '',
+          pathname: '/**',
         },
       ],
     },

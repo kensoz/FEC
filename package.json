@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8011",
+    "dev": "next dev -p 8012",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
