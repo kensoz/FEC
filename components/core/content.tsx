@@ -71,6 +71,7 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
 
           {/* カード情報 */}
           <div className='flex flex-col flex-grow'>
+            <Image src='https://cdn.simpleicons.org/simpleicons/blue' width={20} height={20} alt={e.name} />
             {/* 技術名 */}
             <div className='relative px-2 py-2 font-medium text-gray-400'>
               <Link href={e.url} passHref>
