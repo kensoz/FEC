@@ -11,8 +11,16 @@ const nextConfig = withInterceptStdout(
       defaultLocale: 'ja',
     },
     images: {
-      domains: ['cdn.simpleicons.org', 'cdn.jsdelivr.net'],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'cdn.simpleicons.org',
+        },
+      ],
     },
+    // images: {
+    //   domains: ['cdn.simpleicons.org', 'cdn.jsdelivr.net'],
+    // },
   },
 
   // https://github.com/facebookexperimental/Recoil/issues/733
