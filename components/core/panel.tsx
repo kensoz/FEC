@@ -104,7 +104,10 @@ const Panel = (props: IPanel) => {
 
                 {/* 技術確認と入力 */}
                 {globalList.length === 0 ? (
-                  <div>123</div>
+                  <div className='flex flex-col justify-center items-center my-10 text-gray-400 text-sm font-medium'>
+                    <div>{GET_LOCALS_TEXT(locale, 'noData')}</div>
+                    <div>{GET_LOCALS_TEXT(locale, 'mySKill')}</div>
+                  </div>
                 ) : (
                   <div className='flex flex-col px-2 py-4'>
                     <div className='grid grid-cols-3 gap-2 text-xs text-gray-400'>
@@ -202,7 +205,7 @@ const Panel = (props: IPanel) => {
 
                 {/* ボタングループ */}
                 <div className='py-2 flex flex-row justify-center items-center border-t border-gray-200 dark:border-gray-600'>
-                  <button type='button' className='base-btn px-3 py-1 ' onClick={props.closePanel}>
+                  <button type='button' className='base-btn px-3 py-1 font-medium' onClick={props.closePanel}>
                     {GET_LOCALS_TEXT(locale, 'close')}
                   </button>
 
