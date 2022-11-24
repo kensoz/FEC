@@ -6,6 +6,7 @@ const Footer = () => {
   // router
   const { locale } = useRouter()
 
+  // ---------- TSX ----------
   return (
     <div className='text-xs flex flex-col justify-center items-center text-gray-400'>
       {/* インフォメーション */}

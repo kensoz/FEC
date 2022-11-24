@@ -25,6 +25,7 @@ const Breadcrumb = ({ length }: Record<'length', number>) => {
     return (locale === 'ja' ? defaultNavListJa.get(q) : defaultNavListZh.get(q)) ?? ''
   }
 
+  // ---------- TSX ----------
   return (
     <div className='py-2 text-xs flex flex-row items-center justify-between text-gray-400'>
       <div className='flex flex-row'>

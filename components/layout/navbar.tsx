@@ -37,6 +37,7 @@ const Navbar = () => {
     return defaultNavIconList.get(e) ?? faXmark
   }
 
+  // ---------- TSX ----------
   return (
     <div className='md:hidden flex flex-col pb-2 px-3 mb-3 border-b shadow-b-sm border-gray-200 dark:border-gray-600'>
       {/* タイトル */}

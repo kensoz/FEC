@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
 import { useRecoilValue, useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
 import { sortIDState, listState } from '../../scripts/recoil'
@@ -29,18 +28,15 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
   const [globalList, setListState] = useRecoilState(listState)
 
   // ソート順
-  useEffect((): void => {
-    isSortID ? list.sort((a, b) => Number(a.id) - Number(b.id)) : list.sort((a, b) => Number(b.id) - Number(a.id))
-  })
+  const sortedList = (): IList[] => {
+    return isSortID ? list.sort((a, b) => Number(b.id) - Number(a.id)) : list.sort((a, b) => Number(a.id) - Number(b.id))
+  }
 
-  // 選択
-  // TODO 排序问题
+  // スタァ選択
   const onClick = (e: IGlobalList): void => {
     setListState((old: IGlobalList[]): IGlobalList[] => {
-      const index = old.findIndex((i): boolean => i.id === e.id)
-
+      const index: number = old.findIndex((i): boolean => i.id === e.id)
       if (index !== -1) {
-        // TODO 研究一下咋回事
         return [...globalList.slice(0, index), ...globalList.slice(index + 1)]
       }
 
@@ -48,15 +44,12 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
     })
   }
 
-  useEffect((): void => {
-    console.log(globalList)
-  })
-
   // JSXレンダリング判定用
   const checkRelatedURL = (ja: string[], zh: string[]): string[] => {
     return locale === 'ja' ? ja : zh
   }
 
+  // ---------- TSX ----------
   return list.length === 0 ? (
     // データなしの場合
     <div className='flex justify-center items-center pt-20'>
@@ -67,26 +60,28 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
   ) : (
     // 正常の場合、カード表示
     <div className='grid grid-cols-2 gap-2 md:grid-cols-6 md:gap-3'>
-      {list.map((e: IList) => (
+      {sortedList().map((e: IList) => (
         <div className='flex flex-col base-box bg-slate-100 dark:bg-slate-700' key={e.id}>
           {/* カード写真 */}
           <Link href={e.url} passHref>
-            <a className='block' target='_blank'>
-              <div className='py-5 flex flex-row justify-center items-center border-b border-gray-200 dark:border-gray-500 bg-gray-50 dark:bg-gray-700'>
-                <Image
-                  loader={(): string => `https://cdn.simpleicons.org/${e.name}`}
-                  src={`https://cdn.simpleicons.org/${e.name}`}
-                  width={40}
-                  height={40}
-                  alt={e.name}
-                />
+            <a className='block rounded-t-md' target='_blank'>
+              <div className='py-5 flex flex-row justify-center items-center rounded-t-md border-b border-gray-200 dark:border-gray-500 bg-gray-50 dark:bg-gray-700'>
+                {e.color !== '' && (
+                  <Image
+                    loader={(): string => `https://cdn.simpleicons.org/${e.name}`}
+                    src={`https://cdn.simpleicons.org/${e.name}`}
+                    width={40}
+                    height={40}
+                    alt={e.name}
+                  />
+                )}
 
                 <div className='ml-2 font-bold text-lg'>{e.name}</div>
               </div>
             </a>
           </Link>
 
-          {/* カード情報 */}
+          {/* カード情報＆スタァ */}
           <div className='flex flex-col flex-grow'>
             {/* 技術名 */}
             <div className='relative px-2 py-2 font-medium text-gray-400'>
@@ -100,7 +95,8 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
               </Link>
 
               <div className='text-yellow-300 text-xl absolute right-2 top-[-10px] bg-white dark:bg-slate-700 border border-gray-200 dark:border-gray-500 shadow-sm py-0.5 px-1 rounded-full'>
-                <button onClick={() => onClick({ id: e.id, name: e.name, groupName: e.groupName })}>
+                <button type='button' onClick={() => onClick({ id: e.id, name: e.name, groupName: e.groupName, businessEX: '0年', personalEX: '0年' })}>
+                  {/* <button> */}
                   <FontAwesomeIcon icon={globalList.findIndex((i): boolean => i.id === e.id) !== -1 ? faStar : faRStar} />
                 </button>
               </div>

@@ -19,7 +19,7 @@ import {
 
 import ja from '../locales/ja'
 import zh from '../locales/zh'
-import type { INav, IGroupSSGPath } from '../types/index'
+import type { INav, IGroupSSGPath, IYear } from '../types/index'
 
 // ----- nav&path -----
 // ホーム
@@ -89,3 +89,12 @@ export const defaultNavIconList = new Map<string, IconDefinition>([
   ['tool', faToolbox],
   ['other', faEllipsis],
 ])
+
+// ----- panel -----
+export const year: IYear[] = [
+  { value: '~1年', id: 1 },
+  { value: '1~2年', id: 2 },
+  { value: '2~3年', id: 3 },
+  { value: '3~5年', id: 4 },
+  { value: '5~年', id: 5 },
+]

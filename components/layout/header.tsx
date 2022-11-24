@@ -27,6 +27,7 @@ const Header = () => {
     setIsDisplay(false)
   }
 
+  // ---------- TSX ----------
   return (
     <div className='flex flex-row justify-between items-center py-2 px-3'>
       {/* モバイルロゴ */}

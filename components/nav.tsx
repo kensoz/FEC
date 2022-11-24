@@ -31,6 +31,7 @@ const Nav = () => {
     return defaultNavIconList.get(e) ?? faXmark
   }
 
+  // ---------- TSX ----------
   return (
     <nav className='my-2 ml-2 min-w-[14rem] border rounded-md shadow-sm hidden md:flex flex-col bg-slate-100 dark:bg-slate-800 border-gray-200 dark:border-gray-600'>
       {/* ロゴ */}

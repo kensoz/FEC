@@ -14,6 +14,12 @@ const zh: Ii18n = {
   skillType: '技术分类',
   offical: '官网',
   about: '相关：',
+  download: '导出',
+  close: '返回',
+  delete: '删除',
+  skillName: '技术名',
+  businessEX: '实务经验',
+  personalEX: '个人经验',
   license: 'License:',
   licenseText: 'All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.',
 }

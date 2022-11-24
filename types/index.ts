@@ -46,6 +46,13 @@ export interface IGlobalList {
   id: string
   name: string
   groupName: string
+  businessEX: string
+  personalEX: string
+}
+
+export interface IYear {
+  id: number
+  value: string
 }
 
 // ----- layout -----

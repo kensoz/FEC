@@ -14,6 +14,12 @@ const ja: Ii18n = {
   skillType: '技術分類',
   offical: '公式',
   about: '関連：',
+  download: 'エクスポート',
+  close: 'もどる',
+  delete: '削除',
+  skillName: '技術名称',
+  businessEX: '実務経験',
+  personalEX: '個人経験',
   license: 'License:',
   licenseText: 'All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.',
 }
