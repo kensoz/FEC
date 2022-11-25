@@ -13,6 +13,7 @@ import { Fragment, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
 import { year } from '../../scripts/defaultData'
+import makeTemplate from '../../scripts/mdTemplate'
 import { listState } from '../../scripts/recoil'
 import type { IPanel, IGlobalList } from '../../types'
 
@@ -28,35 +29,26 @@ const Panel = (props: IPanel) => {
   // recoil
   const [globalList, setListState] = useRecoilState(listState)
 
-  // listの削除と経験調整
-  // TODO
-  const changeEX = (list: 'businessEX' | 'personalEX', id: string, value: string): void => {}
-  const deleteListItem = (item: string): void => {}
+  // listの更新と削除
+  const updateListItem = (key: 'businessEX' | 'personalEX', id: string, value: string): void => {
+    setListState(globalList.map((i: IGlobalList): IGlobalList => (i.id === id ? { ...i, [key]: value } : i)))
+  }
+  const deleteListItem = (id: string): void => {
+    const index: number = globalList.findIndex((i: IGlobalList): boolean => i.id === id)
+    setListState([...globalList.slice(0, index), ...globalList.slice(index + 1)])
+  }
 
   // MarkDownのダウンロード
-  // TODO
-  const [download, setDownload] = useState<string>('')
-  const lai = [
-    { h1: 'JSON To Markdown' },
-    { h2: 'Features' },
-    { ul: ['Easy to use', 'You can programmatically generate Markdown content', '...'] },
-    { h2: 'How to contribute' },
-    { ol: ['Fork the project', 'Create your branch', 'Raise a pull request'] },
-    { h2: 'Code blocks' },
-    { p: 'Below you can see a code block example.' },
-    {
-      code: {
-        language: 'js',
-        content: ['function sum (a, b) {', '   return a + b', '}', 'sum(1, 2)'],
-      },
-    },
-    { table: { headers: ['a', 'b'], rows: [{ a: 'col1', b: 'col2' }] } },
-    { table: { headers: ['a', 'b'], rows: [['col1', 'col2']] } },
-  ]
-  const handleDownload = async (): Promise<void> => {
-    const keyi = await json2md(lai)
+  const filename: string = 'FEC-list.md'
+  const [markdown, setMarkDown] = useState<string>('')
+  const download = async (): Promise<void> => {
+    let res: string[][] = []
+    await globalList.map((e: IGlobalList): void => {
+      res.push([e.name, e.businessEX, e.personalEX])
+    })
 
-    setDownload('data:text/plain;charset=utf-8,' + encodeURIComponent(keyi))
+    const text: string = await json2md(makeTemplate(locale, res))
+    setMarkDown('data:text/plain;charset=utf-8,' + encodeURIComponent(text))
   }
 
   // ---------- TSX ----------
@@ -137,7 +129,7 @@ const Panel = (props: IPanel) => {
                         <Listbox
                           value={e.businessEX}
                           onChange={(value: string): void => {
-                            changeEX('businessEX', e.id, value)
+                            updateListItem('businessEX', e.id, value)
                           }}
                         >
                           <div className='relative'>
@@ -170,7 +162,7 @@ const Panel = (props: IPanel) => {
                         <Listbox
                           value={e.personalEX}
                           onChange={(value: string): void => {
-                            changeEX('personalEX', e.id, value)
+                            updateListItem('personalEX', e.id, value)
                           }}
                         >
                           <div className='relative'>
@@ -212,9 +204,9 @@ const Panel = (props: IPanel) => {
                   {globalList.length !== 0 && (
                     <a
                       className='ml-2 inline-flex items-center px-3 py-1 font-medium text-sm leading-6 shadow-sm text-white bg-amber-400 rounded-md cursor-pointer select-none hover:bg-amber-500'
-                      href={download}
-                      download='download.md'
-                      onClick={handleDownload}
+                      href={markdown}
+                      download={filename}
+                      onClick={download}
                     >
                       <FontAwesomeIcon className='mr-2' icon={faCloudArrowDown} />
                       {GET_LOCALS_TEXT(locale, 'download')}
