@@ -95,7 +95,10 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
               </Link>
 
               <div className='text-yellow-300 text-xl absolute right-2 top-[-10px] bg-white dark:bg-slate-700 border border-gray-200 dark:border-gray-500 shadow-sm py-0.5 px-1 rounded-full'>
-                <button type='button' onClick={() => onClick({ id: e.id, name: e.name, groupName: e.groupName, businessEX: '0年', personalEX: '0年' })}>
+                <button
+                  type='button'
+                  onClick={() => onClick({ id: e.id, name: e.name, groupId: e.groupId, groupName: e.groupName, businessEX: '-', personalEX: '-' })}
+                >
                   {/* <button> */}
                   <FontAwesomeIcon icon={globalList.findIndex((i): boolean => i.id === e.id) !== -1 ? faStar : faRStar} />
                 </button>

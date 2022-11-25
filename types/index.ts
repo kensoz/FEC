@@ -45,6 +45,7 @@ export interface IListStaticProps {
 export interface IGlobalList {
   id: string
   name: string
+  groupId: number
   groupName: string
   businessEX: string
   personalEX: string

@@ -3,8 +3,6 @@
     "id": "1",
     "groupId": 1,
     "groupName": "javascript",
-    "groupNameZh": "JavaScript与框架",
-    "groupNameJa": "JSとフレームワーク",
     "name": "JavaScript",
     "color":"F7DF1E",
     "descriptionZh": "为了使操作网页动起来的编程语言",
@@ -17,8 +15,6 @@
     "id": "2",
     "groupId": 1,
     "groupName": "javascript",
-    "groupNameZh": "JavaScript与框架",
-    "groupNameJa": "JSとフレームワーク",
     "name": "TypeScript",
     "color":"3178C6",
     "descriptionZh": "JavaScript的超集",
@@ -31,8 +27,6 @@
     "id": "3",
     "groupId": 1,
     "groupName": "javascript",
-    "groupNameZh": "JavaScript与框架",
-    "groupNameJa": "JSとフレームワーク",
     "name": "Vue.js",
     "color":"4FC08D",
     "descriptionZh": "渐进式JavaScript框架",
@@ -40,5 +34,17 @@
     "url": "https://vuejs.org/",
     "relatedZh": ["https://cn.vuejs.org/"],
     "relatedJa": ["https://ja.vuejs.org/"]
+  },
+  {
+    "id": "4",
+    "groupId": 1,
+    "groupName": "javascript",
+    "name": "React",
+    "color":"61DAFB",
+    "descriptionZh": "用于构建用户界面的JavaScript库",
+    "descriptionJa": "UI構築のためのJavaScriptライブラリ",
+    "url": "https://vuejs.org/",
+    "relatedZh": [],
+    "relatedJa": []
   }
 ]

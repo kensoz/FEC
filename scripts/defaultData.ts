@@ -51,7 +51,7 @@ export const defaultNavPath: IGroupSSGPath[] = [
 
 // ナビリスト
 export const defaultNavListZh = new Map<string, string>([
-  ['javascript', 'JS基本'],
+  ['javascript', 'JavaScript与框架'],
   ['css', 'CSS与UI相关'],
   ['node', 'Node.js相关'],
   ['project', '前端工程化'],
@@ -64,10 +64,10 @@ export const defaultNavListZh = new Map<string, string>([
 ])
 
 export const defaultNavListJa = new Map<string, string>([
-  ['javascript', 'JSの基本'],
+  ['javascript', 'JSとフレームワーク'],
   ['css', 'CSSとUI関連'],
   ['node', 'Node.js関連'],
-  ['project', 'FE工程ツール'],
+  ['project', 'バンドルとビルド'],
   ['lib', '常用ライブラリ'],
   ['deploy', 'デプロイ'],
   ['test', 'テスト'],
@@ -97,4 +97,5 @@ export const year: IYear[] = [
   { value: '2~3年', id: 3 },
   { value: '3~5年', id: 4 },
   { value: '5~年', id: 5 },
+  { value: '-', id: 6 },
 ]
