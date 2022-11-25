@@ -80,7 +80,7 @@ const Toolbar = (): JSX.Element => {
         <span className='h-full w-full inset-0 absolute bg-gradient-to-br filter group-active:opacity-0 rounded-md opacity-50 from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded-md shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='absolute inset-0 w-full h-full transition duration-200 ease-out rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400'></span>
-        <span className='relative text-yellow-200'>
+        <span className='relative text-yellow-100'>
           <FontAwesomeIcon icon={faCloudArrowDown} />
         </span>
       </button>

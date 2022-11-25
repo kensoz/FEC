@@ -1,5 +1,5 @@
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faXmark, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faXmark, IconDefinition, faEnvelope, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -62,19 +62,33 @@ const Nav = (): JSX.Element => {
         ))}
       </div>
 
-      {/* SNSコーナー */}
-      <div className='flex justify-center pb-2 border-b-2 border-gray-200 dark:border-gray-600'>
-        <Link href='/' passHref>
-          <a className='nav-list-btn'>
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-        </Link>
-      </div>
-
       {/* インフォメーション */}
-      <div className='w-56 flex flex-col justify-center py-5 px-2.5 text-gray-400 text-xs pointer-events-none'>
-        <div className='font-bold'>{GET_LOCALS_TEXT(locale, 'license')}</div>
-        <div className='leading-3 font-normal break-all'>{GET_LOCALS_TEXT(locale, 'licenseText')}</div>
+      <div className='flex flex-col py-4 px-2.5 border-t-2 leading-4 border-gray-200 dark:border-gray-600 text-gray-400 text-xs'>
+        {/* TODO */}
+        {/* <div className='flex mb-1 ml-1'>
+          <Link href='/' passHref>
+            <a className='nav-list-btn'>
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+          </Link>
+        </div> */}
+
+        <div className=''>
+          <FontAwesomeIcon className='mr-2' icon={faEnvelope} />
+          お問い合わせ
+        </div>
+
+        <div className=''>
+          <FontAwesomeIcon className='mr-2' icon={faGithub} />
+          PullRequest & Star
+        </div>
+
+        <div className=''>
+          <FontAwesomeIcon className='mr-2' icon={faScaleBalanced} />
+          Disclaimer・免責事項
+        </div>
+
+        <div className=''>FEC: 2.0.0</div>
       </div>
     </nav>
   )
