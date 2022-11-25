@@ -8,13 +8,17 @@ import { sortIDState } from '../../scripts/recoil'
 import Panel from '../core/panel'
 
 // ツールバー
-const Toolbar = () => {
+const Toolbar = (): JSX.Element => {
+  // ---------- Hooksインポート ----------
   // router
   const router = useRouter()
   const { locale } = useRouter()
-
   // recoil
   const [isSortID, setIsSortID] = useRecoilState(sortIDState)
+
+  // ---------- 関数 ----------
+  // Panel
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   // 検索フォーム
   const [query, setQuery] = useState<string>('')
@@ -24,15 +28,6 @@ const Toolbar = () => {
       pathname: '/search',
       query: { key: query },
     })
-  }
-
-  // Panel
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-  const closePanel = () => {
-    setIsOpen(false)
-  }
-  const openPanel = () => {
-    setIsOpen(true)
   }
 
   // ---------- TSX ----------
@@ -74,7 +69,13 @@ const Toolbar = () => {
       </div>
 
       {/* Panelのボタン */}
-      <button type='button' onClick={openPanel} className='w-24 px-4 py-2 relative rounded-md group text-white inline-block'>
+      <button
+        type='button'
+        onClick={() => {
+          setIsOpen(true)
+        }}
+        className='w-24 px-4 py-2 relative rounded-md group text-white inline-block'
+      >
         <span className='absolute top-0 left-0 w-full h-full rounded-md opacity-50 filter blur-sm bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='h-full w-full inset-0 absolute bg-gradient-to-br filter group-active:opacity-0 rounded-md opacity-50 from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded-md shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-pink-600 via-purple-700 to-blue-400'></span>
@@ -85,7 +86,12 @@ const Toolbar = () => {
       </button>
 
       {/* ダイアログPanelコンポーネント */}
-      <Panel isOpen={isOpen} closePanel={closePanel} />
+      <Panel
+        isOpen={isOpen}
+        closePanel={() => {
+          setIsOpen(false)
+        }}
+      />
     </div>
   )
 }

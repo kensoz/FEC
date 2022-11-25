@@ -9,8 +9,9 @@ import Header from './layout/header'
 import Navbar from './layout/navbar'
 import Toolbar from './layout/toolbar'
 
-const Layout = ({ children }: Record<'children', React.ReactNode>) => {
+const Layout = ({ children }: Record<'children', React.ReactNode>): JSX.Element => {
   return (
+    // レイアウト
     <div className='layout'>
       {/* ヘーダ */}
       <Header />

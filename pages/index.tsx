@@ -3,8 +3,8 @@ import Contents from '../components/core/content'
 import { getListCollection } from '../firebase/collections'
 import type { IList, IListStaticProps } from '../types'
 
-// ホームページ
-const Index = ({ list }: Record<'list', IList[]>) => {
+// ----- ホームページ -----
+const Index = ({ list }: Record<'list', IList[]>): JSX.Element => {
   return (
     <section className='py-2'>
       {/* パンくずリスト */}

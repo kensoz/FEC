@@ -5,15 +5,17 @@ import { useRouter } from 'next/router'
 import { Fragment, useState, useEffect } from 'react'
 import { getNavCollection } from '../../firebase/collections'
 import GET_LOCALS_TEXT from '../../locales'
-import { defaultNavHome, defaultNavIconList } from '../../scripts/defaultData'
+import { defaultNavHome, defaultNavIconList } from '../../scripts/default'
 import type { INav, INavBarValue } from '../../types'
 
 // モバイルナビバー
-const Navbar = () => {
+const Navbar = (): JSX.Element => {
+  // ---------- Hooksインポート ----------
   // router
   const router = useRouter()
   const { asPath, locale } = useRouter()
 
+  // ---------- 関数 ----------
   // value処理
   const [selected, setSelected] = useState<INavBarValue>({ nameJa: defaultNavHome.groupNameJa, nameZh: defaultNavHome.groupNameZh, value: '/' })
   const onChange = (e: INavBarValue): void => {

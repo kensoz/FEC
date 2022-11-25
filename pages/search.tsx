@@ -5,16 +5,18 @@ import Contents from '../components/core/content'
 import { getListCollection } from '../firebase/collections'
 import type { IList, IListStaticProps } from '../types'
 
-// 検索ページ
-const Search = ({ list }: Record<'list', IList[]>) => {
+// ----- 検索ページ -----
+const Search = ({ list }: Record<'list', IList[]>): JSX.Element => {
+  // ---------- Hooksインポート ----------
   // router
   const router = useRouter()
   const { key } = router.query
 
+  // ---------- 関数 ----------
   // 検索Fuse.jsインスタント
   const fuse = new Fuse<IList>(list, { keys: ['name', 'groupName'] })
   const ruseResult: Fuse.FuseResult<IList>[] = fuse.search(Array.isArray(key) || key === undefined ? '' : key)
-  const rusedList: IList[] = ruseResult.map((r) => r.item)
+  const rusedList: IList[] = ruseResult.map((r: Fuse.FuseResult<IList>) => r.item)
 
   return (
     <section className='py-2'>

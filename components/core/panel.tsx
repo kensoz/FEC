@@ -12,23 +12,24 @@ import { useRouter } from 'next/router'
 import { Fragment, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
-import { year } from '../../scripts/defaultData'
-import makeTemplate from '../../scripts/mdTemplate'
+import { defaultYear } from '../../scripts/default'
 import { listState } from '../../scripts/recoil'
 import type { IPanel, IGlobalList } from '../../types'
+import makeTemplate from './util'
 
 /**
  * ダイアログPanel
  * @param {IPanel} props
  * @return {JSX.Element}
  */
-const Panel = (props: IPanel) => {
+const Panel = (props: IPanel): JSX.Element => {
+  // ---------- Hooksインポート ----------
   // router
   const { locale } = useRouter()
-
   // recoil
   const [globalList, setListState] = useRecoilState(listState)
 
+  // ---------- 関数 ----------
   // listの更新と削除
   const updateListItem = (key: 'businessEX' | 'personalEX', id: string, value: string): void => {
     setListState(globalList.map((i: IGlobalList): IGlobalList => (i.id === id ? { ...i, [key]: value } : i)))
@@ -41,6 +42,7 @@ const Panel = (props: IPanel) => {
   // MarkDownのダウンロード
   const filename: string = 'FEC-list.md'
   const [markdown, setMarkDown] = useState<string>('')
+
   const download = async (): Promise<void> => {
     let res: string[][] = []
     await globalList.map((e: IGlobalList): void => {
@@ -144,7 +146,7 @@ const Panel = (props: IPanel) => {
                             {/* オプション */}
                             <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
                               <Listbox.Options className='z-30 w-full absolute overflow-auto base-box bg-white dark:bg-slate-800 p-2'>
-                                {year.map((blist) => (
+                                {defaultYear.map((blist) => (
                                   <Listbox.Option
                                     key={blist.id}
                                     className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
@@ -177,7 +179,7 @@ const Panel = (props: IPanel) => {
                             {/* オプション */}
                             <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
                               <Listbox.Options className='z-30 w-full absolute overflow-auto base-box bg-white dark:bg-slate-800 p-2'>
-                                {year.map((blist) => (
+                                {defaultYear.map((blist) => (
                                   <Listbox.Option
                                     key={blist.id}
                                     className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}

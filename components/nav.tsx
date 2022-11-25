@@ -7,14 +7,16 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getNavCollection } from '../firebase/collections'
 import GET_LOCALS_TEXT from '../locales'
-import { defaultNavHome, defaultNavIconList } from '../scripts/defaultData'
+import { defaultNavHome, defaultNavIconList } from '../scripts/default'
 import type { INav } from '../types'
 
 // サイドナビバー
-const Nav = () => {
+const Nav = (): JSX.Element => {
+  // ---------- Hooksインポート ----------
   // router
   const { locale } = useRouter()
 
+  // ---------- 関数 ----------
   // navデータ取得
   const [nav, setNav] = useState<INav[]>([])
   const getNavData = async (): Promise<void> => {

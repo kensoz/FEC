@@ -1,3 +1,4 @@
+// MarkDownファイルテンプレート
 const makeTemplate = (lang: string | undefined, data: string[][]) => {
   const url: string = 'https://github.com/kensoz/FEC'
 
@@ -13,7 +14,7 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         },
         { p: `リスト作成時間：${new Date().toLocaleDateString()}` },
         { hr: '' },
-        { p: '🍋FECのご利用いただきありがとうございます！' },
+        { p: '🍋FECのご利用いただきありがとうございます！開発などの問い合わせは下のGitHubまで' },
         { link: { title: 'FEC', source: url } },
       ]
     : [
@@ -27,7 +28,7 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         },
         { p: `清单生成时间：${new Date().toLocaleDateString()}` },
         { hr: '' },
-        { p: '非常感谢使用🍋FEC！' },
+        { p: '非常感谢使用🍋FEC！开发等等的咨询请详见下面的Github仓库' },
         { link: { title: 'FEC', source: url } },
       ]
 }

@@ -20,7 +20,7 @@ const ja: Ii18n = {
   skillName: '技術名称',
   businessEX: '実務経験',
   personalEX: '個人経験',
-  mySKill: '早速自分の「マイスキル」をスタァして、エクスポートしましょう',
+  mySKill: '早速「マイスキル」をスタァしましょう!',
   license: 'License:',
   licenseText: 'All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.',
 }

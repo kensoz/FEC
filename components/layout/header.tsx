@@ -9,12 +9,14 @@ import { useState, useEffect } from 'react'
 import Flag from 'react-world-flags'
 
 // Header
-const Header = () => {
+const Header = (): JSX.Element => {
+  // ---------- Hooksインポート ----------
   // router
-  const { asPath, locale } = useRouter()
   const router = useRouter()
+  const { asPath, locale } = useRouter()
   const gitHubURL: string = 'https://github.com/kensoz/FEC'
 
+  // ---------- 関数 ----------
   // ダークモード
   const { theme, setTheme } = useTheme()
   const [isMounted, setIsMounted] = useState<boolean>(false)

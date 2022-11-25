@@ -2,8 +2,8 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 
-// 404ページ
-const Custom404 = () => {
+// ----- 404ページ -----
+const Custom404 = (): JSX.Element => {
   return (
     <section className='h-full flex justify-center items-center pb-20'>
       <div className='flex flex-col font-bold'>

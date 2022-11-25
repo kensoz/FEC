@@ -21,11 +21,11 @@ import ja from '../locales/ja'
 import zh from '../locales/zh'
 import type { INav, IGroupSSGPath, IYear } from '../types/index'
 
-// ----- nav&path -----
+// ----- path&SSG -----
 // ホーム
 export const defaultNavHome: INav = { id: '99', groupId: 99, groupName: '/', groupNameZh: zh.homepage, groupNameJa: ja.homepage }
 
-// ナビパス
+// パス
 export const defaultNavPath: IGroupSSGPath[] = [
   { params: { group: 'javascript' }, locale: 'ja' },
   { params: { group: 'css' }, locale: 'ja' },
@@ -49,7 +49,7 @@ export const defaultNavPath: IGroupSSGPath[] = [
   { params: { group: 'other' }, locale: 'zh' },
 ]
 
-// ナビリスト
+// ----- ナビ -----
 export const defaultNavListZh = new Map<string, string>([
   ['javascript', 'JavaScript与框架'],
   ['css', 'CSS与UI相关'],
@@ -91,7 +91,7 @@ export const defaultNavIconList = new Map<string, IconDefinition>([
 ])
 
 // ----- panel -----
-export const year: IYear[] = [
+export const defaultYear: IYear[] = [
   { value: '~1年', id: 1 },
   { value: '1~2年', id: 2 },
   { value: '2~3年', id: 3 },

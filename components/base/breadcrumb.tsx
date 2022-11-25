@@ -8,18 +8,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import GET_LOCALS_TEXT from '../../locales'
-import { defaultNavListZh, defaultNavListJa } from '../../scripts/defaultData'
+import { defaultNavListZh, defaultNavListJa } from '../../scripts/default'
 
 /**
  * パンくずリスト
  * @param {IPanel} props
  * @return {JSX.Element}
  */
-const Breadcrumb = ({ length }: Record<'length', number>) => {
+const Breadcrumb = ({ length }: Record<'length', number>): JSX.Element => {
+  // ---------- Hooksインポート ----------
   // router
   const { query, locale } = useRouter()
 
-  // パンくずリストのテキスト
+  // ---------- 関数 ----------
+  // パンくずリストのテキスト判定
   const handleText = (q: string | string[] | undefined): string => {
     if (Array.isArray(q) || q === undefined) return GET_LOCALS_TEXT(locale, 'homepage')
     return (locale === 'ja' ? defaultNavListJa.get(q) : defaultNavListZh.get(q)) ?? ''

@@ -64,7 +64,7 @@ export interface INavBarValue {
   value: string
 }
 
-// ----- ssg -----
+// ----- ssg&page -----
 export interface IGroupSSGPath {
   params: { group: string }
   locale: string

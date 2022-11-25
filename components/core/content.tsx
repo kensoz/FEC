@@ -19,14 +19,15 @@ import type { IList, IGlobalList } from '../../types'
  * @param {IList[]} list
  * @return {JSX.Element}
  */
-const Contents = ({ list }: Record<'list', IList[]>) => {
+const Contents = ({ list }: Record<'list', IList[]>): JSX.Element => {
+  // ---------- Hooksインポート ----------
   // router
   const { locale } = useRouter()
-
   // recoil
   const isSortID = useRecoilValue(sortIDState)
   const [globalList, setListState] = useRecoilState(listState)
 
+  // ---------- 関数 ----------
   // ソート順
   const sortedList = (): IList[] => {
     return isSortID ? list.sort((a, b) => Number(b.id) - Number(a.id)) : list.sort((a, b) => Number(a.id) - Number(b.id))
@@ -35,7 +36,7 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
   // スタァ選択
   const onClick = (e: IGlobalList): void => {
     setListState((old: IGlobalList[]): IGlobalList[] => {
-      const index: number = old.findIndex((i): boolean => i.id === e.id)
+      const index: number = old.findIndex((i: IGlobalList): boolean => i.id === e.id)
       if (index !== -1) {
         return [...globalList.slice(0, index), ...globalList.slice(index + 1)]
       }
@@ -44,7 +45,7 @@ const Contents = ({ list }: Record<'list', IList[]>) => {
     })
   }
 
-  // JSXレンダリング判定用
+  // TSXレンダリング判定用
   const checkRelatedURL = (ja: string[], zh: string[]): string[] => {
     return locale === 'ja' ? ja : zh
   }

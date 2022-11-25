@@ -17,7 +17,7 @@ import '../styles/index.css'
 
 config.autoAddCss = false
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <>
       {/* サイトのタイトル */}

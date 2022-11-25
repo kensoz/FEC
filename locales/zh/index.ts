@@ -20,7 +20,7 @@ const zh: Ii18n = {
   skillName: '技术名',
   businessEX: '实务经验',
   personalEX: '个人经验',
-  mySKill: '快来星标自己的技能并导出吧',
+  mySKill: '快来星标自己的技能吧!',
   license: 'License:',
   licenseText: 'All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.',
 }

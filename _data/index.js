@@ -7,7 +7,6 @@ import fs from 'node:fs/promises'
 import inquirer from 'inquirer'
 import prompt from './prompt.js'
 
-// TODO
 // jsonファイル取得
 const json = await fs.readFile('./_data/json/test.json', 'utf8').then((res) => JSON.parse(res))
 

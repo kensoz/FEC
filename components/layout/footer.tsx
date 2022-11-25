@@ -2,7 +2,8 @@ import { useRouter } from 'next/router'
 import GET_LOCALS_TEXT from '../../locales'
 
 // Footer
-const Footer = () => {
+const Footer = (): JSX.Element => {
+  // ---------- Hooksインポート ----------
   // router
   const { locale } = useRouter()
 

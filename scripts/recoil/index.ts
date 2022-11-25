@@ -13,7 +13,7 @@ export const sortIDState = atom<boolean>({
   default: false,
 })
 
-// 選択されたリスト
+// 選択されたPanelのリスト
 export const listState = atom<IGlobalList[]>({
   key: 'globalList',
   default: [],

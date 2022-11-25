@@ -1,11 +1,11 @@
 import Breadcrumb from '../components/base/breadcrumb'
 import Contents from '../components/core/content'
 import { getListCollection } from '../firebase/collections'
-import { defaultNavPath } from '../scripts/defaultData'
+import { defaultNavPath } from '../scripts/default'
 import type { IGroupSSGPath, IList, IListStaticProps } from '../types'
 
-// 動的ルーティング
-const Group = ({ list }: Record<'list', IList[]>) => {
+// ----- 動的ルーティングページ -----
+const Group = ({ list }: Record<'list', IList[]>): JSX.Element => {
   return (
     <section className='py-2'>
       {/* パンくずリスト */}
