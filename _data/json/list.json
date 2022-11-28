@@ -4,7 +4,7 @@
     "groupId": 1,
     "groupName": "javascript",
     "name": "JavaScript",
-    "color":"F7DF1E",
+    "color": "F7DF1E",
     "descriptionZh": "为了使操作网页动起来的编程语言",
     "descriptionJa": "ページを動かすためのプログラム言語",
     "url": "",
@@ -16,33 +16,41 @@
     "groupId": 1,
     "groupName": "javascript",
     "name": "TypeScript",
-    "color":"3178C6",
+    "color": "3178C6",
     "descriptionZh": "JavaScript的超集",
     "descriptionJa": "JavaScriptのスーパーセット",
     "url": "https://www.typescriptlang.org/",
-    "relatedZh": ["https://typescript.bootcss.com/"],
-    "relatedJa": ["https://typescriptbook.jp/"]
+    "relatedZh": [
+      "https://typescript.bootcss.com/"
+    ],
+    "relatedJa": [
+      "https://typescriptbook.jp/"
+    ]
   },
   {
     "id": "3",
     "groupId": 1,
     "groupName": "javascript",
     "name": "Vue.js",
-    "color":"4FC08D",
+    "color": "4FC08D",
     "descriptionZh": "渐进式JavaScript框架",
     "descriptionJa": "Web UI構築のためのJSフレームワーク",
     "url": "https://vuejs.org/",
-    "relatedZh": ["https://cn.vuejs.org/"],
-    "relatedJa": ["https://ja.vuejs.org/"]
+    "relatedZh": [
+      "https://cn.vuejs.org/"
+    ],
+    "relatedJa": [
+      "https://ja.vuejs.org/"
+    ]
   },
   {
     "id": "4",
     "groupId": 1,
     "groupName": "javascript",
     "name": "React",
-    "color":"61DAFB",
+    "color": "61DAFB",
     "descriptionZh": "用于构建用户界面的JavaScript库",
-    "descriptionJa": "UI構築のためのJavaScriptライブラリ",
+    "descriptionJa": "Web UI構築のためのJSフレームワーク",
     "url": "https://vuejs.org/",
     "relatedZh": [],
     "relatedJa": []

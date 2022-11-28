@@ -9,8 +9,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-firebase": "node ./_data/update/index.js",
-    "add-list": "node ./_data/index.js"
+    "update-firebase-list": "node ./_data/update/index.js",
+    "add-list": "node ./_data/index.js",
+    "lint-list": "node ./_data/lint/json.js"
   },
   "dependencies": {
     "firebase": "^9.12.0",
@@ -39,6 +40,7 @@
     "fuse.js": "^6.6.2",
     "inquirer": "^9.1.4",
     "json2md": "^2.0.0",
+    "jsonschema": "^1.4.1",
     "next-intercept-stdout": "^1.0.1",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.16",
