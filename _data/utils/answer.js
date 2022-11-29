@@ -29,8 +29,10 @@ const makeAnswer = (length, answer) => {
   item.groupName = list[Number(groupId) - 1]
 
   // color
-  const hexReg = /^#/i
-  item.color = answer.color ? answer.color.replace(hexReg, '') : ''
+  if (answer.isColor) {
+    const hexReg = /^#/i
+    item.color = answer.color ? answer.color.replace(hexReg, '') : ''
+  }
 
   // related site
   if (answer.isrelatedJa) {

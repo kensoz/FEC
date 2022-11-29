@@ -24,10 +24,16 @@ const prompt = [
   },
   // カラー
   {
+    type: 'confirm',
+    name: 'isColor',
+    message: 'Is there an Icon in Simple Icons ?',
+  },
+  {
     type: 'input',
     name: 'color',
     message: 'Enter the hex color. ',
     validate: colorValidate,
+    when: ({ isColor }) => isColor,
   },
   // 分類
   {

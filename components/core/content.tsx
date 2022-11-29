@@ -46,6 +46,9 @@ const Contents = ({ list }: Record<'list', IList[]>): JSX.Element => {
   }
 
   // TSXレンダリング判定用
+  const checkURL = (ja: string, zh: string): string => {
+    return locale === 'ja' ? ja : zh
+  }
   const checkRelatedURL = (ja: string[], zh: string[]): string[] => {
     return locale === 'ja' ? ja : zh
   }
@@ -110,16 +113,31 @@ const Contents = ({ list }: Record<'list', IList[]>): JSX.Element => {
             <div className='flex-grow px-2 pt-1 pb-3 text-xs font-medium'>{locale === 'ja' ? e.descriptionJa : e.descriptionZh}</div>
 
             {/* 関連リンク */}
-            {checkRelatedURL(e.relatedJa, e.relatedZh).length !== 0 && (
-              <div className='px-2 py-0.5 flex flex-row items-center text-xs border-t border-gray-200 dark:border-gray-500'>
-                <div className='pr-1 text-gray-400'>{GET_LOCALS_TEXT(locale, 'about')}</div>
-                {checkRelatedURL(e.relatedJa, e.relatedZh).map((c: string) => (
-                  <Link href={c} key={c} passHref>
-                    <a className='nav-list-btn py-0 mr-2' target='_blank'>
-                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                    </a>
-                  </Link>
-                ))}
+            {checkURL(e.urlJa, e.urlZh) === '' && checkRelatedURL(e.relatedJa, e.relatedZh).length === 0 ? null : (
+              <div className='px-2 flex flex-row items-center text-xs border-t border-gray-200 dark:border-gray-500'>
+                {checkURL(e.urlJa, e.urlZh) !== '' && (
+                  <div className='py-0.5'>
+                    <Link href={checkURL(e.urlJa, e.urlZh)} passHref>
+                      <a className='nav-list-btn py-0 mr-2' target='_blank'>
+                        {GET_LOCALS_TEXT(locale, 'i18n')}
+                        <FontAwesomeIcon icon={faLink} />
+                      </a>
+                    </Link>
+                  </div>
+                )}
+
+                {checkRelatedURL(e.relatedJa, e.relatedZh).length !== 0 && (
+                  <div className='flex flex-row items-center py-0.5'>
+                    <div className='pr-1 text-gray-400'>{GET_LOCALS_TEXT(locale, 'about')}</div>
+                    {checkRelatedURL(e.relatedJa, e.relatedZh).map((c: string) => (
+                      <Link href={c} key={c} passHref>
+                        <a className='nav-list-btn py-0 mr-2' target='_blank'>
+                          <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                        </a>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </div>

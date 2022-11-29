@@ -95,5 +95,19 @@
     "urlJa": "https://svelte.jp/",
     "relatedZh": [],
     "relatedJa": []
+  },
+  {
+    "id": "7",
+    "groupId": 1,
+    "groupName": "javascript",
+    "name": "Lit",
+    "color": "324FFF",
+    "descriptionZh": "Web组件构建库",
+    "descriptionJa": "Webコンポーネントのフレームワーク",
+    "url": "https://lit.dev/",
+    "urlZh": "",
+    "urlJa": "",
+    "relatedZh": [],
+    "relatedJa": []
   }
 ]
