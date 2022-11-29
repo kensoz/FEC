@@ -1,4 +1,10 @@
+import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
+import Modal from '../../components/widgets/modal'
 import GET_LOCALS_TEXT from '../../locales'
 
 // Footer
@@ -7,22 +13,49 @@ const Footer = (): JSX.Element => {
   // router
   const { locale } = useRouter()
 
+  // ---------- 関数 ----------
+  // Modal
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+
   // ---------- TSX ----------
   return (
-    <div className='text-xs flex flex-col justify-center items-center text-gray-400'>
+    <footer className='text-xs mt-2 flex flex-col justify-center items-center text-gray-400'>
       {/* インフォメーション */}
-      <div className='block md:hidden pointer-events-none text-xs text-center leading-3 font-normal py-3 border-t shadow-t-sm border-gray-200 dark:border-gray-600'>
-        <span className='font-bold'> {GET_LOCALS_TEXT(locale, 'license')} </span>
-        {GET_LOCALS_TEXT(locale, 'licenseText')}
+      <div className='md:hidden w-full text-xs py-2 flex flex-row justify-center font-normal border-t shadow-t-sm border-gray-200 dark:border-gray-600'>
+        <Link href='mailto:renhoujob@gmail.com' passHref>
+          <a className='block mr-4'>
+            <FontAwesomeIcon className='mr-1.5' icon={faEnvelope} />
+            お問い合わせ
+          </a>
+        </Link>
+
+        <button
+          type='button'
+          onClick={() => {
+            setIsOpen(true)
+          }}
+        >
+          <FontAwesomeIcon className='mr-1.5' icon={faScaleBalanced} />
+          {GET_LOCALS_TEXT(locale, 'disclaimer')}
+        </button>
       </div>
 
       {/* FEC */}
-      <div className='flex mb-2'>
+      <div className='flex mb-3'>
         <p>© renhou</p>
         <p className='mx-2'>🍋</p>
         <p>Front-End-Collection</p>
       </div>
-    </div>
+
+      {/* Modal コンポーネント */}
+      <Modal
+        isOpen={isOpen}
+        mode={'disclaimer'}
+        closeModal={() => {
+          setIsOpen(false)
+        }}
+      />
+    </footer>
   )
 }
 

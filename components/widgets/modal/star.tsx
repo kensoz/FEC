@@ -4,7 +4,7 @@
 // *
 // * ------------------------------
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
-import { faStar, faSort, faCloudArrowDown } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faSort, faCloudArrowDown, faCircleXmark as faClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Listbox, Transition } from '@headlessui/react'
 import json2md from 'json2md'
@@ -56,14 +56,20 @@ const Star = (props: IModalContent): JSX.Element => {
   // ---------- TSX ----------
   return (
     <div className='flex flex-col'>
-      <div className='m-2 rounded-md text-left font-bold pl-3 py-1.5 relative text-white inline-block'>
+      <div className='m-2 rounded-md text-left font-bold px-3 py-1 relative text-white inline-block'>
         <span className='absolute top-0 left-0 w-full h-full rounded-md opacity-50 filter blur-sm bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='h-full w-full inset-0 absolute rounded-md bg-gradient-to-br filter opacity-50 from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='absolute inset-0 w-full h-full rounded-md transition-all duration-200 ease-out bg-gradient-to-br filter group-hover:blur-sm from-pink-600 via-purple-700 to-blue-400'></span>
         <span className='absolute inset-0 w-full h-full rounded-md shadow-sm transition duration-200 ease-out bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400'></span>
-        <span className='relative text-white'>
-          <FontAwesomeIcon className='mr-2 text-yellow-300' icon={faStar} />
-          {'MarkDown' + GET_LOCALS_TEXT(locale, 'download')}
+        <span className='relative flex flex-row justify-between items-center text-white'>
+          <span>
+            <FontAwesomeIcon className='mr-2 text-yellow-300' icon={faStar} />
+            {GET_LOCALS_TEXT(locale, 'download')}
+          </span>
+
+          <button type='button' className='text-white hover:text-gray-100 text-lg' onClick={props.closeModalContent}>
+            <FontAwesomeIcon icon={faClose} />
+          </button>
         </span>
       </div>
 
@@ -169,12 +175,8 @@ const Star = (props: IModalContent): JSX.Element => {
       )}
 
       {/* ボタングループ */}
-      <div className='py-2 flex flex-row justify-center items-center border-t border-gray-200 dark:border-gray-600'>
-        <button type='button' className='base-btn px-3 py-1 font-medium' onClick={props.closeModalContent}>
-          {GET_LOCALS_TEXT(locale, 'close')}
-        </button>
-
-        {globalList.length !== 0 && (
+      {globalList.length !== 0 && (
+        <div className='py-2 flex flex-row justify-center items-center border-t border-gray-200 dark:border-gray-600'>
           <a
             className='ml-2 inline-flex items-center px-3 py-1 font-medium text-sm leading-6 shadow-sm text-white bg-amber-400 rounded-md cursor-pointer select-none hover:bg-amber-500'
             href={markdown}
@@ -184,8 +186,8 @@ const Star = (props: IModalContent): JSX.Element => {
             <FontAwesomeIcon className='mr-2' icon={faCloudArrowDown} />
             {GET_LOCALS_TEXT(locale, 'download')}
           </a>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   )
 }

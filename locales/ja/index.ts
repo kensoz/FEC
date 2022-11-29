@@ -14,14 +14,14 @@ const ja: IStringObj = {
   skillType: '技術分類',
   offical: '日本語公式',
   about: '関連：',
-  download: 'エクスポート',
+  download: '「マイスキル」 エクスポート',
   close: 'もどる',
   delete: '削除',
   skillName: '技術名称',
   businessEX: '実務経験',
   personalEX: '個人経験',
   mySKill: '早速「マイスキル」をスタァしましょう!',
-  disclaimer: 'disclaimer・免責事項',
+  disclaimer: 'Disclaimer・免責事項',
   licenseText: 'All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.',
 }
 
