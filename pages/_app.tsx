@@ -4,7 +4,6 @@
 // * 2022-11-01 renhou　新規作成
 // *
 // * ------------------------------
-
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { ThemeProvider } from 'next-themes'
