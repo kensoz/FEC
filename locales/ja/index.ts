@@ -12,7 +12,7 @@ const ja: Ii18n = {
   noData: '該当データはありません!',
   sreach: '検索',
   skillType: '技術分類',
-  offical: '公式',
+  offical: '日本語公式',
   about: '関連：',
   download: 'エクスポート',
   close: 'もどる',

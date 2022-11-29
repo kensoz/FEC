@@ -80,7 +80,7 @@ const Contents = ({ list }: Record<'list', IList[]>): JSX.Element => {
                   />
                 )}
 
-                <div className='ml-2 font-bold text-lg'>{e.name}</div>
+                <div className={`${e.color !== '' ? 'ml-2' : 'min-h-[40px] pt-2'} font-bold text-lg`}>{e.name}</div>
               </div>
             </a>
           </Link>
@@ -116,18 +116,18 @@ const Contents = ({ list }: Record<'list', IList[]>): JSX.Element => {
             {checkURL(e.urlJa, e.urlZh) === '' && checkRelatedURL(e.relatedJa, e.relatedZh).length === 0 ? null : (
               <div className='px-2 flex flex-row items-center text-xs border-t border-gray-200 dark:border-gray-500'>
                 {checkURL(e.urlJa, e.urlZh) !== '' && (
-                  <div className='py-0.5'>
+                  <div className='py-1 mr-1'>
                     <Link href={checkURL(e.urlJa, e.urlZh)} passHref>
                       <a className='nav-list-btn py-0 mr-2' target='_blank'>
-                        {GET_LOCALS_TEXT(locale, 'i18n')}
-                        <FontAwesomeIcon icon={faLink} />
+                        <span>{GET_LOCALS_TEXT(locale, 'offical')}</span>
+                        <FontAwesomeIcon className='ml-0.5' icon={faLink} />
                       </a>
                     </Link>
                   </div>
                 )}
 
                 {checkRelatedURL(e.relatedJa, e.relatedZh).length !== 0 && (
-                  <div className='flex flex-row items-center py-0.5'>
+                  <div className='flex flex-row items-center py-1'>
                     <div className='pr-1 text-gray-400'>{GET_LOCALS_TEXT(locale, 'about')}</div>
                     {checkRelatedURL(e.relatedJa, e.relatedZh).map((c: string) => (
                       <Link href={c} key={c} passHref>

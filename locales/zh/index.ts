@@ -12,7 +12,7 @@ const zh: Ii18n = {
   noData: '找不到当前数据！',
   sreach: '搜索',
   skillType: '技术分类',
-  offical: '官网',
+  offical: '中文官网',
   about: '相关：',
   download: '导出',
   close: '返回',
