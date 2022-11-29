@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
-import { sortIDState } from '../../scripts/recoil'
-import Panel from '../core/panel'
+import { sortIDState } from '../../recoil'
+import StarModal from '../modal/star'
 
 // ツールバー
 const Toolbar = (): JSX.Element => {
@@ -17,7 +17,7 @@ const Toolbar = (): JSX.Element => {
   const [isSortID, setIsSortID] = useRecoilState(sortIDState)
 
   // ---------- 関数 ----------
-  // Panel
+  // Modal
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   // 検索フォーム
@@ -68,7 +68,7 @@ const Toolbar = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Panelのボタン */}
+      {/* Modalのボタン */}
       <button
         type='button'
         onClick={() => {
@@ -85,10 +85,10 @@ const Toolbar = (): JSX.Element => {
         </span>
       </button>
 
-      {/* ダイアログPanelコンポーネント */}
-      <Panel
+      {/* StarModal コンポーネント */}
+      <StarModal
         isOpen={isOpen}
-        closePanel={() => {
+        closeModal={() => {
           setIsOpen(false)
         }}
       />

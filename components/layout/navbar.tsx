@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { Fragment, useState, useEffect } from 'react'
 import { getNavCollection } from '../../firebase/collections'
 import GET_LOCALS_TEXT from '../../locales'
-import { defaultNavHome, defaultNavIconList } from '../../scripts/default'
+import { navHome, navIconList } from '../../scripts/constant'
 import type { INav, INavBarValue } from '../../types'
 
 // モバイルナビバー
@@ -17,7 +17,7 @@ const Navbar = (): JSX.Element => {
 
   // ---------- 関数 ----------
   // value処理
-  const [selected, setSelected] = useState<INavBarValue>({ nameJa: defaultNavHome.groupNameJa, nameZh: defaultNavHome.groupNameZh, value: '/' })
+  const [selected, setSelected] = useState<INavBarValue>({ nameJa: navHome.groupNameJa, nameZh: navHome.groupNameZh, value: '/' })
   const onChange = (e: INavBarValue): void => {
     setSelected(e)
     e.value === '/' ? router.push('/') : router.push('/[group]', `/${e.value}`)
@@ -27,7 +27,7 @@ const Navbar = (): JSX.Element => {
   const [nav, setNav] = useState<INav[]>([])
   const getNavData = async (): Promise<void> => {
     const navRes = await getNavCollection()
-    navRes.unshift(defaultNavHome)
+    navRes.unshift(navHome)
     setNav(navRes)
   }
   useEffect(() => {
@@ -36,7 +36,7 @@ const Navbar = (): JSX.Element => {
 
   // icon判断
   const getIcon = (e: string): IconDefinition => {
-    return defaultNavIconList.get(e) ?? faXmark
+    return navIconList.get(e) ?? faXmark
   }
 
   // ---------- TSX ----------

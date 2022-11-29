@@ -1,7 +1,7 @@
-import Breadcrumb from '../components/base/breadcrumb'
-import Contents from '../components/core/content'
+import Breadcrumb from '../components/pages/breadcrumb'
+import Card from '../components/pages/card'
 import { getListCollection } from '../firebase/collections'
-import { defaultNavPath } from '../scripts/default'
+import { ssgPath } from '../scripts/constant'
 import type { IGroupSSGPath, IList, IListStaticProps } from '../types'
 
 // ----- 動的ルーティングページ -----
@@ -11,15 +11,15 @@ const Group = ({ list }: Record<'list', IList[]>): JSX.Element => {
       {/* パンくずリスト */}
       <Breadcrumb length={list.length} />
 
-      {/* コンテンツカードコンポーネント */}
-      <Contents list={list} />
+      {/* カード */}
+      <Card list={list} />
     </section>
   )
 }
 
 // ----- SSG動的パス -----
 export const getStaticPaths = async () => {
-  return { paths: defaultNavPath, fallback: false }
+  return { paths: ssgPath, fallback: false }
 }
 
 // ----- SSGデータ取得 -----

@@ -1,5 +1,5 @@
-import Breadcrumb from '../components/base/breadcrumb'
-import Contents from '../components/core/content'
+import Breadcrumb from '../components/pages/breadcrumb'
+import Card from '../components/pages/card'
 import { getListCollection } from '../firebase/collections'
 import type { IList, IListStaticProps } from '../types'
 
@@ -10,8 +10,8 @@ const Index = ({ list }: Record<'list', IList[]>): JSX.Element => {
       {/* パンくずリスト */}
       <Breadcrumb length={list.length} />
 
-      {/* コンテンツカードコンポーネント */}
-      <Contents list={list} />
+      {/* カード */}
+      <Card list={list} />
     </section>
   )
 }

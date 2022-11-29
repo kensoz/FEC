@@ -1,6 +1,6 @@
 // * ------------------------------
 // *
-// * Default Variable
+// * Constant
 // *
 // * ------------------------------
 import { faJs, faNodeJs } from '@fortawesome/free-brands-svg-icons'
@@ -16,17 +16,12 @@ import {
   IconDefinition,
   faEllipsis,
 } from '@fortawesome/free-solid-svg-icons'
-
 import ja from '../locales/ja'
 import zh from '../locales/zh'
 import type { INav, IGroupSSGPath, IYear } from '../types/index'
 
-// ----- path&SSG -----
-// ホーム
-export const defaultNavHome: INav = { id: '99', groupId: 99, groupName: '/', groupNameZh: zh.homepage, groupNameJa: ja.homepage }
-
-// パス
-export const defaultNavPath: IGroupSSGPath[] = [
+// ----- SSG -----
+export const ssgPath: IGroupSSGPath[] = [
   { params: { group: 'javascript' }, locale: 'ja' },
   { params: { group: 'css' }, locale: 'ja' },
   { params: { group: 'node' }, locale: 'ja' },
@@ -49,8 +44,10 @@ export const defaultNavPath: IGroupSSGPath[] = [
   { params: { group: 'other' }, locale: 'zh' },
 ]
 
-// ----- ナビ -----
-export const defaultNavListZh = new Map<string, string>([
+// ----- Nav -----
+export const navHome: INav = { id: '99', groupId: 99, groupName: '/', groupNameZh: zh.homepage, groupNameJa: ja.homepage }
+
+export const navListZh = new Map<string, string>([
   ['javascript', 'JavaScript与框架'],
   ['css', 'CSS与UI相关'],
   ['node', 'Node.js相关'],
@@ -63,7 +60,7 @@ export const defaultNavListZh = new Map<string, string>([
   ['other', '其他'],
 ])
 
-export const defaultNavListJa = new Map<string, string>([
+export const navListJa = new Map<string, string>([
   ['javascript', 'JSとフレームワーク'],
   ['css', 'CSSとUI関連'],
   ['node', 'Node.js関連'],
@@ -76,7 +73,7 @@ export const defaultNavListJa = new Map<string, string>([
   ['other', 'その他'],
 ])
 
-export const defaultNavIconList = new Map<string, IconDefinition>([
+export const navIconList = new Map<string, IconDefinition>([
   ['/', faHouse],
   ['javascript', faJs],
   ['css', faPalette],
@@ -90,8 +87,8 @@ export const defaultNavIconList = new Map<string, IconDefinition>([
   ['other', faEllipsis],
 ])
 
-// ----- panel -----
-export const defaultYear: IYear[] = [
+// ----- Modal -----
+export const year: IYear[] = [
   { value: '~1年', id: 1 },
   { value: '1~2年', id: 2 },
   { value: '2~3年', id: 3 },

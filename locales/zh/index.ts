@@ -3,9 +3,9 @@
 // * 中国語/简体中文
 // *
 // * ------------------------------
-import type { Ii18n } from '../../types'
+import type { IStringObj } from '../../types'
 
-const zh: Ii18n = {
+const zh: IStringObj = {
   i18n: 'ZH',
   homepage: '首页',
   total: '总计',

@@ -5,7 +5,7 @@
 // * ------------------------------
 
 import { atom } from 'recoil'
-import type { IGlobalList } from '../../types/index'
+import type { IGlobalList } from '../types/index'
 
 // ソート順
 export const sortIDState = atom<boolean>({
@@ -13,7 +13,7 @@ export const sortIDState = atom<boolean>({
   default: false,
 })
 
-// 選択されたPanelのリスト
+// 選択されたStarModalのリスト
 export const listState = atom<IGlobalList[]>({
   key: 'globalList',
   default: [],

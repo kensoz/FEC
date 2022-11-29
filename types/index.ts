@@ -3,8 +3,12 @@
 // * Type
 // *
 // * ------------------------------
+// ----- Common -----
+export interface IStringObj {
+  [key: string]: string
+}
 
-// ----- nav collection -----
+// ----- Nav Collection -----
 export interface INav {
   id: string
   groupId: number
@@ -19,7 +23,7 @@ export interface INavStaticProps {
   }
 }
 
-// ----- list collection -----
+// ----- List Collection -----
 export interface IList {
   id: string
   groupId: number
@@ -41,7 +45,7 @@ export interface IListStaticProps {
   }
 }
 
-// ----- panel -----
+// ----- Modal -----
 export interface IGlobalList {
   id: string
   name: string
@@ -56,7 +60,7 @@ export interface IYear {
   value: string
 }
 
-// ----- layout -----
+// ----- Layout -----
 // モバイルnavbar
 export interface INavBarValue {
   nameJa: string
@@ -64,20 +68,22 @@ export interface INavBarValue {
   value: string
 }
 
-// ----- ssg&page -----
+// ----- SSG -----
 export interface IGroupSSGPath {
   params: { group: string }
   locale: string
 }
 
-// ----- コンポーネント -----
-// ダイアログPanel
-export interface IPanel {
-  isOpen: boolean
-  closePanel: () => void
+// ----- Props -----
+export interface ICard {
+  list: IList[]
 }
 
-// ----- i18n -----
-export interface Ii18n {
-  [key: string]: string
+export interface IModal {
+  isOpen: boolean
+  closeModal: () => void
+}
+
+export interface IBreadcrumb {
+  length: number
 }

@@ -1,6 +1,6 @@
 // * ------------------------------
 // *
-// * ダイアログPanelコンポーネント
+// * StarModal
 // *
 // * ------------------------------
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
@@ -12,17 +12,17 @@ import { useRouter } from 'next/router'
 import { Fragment, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
-import { defaultYear } from '../../scripts/default'
-import { listState } from '../../scripts/recoil'
-import type { IPanel, IGlobalList } from '../../types'
-import makeTemplate from './util'
+import { listState } from '../../recoil'
+import { year } from '../../scripts/constant'
+import makeTemplate from '../../scripts/template'
+import type { IModal, IGlobalList } from '../../types'
 
 /**
- * ダイアログPanel
- * @param {IPanel} props
+ * StarModal
+ * @param {IModal} props
  * @return {JSX.Element}
  */
-const Panel = (props: IPanel): JSX.Element => {
+const StarModal = (props: IModal): JSX.Element => {
   // ---------- Hooksインポート ----------
   // router
   const { locale } = useRouter()
@@ -70,7 +70,7 @@ const Panel = (props: IPanel): JSX.Element => {
           <div className='fixed inset-0 bg-black bg-opacity-25' />
         </Transition.Child>
 
-        {/* panelレイアウト */}
+        {/* Modalレイアウト */}
         <div className='fixed inset-0 overflow-y-auto'>
           <div className='flex min-h-full items-center justify-center'>
             <Transition.Child
@@ -82,7 +82,7 @@ const Panel = (props: IPanel): JSX.Element => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              {/* panel本体 */}
+              {/* Modal本体 */}
               <Dialog.Panel className='w-11/12 md:w-1/3 base-box transform bg-slate-50 dark:bg-slate-800 flex flex-col transition-all'>
                 {/* タイトル */}
                 <Dialog.Title as='h3' className='m-2 rounded-md text-left font-bold pl-3 py-1.5 relative text-white inline-block'>
@@ -146,7 +146,7 @@ const Panel = (props: IPanel): JSX.Element => {
                             {/* オプション */}
                             <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
                               <Listbox.Options className='z-30 w-full absolute overflow-auto base-box bg-white dark:bg-slate-800 p-2'>
-                                {defaultYear.map((blist) => (
+                                {year.map((blist) => (
                                   <Listbox.Option
                                     key={blist.id}
                                     className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
@@ -179,7 +179,7 @@ const Panel = (props: IPanel): JSX.Element => {
                             {/* オプション */}
                             <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
                               <Listbox.Options className='z-30 w-full absolute overflow-auto base-box bg-white dark:bg-slate-800 p-2'>
-                                {defaultYear.map((blist) => (
+                                {year.map((blist) => (
                                   <Listbox.Option
                                     key={blist.id}
                                     className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
@@ -199,7 +199,7 @@ const Panel = (props: IPanel): JSX.Element => {
 
                 {/* ボタングループ */}
                 <div className='py-2 flex flex-row justify-center items-center border-t border-gray-200 dark:border-gray-600'>
-                  <button type='button' className='base-btn px-3 py-1 font-medium' onClick={props.closePanel}>
+                  <button type='button' className='base-btn px-3 py-1 font-medium' onClick={props.closeModal}>
                     {GET_LOCALS_TEXT(locale, 'close')}
                   </button>
 
@@ -224,4 +224,4 @@ const Panel = (props: IPanel): JSX.Element => {
   )
 }
 
-export default Panel
+export default StarModal

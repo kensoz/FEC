@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getNavCollection } from '../firebase/collections'
 import GET_LOCALS_TEXT from '../locales'
-import { defaultNavHome, defaultNavIconList } from '../scripts/default'
+import { navHome, navIconList } from '../scripts/constant'
 import type { INav } from '../types'
 
 // サイドナビバー
@@ -21,7 +21,7 @@ const Nav = (): JSX.Element => {
   const [nav, setNav] = useState<INav[]>([])
   const getNavData = async (): Promise<void> => {
     const navRes = await getNavCollection()
-    navRes.unshift(defaultNavHome)
+    navRes.unshift(navHome)
     setNav(navRes)
   }
   useEffect((): void => {
@@ -30,7 +30,7 @@ const Nav = (): JSX.Element => {
 
   // icon判断
   const getIcon = (e: string): IconDefinition => {
-    return defaultNavIconList.get(e) ?? faXmark
+    return navIconList.get(e) ?? faXmark
   }
 
   // ---------- TSX ----------

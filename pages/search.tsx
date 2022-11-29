@@ -1,7 +1,7 @@
 import Fuse from 'fuse.js'
 import { useRouter } from 'next/router'
-import Breadcrumb from '../components/base/breadcrumb'
-import Contents from '../components/core/content'
+import Breadcrumb from '../components/pages/breadcrumb'
+import Card from '../components/pages/card'
 import { getListCollection } from '../firebase/collections'
 import type { IList, IListStaticProps } from '../types'
 
@@ -23,8 +23,8 @@ const Search = ({ list }: Record<'list', IList[]>): JSX.Element => {
       {/* パンくずリスト */}
       <Breadcrumb length={rusedList.length} />
 
-      {/* コンテンツカードコンポーネント */}
-      <Contents list={rusedList} />
+      {/* カード */}
+      <Card list={rusedList} />
     </section>
   )
 }

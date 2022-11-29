@@ -1,6 +1,6 @@
 // * ------------------------------
 // *
-// * コンテンツカードコンポーネント
+// * カード
 // *
 // * ------------------------------
 import { faStar as faRStar } from '@fortawesome/free-regular-svg-icons'
@@ -11,15 +11,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useRecoilValue, useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
-import { sortIDState, listState } from '../../scripts/recoil'
-import type { IList, IGlobalList } from '../../types'
+import { sortIDState, listState } from '../../recoil'
+import type { ICard, IList, IGlobalList } from '../../types'
 
 /**
- * ダイアログPanel
- * @param {IList[]} list
+ * カード
+ * @param {ICard} props
  * @return {JSX.Element}
  */
-const Contents = ({ list }: Record<'list', IList[]>): JSX.Element => {
+const Card = (props: ICard): JSX.Element => {
   // ---------- Hooksインポート ----------
   // router
   const { locale } = useRouter()
@@ -30,7 +30,7 @@ const Contents = ({ list }: Record<'list', IList[]>): JSX.Element => {
   // ---------- 関数 ----------
   // ソート順
   const sortedList = (): IList[] => {
-    return isSortID ? list.sort((a, b) => Number(b.id) - Number(a.id)) : list.sort((a, b) => Number(a.id) - Number(b.id))
+    return isSortID ? props.list.sort((a, b) => Number(b.id) - Number(a.id)) : props.list.sort((a, b) => Number(a.id) - Number(b.id))
   }
 
   // スタァ選択
@@ -54,7 +54,7 @@ const Contents = ({ list }: Record<'list', IList[]>): JSX.Element => {
   }
 
   // ---------- TSX ----------
-  return list.length === 0 ? (
+  return props.list.length === 0 ? (
     // データなしの場合
     <div className='flex justify-center items-center pt-20'>
       <div className='flex flex-col font-bold'>
@@ -147,4 +147,4 @@ const Contents = ({ list }: Record<'list', IList[]>): JSX.Element => {
   )
 }
 
-export default Contents
+export default Card

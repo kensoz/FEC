@@ -8,14 +8,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import GET_LOCALS_TEXT from '../../locales'
-import { defaultNavListZh, defaultNavListJa } from '../../scripts/default'
+import { navListZh, navListJa } from '../../scripts/constant'
+import type { IBreadcrumb } from '../../types'
 
 /**
  * パンくずリスト
- * @param {IPanel} props
+ * @param {IBreadcrumb} props
  * @return {JSX.Element}
  */
-const Breadcrumb = ({ length }: Record<'length', number>): JSX.Element => {
+const Breadcrumb = (props: IBreadcrumb): JSX.Element => {
   // ---------- Hooksインポート ----------
   // router
   const { query, locale } = useRouter()
@@ -24,7 +25,7 @@ const Breadcrumb = ({ length }: Record<'length', number>): JSX.Element => {
   // パンくずリストのテキスト判定
   const handleText = (q: string | string[] | undefined): string => {
     if (Array.isArray(q) || q === undefined) return GET_LOCALS_TEXT(locale, 'homepage')
-    return (locale === 'ja' ? defaultNavListJa.get(q) : defaultNavListZh.get(q)) ?? ''
+    return (locale === 'ja' ? navListJa.get(q) : navListZh.get(q)) ?? ''
   }
 
   // ---------- TSX ----------
@@ -41,7 +42,7 @@ const Breadcrumb = ({ length }: Record<'length', number>): JSX.Element => {
       </div>
 
       <div>
-        {GET_LOCALS_TEXT(locale, 'total')}：{length}
+        {GET_LOCALS_TEXT(locale, 'total')}：{props.length}
       </div>
     </div>
   )

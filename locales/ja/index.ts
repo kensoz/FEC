@@ -3,9 +3,9 @@
 // * 日本語/日语
 // *
 // * ------------------------------
-import type { Ii18n } from '../../types'
+import type { IStringObj } from '../../types'
 
-const ja: Ii18n = {
+const ja: IStringObj = {
   i18n: 'JA',
   homepage: 'ホームページ',
   total: 'トータル',
