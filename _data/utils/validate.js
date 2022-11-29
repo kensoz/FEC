@@ -20,7 +20,7 @@ const nameValidate = (input) => {
  * @return {boolean | string}
  */
 const colorValidate = (input) => {
-  const reg = /(^[0-9A-Fa-f]{6}$)|(^[0-9A-Fa-f]{3}$)/
+  const reg = /(^#?[0-9A-Fa-f]{6}$)|(^#?[0-9A-Fa-f]{3}$)/
   return reg.test(input) ? true : 'invalid value'
 }
 

@@ -1,4 +1,8 @@
-// Json Lint
+// * ------------------------------
+// *
+// * list.json Lint
+// *
+// * ------------------------------
 import fs from 'node:fs/promises'
 import { Validator } from 'jsonschema'
 
@@ -17,10 +21,12 @@ const schema = {
       descriptionZh: { type: 'string' },
       descriptionJa: { type: 'string' },
       url: { type: 'string' },
+      urlZh: { type: 'string' },
+      urlJa: { type: 'string' },
       relatedZh: { type: 'array' },
       relatedJa: { type: 'array' },
     },
-    required: ['id', 'groupId', 'groupName', 'name', 'color', 'descriptionZh', 'descriptionJa', 'url', 'relatedZh', 'relatedJa'],
+    required: ['id', 'groupId', 'groupName', 'name', 'color', 'descriptionZh', 'descriptionJa', 'url', 'urlZh', 'urlJa', 'relatedZh', 'relatedJa'],
   },
 }
 
@@ -32,7 +38,7 @@ if (result.errors.length > 0) {
     console.error(error)
   })
 
-  console.log('JSON format error')
+  console.log('JSON Lint Error')
   process.exit(1)
 } else {
   console.log('JSON Lint Passed')

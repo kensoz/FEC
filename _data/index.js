@@ -19,4 +19,6 @@ await inquirer.prompt(prompt).then((answers) => {
   // list.jsonファイルにデータ追加
   json.push(res)
   fs.writeFile('./_data/json/list.json', JSON.stringify(json, '', 2), 'utf8')
+
+  console.log('Add JSON data sucess')
 })

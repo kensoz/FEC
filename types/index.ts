@@ -24,13 +24,13 @@ export interface IList {
   id: string
   groupId: number
   groupName: string
-  groupNameZh: string
-  groupNameJa: string
   name: string
   color: string
   descriptionZh: string
   descriptionJa: string
   url: string
+  urlZh: string
+  urlJa: string
   relatedZh: string[]
   relatedJa: string[]
 }

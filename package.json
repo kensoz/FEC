@@ -9,9 +9,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-firebase-list": "node ./_data/update/index.js",
     "add-list": "node ./_data/index.js",
-    "lint-list": "node ./_data/lint/json.js"
+    "lint-list": "node ./_data/lint/json.js",
+    "update-list-firebase": "node ./_data/update/index.js"
   },
   "dependencies": {
     "firebase": "^9.12.0",

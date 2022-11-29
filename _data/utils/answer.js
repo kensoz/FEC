@@ -12,10 +12,12 @@ const makeAnswer = (length, answer) => {
     groupId: 10,
     groupName: '',
     name: answer.name ?? '',
-    color: answer.color ?? '',
+    color: '',
     descriptionZh: answer.descriptionZh ?? '',
     descriptionJa: answer.descriptionJa ?? '',
     url: answer.url ?? '',
+    urlZh: answer.urlZh ?? '',
+    urlJa: answer.urlJa ?? '',
     relatedZh: [],
     relatedJa: [],
   }
@@ -25,6 +27,10 @@ const makeAnswer = (length, answer) => {
   const groupId = answer.groupName.split('.')[0]
   item.groupId = Number(groupId)
   item.groupName = list[Number(groupId) - 1]
+
+  // color
+  const hexReg = /^#/i
+  item.color = answer.color ? answer.color.replace(hexReg, '') : ''
 
   // related site
   if (answer.isrelatedJa) {

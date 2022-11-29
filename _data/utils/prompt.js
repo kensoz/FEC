@@ -26,7 +26,7 @@ const prompt = [
   {
     type: 'input',
     name: 'color',
-    message: 'Enter the hex color (without #). ',
+    message: 'Enter the hex color. ',
     validate: colorValidate,
   },
   // 分類
@@ -50,12 +50,24 @@ const prompt = [
     message: 'Enter the description in Chinese.',
     validate: textValidate,
   },
-  // URL
+  // 公式URL
   {
     type: 'input',
     name: 'url',
     message: 'Enter the homepage URL.',
     validate: (input) => urlValidate('must', input),
+  },
+  {
+    type: 'input',
+    name: 'urlJa',
+    message: 'Enter the homepage URL in Japanese.',
+    validate: (input) => urlValidate('any', input),
+  },
+  {
+    type: 'input',
+    name: 'urlZh',
+    message: 'Enter the homepage URL in Chinese.',
+    validate: (input) => urlValidate('any', input),
   },
   // 日本語関連サイト
   {
