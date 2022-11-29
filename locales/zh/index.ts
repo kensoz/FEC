@@ -21,7 +21,7 @@ const zh: IStringObj = {
   businessEX: '实务经验',
   personalEX: '个人经验',
   mySKill: '快来星标自己的技能吧!',
-  license: 'License:',
+  disclaimer: 'disclaimer・免责声明',
   licenseText: 'All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.',
 }
 

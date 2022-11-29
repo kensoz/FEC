@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
 import { sortIDState } from '../../recoil'
-import StarModal from '../modal/star'
+import Modal from '../widgets/modal'
 
 // ツールバー
 const Toolbar = (): JSX.Element => {
@@ -85,9 +85,10 @@ const Toolbar = (): JSX.Element => {
         </span>
       </button>
 
-      {/* StarModal コンポーネント */}
-      <StarModal
+      {/* Modal コンポーネント */}
+      <Modal
         isOpen={isOpen}
+        mode={'star'}
         closeModal={() => {
           setIsOpen(false)
         }}

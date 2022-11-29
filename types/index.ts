@@ -79,11 +79,16 @@ export interface ICard {
   list: IList[]
 }
 
+export interface IBreadcrumb {
+  length: number
+}
+
 export interface IModal {
+  mode: 'star' | 'disclaimer'
   isOpen: boolean
   closeModal: () => void
 }
 
-export interface IBreadcrumb {
-  length: number
+export interface IModalContent {
+  closeModalContent: () => void
 }

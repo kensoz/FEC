@@ -13,7 +13,7 @@ export const sortIDState = atom<boolean>({
   default: false,
 })
 
-// 選択されたStarModalのリスト
+// 選択されたModalのリスト
 export const listState = atom<IGlobalList[]>({
   key: 'globalList',
   default: [],

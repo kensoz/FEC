@@ -20,6 +20,9 @@ import ja from '../locales/ja'
 import zh from '../locales/zh'
 import type { INav, IGroupSSGPath, IYear } from '../types/index'
 
+// ----- Common -----
+export const github: string = 'https://github.com/kensoz/FEC'
+
 // ----- SSG -----
 export const ssgPath: IGroupSSGPath[] = [
   { params: { group: 'javascript' }, locale: 'ja' },

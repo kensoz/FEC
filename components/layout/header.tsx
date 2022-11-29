@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import Flag from 'react-world-flags'
+import { github } from '../../scripts/constant'
 
 // Header
 const Header = (): JSX.Element => {
@@ -14,7 +15,6 @@ const Header = (): JSX.Element => {
   // router
   const router = useRouter()
   const { asPath, locale } = useRouter()
-  const gitHubURL: string = 'https://github.com/kensoz/FEC'
 
   // ---------- 関数 ----------
   // ダークモード
@@ -70,7 +70,7 @@ const Header = (): JSX.Element => {
         </div>
 
         {/* GitHubボタン */}
-        <Link href={gitHubURL} passHref>
+        <Link href={github} passHref>
           <a className='base-icon_btn text-slate-400' target='_blank'>
             <FontAwesomeIcon icon={faGithub} />
           </a>

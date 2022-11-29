@@ -1,7 +1,7 @@
+import { github } from './constant'
+
 // MarkDownファイルテンプレート
 const makeTemplate = (lang: string | undefined, data: string[][]) => {
-  const url: string = 'https://github.com/kensoz/FEC'
-
   return lang === 'ja'
     ? [
         { h1: 'マイスキル' },
@@ -14,7 +14,7 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         },
         { p: `リスト作成時間：${new Date().toLocaleDateString()}` },
         { hr: '' },
-        { link: { title: '🍋 FEC', source: url } },
+        { link: { title: '🍋 FEC', source: github } },
       ]
     : [
         { h1: '我的技能清单' },
@@ -27,7 +27,7 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         },
         { p: `清单生成时间：${new Date().toLocaleDateString()}` },
         { hr: '' },
-        { link: { title: '🍋 FEC', source: url } },
+        { link: { title: '🍋 FEC', source: github } },
       ]
 }
 

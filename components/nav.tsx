@@ -7,8 +7,9 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getNavCollection } from '../firebase/collections'
 import GET_LOCALS_TEXT from '../locales'
-import { navHome, navIconList } from '../scripts/constant'
+import { navHome, navIconList, github } from '../scripts/constant'
 import type { INav } from '../types'
+import Modal from './widgets/modal'
 
 // サイドナビバー
 const Nav = (): JSX.Element => {
@@ -17,6 +18,9 @@ const Nav = (): JSX.Element => {
   const { locale } = useRouter()
 
   // ---------- 関数 ----------
+  // Modal
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+
   // navデータ取得
   const [nav, setNav] = useState<INav[]>([])
   const getNavData = async (): Promise<void> => {
@@ -63,7 +67,7 @@ const Nav = (): JSX.Element => {
       </div>
 
       {/* インフォメーション */}
-      <div className='flex flex-col py-4 px-2.5 border-t-2 leading-4 border-gray-200 dark:border-gray-600 text-gray-400 text-xs'>
+      <div className='flex flex-col py-4 px-2.5 border-t-2 border-gray-200 dark:border-gray-600 text-gray-400 text-xs'>
         {/* TODO */}
         {/* <div className='flex mb-1 ml-1'>
           <Link href='/' passHref>
@@ -74,22 +78,44 @@ const Nav = (): JSX.Element => {
         </div> */}
 
         <div className=''>
-          <FontAwesomeIcon className='mr-2' icon={faEnvelope} />
-          お問い合わせ
+          <Link href='mailto:renhoujob@gmail.com' passHref>
+            <a className=''>
+              <FontAwesomeIcon className='mr-2' icon={faEnvelope} />
+              お問い合わせ
+            </a>
+          </Link>
         </div>
 
         <div className=''>
-          <FontAwesomeIcon className='mr-2' icon={faGithub} />
-          PullRequest & Star
+          <Link href={github} passHref>
+            <a className='' target='_blank'>
+              <FontAwesomeIcon className='mr-2' icon={faGithub} />
+              Pull requests & Star
+            </a>
+          </Link>
         </div>
 
         <div className=''>
-          <FontAwesomeIcon className='mr-2' icon={faScaleBalanced} />
-          Disclaimer・免責事項
+          <button
+            type='button'
+            onClick={() => {
+              setIsOpen(true)
+            }}
+          >
+            <FontAwesomeIcon className='mr-2' icon={faScaleBalanced} />
+            {GET_LOCALS_TEXT(locale, 'disclaimer')}
+          </button>
         </div>
-
-        <div className=''>FEC: 2.0.0</div>
       </div>
+
+      {/* Modal コンポーネント */}
+      <Modal
+        isOpen={isOpen}
+        mode={'disclaimer'}
+        closeModal={() => {
+          setIsOpen(false)
+        }}
+      />
     </nav>
   )
 }
