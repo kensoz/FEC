@@ -1,11 +1,12 @@
-import { faXmark, faList, faSort, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { faList, faSort, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Listbox, Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
 import { Fragment, useState, useEffect } from 'react'
 import { getNavCollection } from '../../firebase/collections'
 import GET_LOCALS_TEXT from '../../locales'
-import { navHome, navIconList } from '../../scripts/constant'
+import { navHome } from '../../scripts/constant'
+import { getIcon, isCurrentPath } from '../../scripts/utils'
 import type { INav, INavBarValue } from '../../types'
 
 // モバイルナビバー
@@ -33,11 +34,6 @@ const Navbar = (): JSX.Element => {
   useEffect(() => {
     getNavData()
   }, [])
-
-  // icon判断
-  const getIcon = (e: string): IconDefinition => {
-    return navIconList.get(e) ?? faXmark
-  }
 
   // ---------- TSX ----------
   return (
@@ -71,7 +67,7 @@ const Navbar = (): JSX.Element => {
                   className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
                   value={{ nameEn: e.groupNameEn, nameJa: e.groupNameJa, nameZh: e.groupNameZh, value: e.groupName }}
                 >
-                  <div className={asPath === `/${e.groupName}/` ? 'text-yellow-400' : ''}>
+                  <div className={isCurrentPath(asPath, e.groupName) ? 'text-yellow-400' : ''}>
                     <span className='mr-3'>
                       <FontAwesomeIcon icon={getIcon(e.groupName)} />
                     </span>

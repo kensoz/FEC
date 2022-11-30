@@ -1,5 +1,5 @@
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faXmark, faCodePullRequest, IconDefinition, faEnvelopeCircleCheck, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
+import { faCodePullRequest, faEnvelopeCircleCheck, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react'
 import { TwitterShareButton } from 'react-share'
 import { getNavCollection } from '../firebase/collections'
 import GET_LOCALS_TEXT from '../locales'
-import { navHome, navIconList } from '../scripts/constant'
+import { navHome } from '../scripts/constant'
+import { getIcon, isCurrentPath } from '../scripts/utils'
 import type { INav } from '../types'
 import Modal from './widgets/modal'
 
@@ -16,7 +17,7 @@ import Modal from './widgets/modal'
 const Nav = (): JSX.Element => {
   // ---------- Hooksインポート ----------
   // router
-  const { locale } = useRouter()
+  const { asPath, locale } = useRouter()
 
   // ---------- 関数 ----------
   // Modal
@@ -32,11 +33,6 @@ const Nav = (): JSX.Element => {
   useEffect((): void => {
     getNavData()
   }, [])
-
-  // icon判断
-  const getIcon = (e: string): IconDefinition => {
-    return navIconList.get(e) ?? faXmark
-  }
 
   // ---------- TSX ----------
   return (
@@ -56,11 +52,13 @@ const Nav = (): JSX.Element => {
           <div key={e.id} className='flex flex-row'>
             <Link as={e.groupName === '/' ? undefined : `/${e.groupName}`} href={e.groupName === '/' ? '/' : '/[group]'} passHref>
               <a className='nav-list-btn'>
-                <span className='mr-3'>
+                <span className={isCurrentPath(asPath, e.groupName) ? 'text-yellow-400 mr-3' : 'mr-3'}>
                   <FontAwesomeIcon icon={getIcon(e.groupName)} />
                 </span>
 
-                <span>{locale === 'ja' ? e.groupNameJa : locale === 'zh' ? e.groupNameZh : e.groupNameEn}</span>
+                <span className={isCurrentPath(asPath, e.groupName) ? 'text-yellow-400' : ''}>
+                  {locale === 'ja' ? e.groupNameJa : locale === 'zh' ? e.groupNameZh : e.groupNameEn}
+                </span>
               </a>
             </Link>
           </div>

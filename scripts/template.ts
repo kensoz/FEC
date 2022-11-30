@@ -1,6 +1,10 @@
+// * ------------------------------
+// *
+// * MarkDownファイルテンプレート
+// *
+// * ------------------------------
 import { github } from './constant'
 
-// MarkDownファイルテンプレート
 const makeTemplate = (lang: string | undefined, data: string[][]) => {
   return lang === 'ja'
     ? [
