@@ -24,8 +24,8 @@ const Header = (): JSX.Element => {
 
   // i18nメニュー
   const [isDisplay, setIsDisplay] = useState<boolean>(true)
-  const changeLanage = (str: 'zh' | 'ja'): void => {
-    router.push(asPath, undefined, { locale: str })
+  const changeLanage = (lang: 'zh' | 'ja' | 'en'): void => {
+    router.push(asPath, undefined, { locale: lang })
     setIsDisplay(false)
   }
 
@@ -63,6 +63,13 @@ const Header = (): JSX.Element => {
                     <Flag code='cn' width={20} />
                   </span>
                   <span className={locale === 'zh' ? 'text-yellow-400' : ''}>简体中文</span>
+                </button>
+
+                <button className='p-2 inline-flex items-center rounded-md hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('en')}>
+                  <span className='mr-2'>
+                    <Flag code='us' width={20} />
+                  </span>
+                  <span className={locale === 'en' ? 'text-yellow-400' : ''}>English</span>
                 </button>
               </div>
             </div>

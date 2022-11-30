@@ -17,7 +17,7 @@ const Navbar = (): JSX.Element => {
 
   // ---------- 関数 ----------
   // value処理
-  const [selected, setSelected] = useState<INavBarValue>({ nameJa: navHome.groupNameJa, nameZh: navHome.groupNameZh, value: '/' })
+  const [selected, setSelected] = useState<INavBarValue>({ nameEn: navHome.groupNameEn, nameJa: navHome.groupNameJa, nameZh: navHome.groupNameZh, value: '/' })
   const onChange = (e: INavBarValue): void => {
     setSelected(e)
     e.value === '/' ? router.push('/') : router.push('/[group]', `/${e.value}`)
@@ -56,7 +56,7 @@ const Navbar = (): JSX.Element => {
             <span className='pointer-events-none absolute inset-y-0 left-3 flex items-center'>
               <FontAwesomeIcon icon={getIcon(selected.value)} />
             </span>
-            <span className='pl-6 block truncate'>{locale === 'ja' ? selected.nameJa : selected.nameZh}</span>
+            <span className='pl-6 block truncate'>{locale === 'ja' ? selected.nameJa : locale === 'zh' ? selected.nameZh : selected.nameEn}</span>
             <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
               <FontAwesomeIcon icon={faSort} />
             </span>
@@ -69,13 +69,13 @@ const Navbar = (): JSX.Element => {
                 <Listbox.Option
                   key={e.id}
                   className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
-                  value={{ nameJa: e.groupNameJa, nameZh: e.groupNameZh, value: e.groupName }}
+                  value={{ nameEn: e.groupNameEn, nameJa: e.groupNameJa, nameZh: e.groupNameZh, value: e.groupName }}
                 >
                   <div className={asPath === `/${e.groupName}/` ? 'text-yellow-400' : ''}>
                     <span className='mr-3'>
                       <FontAwesomeIcon icon={getIcon(e.groupName)} />
                     </span>
-                    {locale === 'ja' ? e.groupNameJa : e.groupNameZh}
+                    {locale === 'ja' ? e.groupNameJa : locale === 'zh' ? e.groupNameZh : e.groupNameEn}
                   </div>
                 </Listbox.Option>
               ))}

@@ -16,6 +16,7 @@ import {
   IconDefinition,
   faEllipsis,
 } from '@fortawesome/free-solid-svg-icons'
+import en from '../locales/en'
 import ja from '../locales/ja'
 import zh from '../locales/zh'
 import type { INav, IGroupSSGPath, IYear } from '../types/index'
@@ -45,10 +46,20 @@ export const ssgPath: IGroupSSGPath[] = [
   { params: { group: 'mixed' }, locale: 'zh' },
   { params: { group: 'tool' }, locale: 'zh' },
   { params: { group: 'other' }, locale: 'zh' },
+  { params: { group: 'javascript' }, locale: 'en' },
+  { params: { group: 'css' }, locale: 'en' },
+  { params: { group: 'node' }, locale: 'en' },
+  { params: { group: 'project' }, locale: 'en' },
+  { params: { group: 'lib' }, locale: 'en' },
+  { params: { group: 'deploy' }, locale: 'en' },
+  { params: { group: 'test' }, locale: 'en' },
+  { params: { group: 'mixed' }, locale: 'en' },
+  { params: { group: 'tool' }, locale: 'en' },
+  { params: { group: 'other' }, locale: 'en' },
 ]
 
 // ----- Nav -----
-export const navHome: INav = { id: '99', groupId: 99, groupName: '/', groupNameZh: zh.homepage, groupNameJa: ja.homepage }
+export const navHome: INav = { id: '99', groupId: 99, groupName: '/', groupNameEn: en.homepage, groupNameZh: zh.homepage, groupNameJa: ja.homepage }
 
 export const navListZh = new Map<string, string>([
   ['javascript', 'JavaScript与框架'],
@@ -76,6 +87,19 @@ export const navListJa = new Map<string, string>([
   ['other', 'その他'],
 ])
 
+export const navListEn = new Map<string, string>([
+  ['javascript', 'JS & Framework'],
+  ['css', 'CSS & UI Framework'],
+  ['node', 'Node.js'],
+  ['project', 'Bundle & Build'],
+  ['lib', 'Library'],
+  ['deploy', 'Deploy'],
+  ['test', 'Test'],
+  ['mixed', 'Cross Platform'],
+  ['tool', 'Tool & Software'],
+  ['other', 'Other'],
+])
+
 export const navIconList = new Map<string, IconDefinition>([
   ['/', faHouse],
   ['javascript', faJs],
@@ -92,10 +116,10 @@ export const navIconList = new Map<string, IconDefinition>([
 
 // ----- Modal -----
 export const year: IYear[] = [
-  { value: '~1年', id: 1 },
-  { value: '1~2年', id: 2 },
-  { value: '2~3年', id: 3 },
-  { value: '3~5年', id: 4 },
-  { value: '5~年', id: 5 },
+  { value: '~ 1', id: 1 },
+  { value: '1 ~ 2', id: 2 },
+  { value: '2 ~ 3', id: 3 },
+  { value: '3 ~ 5', id: 4 },
+  { value: '5 ~ ', id: 5 },
   { value: '-', id: 6 },
 ]

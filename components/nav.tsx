@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getNavCollection } from '../firebase/collections'
 import GET_LOCALS_TEXT from '../locales'
-import { navHome, navIconList, github } from '../scripts/constant'
+import { navHome, navIconList } from '../scripts/constant'
 import type { INav } from '../types'
 import Modal from './widgets/modal'
 
@@ -59,7 +59,7 @@ const Nav = (): JSX.Element => {
                   <FontAwesomeIcon icon={getIcon(e.groupName)} />
                 </span>
 
-                <span>{locale === 'ja' ? e.groupNameJa : e.groupNameZh}</span>
+                <span>{locale === 'ja' ? e.groupNameJa : locale === 'zh' ? e.groupNameZh : e.groupNameEn}</span>
               </a>
             </Link>
           </div>
@@ -81,16 +81,7 @@ const Nav = (): JSX.Element => {
           <Link href='mailto:renhoujob@gmail.com' passHref>
             <a className=''>
               <FontAwesomeIcon className='mr-2' icon={faEnvelope} />
-              お問い合わせ
-            </a>
-          </Link>
-        </div>
-
-        <div className=''>
-          <Link href={github} passHref>
-            <a className='' target='_blank'>
-              <FontAwesomeIcon className='mr-2' icon={faGithub} />
-              Pull requests & Star
+              {GET_LOCALS_TEXT(locale, 'inquiry')}
             </a>
           </Link>
         </div>

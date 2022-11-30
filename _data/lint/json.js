@@ -6,6 +6,24 @@
 import fs from 'node:fs/promises'
 import { Validator } from 'jsonschema'
 
+// Lint必要なkey
+const required = [
+  'id',
+  'groupId',
+  'groupName',
+  'name',
+  'color',
+  'description',
+  'descriptionZh',
+  'descriptionJa',
+  'url',
+  'urlZh',
+  'urlJa',
+  'related',
+  'relatedZh',
+  'relatedJa',
+]
+
 // jsonファイル取得
 const json = await fs.readFile('./_data/json/list.json', 'utf8').then((res) => JSON.parse(res))
 // json schema
@@ -18,18 +36,21 @@ const schema = {
       groupName: { type: 'string' },
       name: { type: 'string' },
       color: { type: 'string' },
+      description: { type: 'string' },
       descriptionZh: { type: 'string' },
       descriptionJa: { type: 'string' },
       url: { type: 'string' },
       urlZh: { type: 'string' },
       urlJa: { type: 'string' },
+      related: { type: 'array' },
       relatedZh: { type: 'array' },
       relatedJa: { type: 'array' },
     },
-    required: ['id', 'groupId', 'groupName', 'name', 'color', 'descriptionZh', 'descriptionJa', 'url', 'urlZh', 'urlJa', 'relatedZh', 'relatedJa'],
+    required: required,
   },
 }
 
+// チェック
 const validator = new Validator()
 const result = validator.validate(json, schema)
 

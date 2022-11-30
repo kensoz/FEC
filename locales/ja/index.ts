@@ -1,6 +1,6 @@
 // * ------------------------------
 // *
-// * 日本語/日语
+// * 日本語/日语/Japanese
 // *
 // * ------------------------------
 import type { IStringObj } from '../../types'
@@ -18,11 +18,11 @@ const ja: IStringObj = {
   close: 'もどる',
   delete: '削除',
   skillName: '技術名称',
-  businessEX: '実務経験',
-  personalEX: '個人経験',
+  businessEX: '実務経験（年）',
+  personalEX: '個人経験（年）',
   mySKill: '早速「マイスキル」をスタァしましょう!',
-  disclaimer: 'Disclaimer・免責事項',
-  licenseText: 'All brand logos are trademarks of their respective owners. The use of these trademarks is for display only.',
+  inquiry: 'お問い合わせ',
+  disclaimer: '免責事項',
 }
 
 export default ja

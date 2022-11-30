@@ -7,7 +7,7 @@ const nextConfig = withInterceptStdout(
     trailingSlash: true,
     swcMinify: true,
     i18n: {
-      locales: ['zh', 'ja'],
+      locales: ['zh', 'ja', 'en'],
       defaultLocale: 'ja',
     },
     images: {

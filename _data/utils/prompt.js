@@ -9,7 +9,7 @@ const choicesList = [
   '5.Library',
   '6.Deploy',
   '7.Test',
-  '8.Hybrid App',
+  '8.Cross Platform',
   '9.Tool & Software',
   '10.Other',
 ]
@@ -41,6 +41,13 @@ const prompt = [
     name: 'groupName',
     message: 'Choose A type.',
     choices: choicesList,
+  },
+  // 英語説明
+  {
+    type: 'input',
+    name: 'description',
+    message: 'Enter the description.',
+    validate: textValidate,
   },
   // 日本語説明
   {
@@ -74,6 +81,33 @@ const prompt = [
     name: 'urlZh',
     message: 'Enter the homepage URL in Chinese.',
     validate: (input) => urlValidate('any', input),
+  },
+  // 英語関連サイト
+  {
+    type: 'confirm',
+    name: 'isrelated',
+    message: 'Do you hava any related pages ?',
+  },
+  {
+    type: 'input',
+    name: 'related1',
+    message: 'related page one. ',
+    validate: (input) => urlValidate('any', input),
+    when: ({ isrelated }) => isrelated,
+  },
+  {
+    type: 'input',
+    name: 'related2',
+    message: 'related page two. ',
+    validate: (input) => urlValidate('any', input),
+    when: ({ related1 }) => related1,
+  },
+  {
+    type: 'input',
+    name: 'related3',
+    message: 'related page three. ',
+    validate: (input) => urlValidate('any', input),
+    when: ({ related2 }) => related2,
   },
   // 日本語関連サイト
   {

@@ -3,7 +3,7 @@
 // * Firestoreにデータをインポート
 // *
 // * nav.json更新:ほぼ固定データなので、必要なとき使う
-// * import json from '../json/nav.json'
+// * import json from '../json/nav.json' { type: 'json' }
 // * const collectionKey = 'nav'
 // *
 // * ------------------------------

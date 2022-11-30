@@ -13,11 +13,13 @@ const makeAnswer = (length, answer) => {
     groupName: '',
     name: answer.name ?? '',
     color: '',
+    description: answer.description ?? '',
     descriptionZh: answer.descriptionZh ?? '',
     descriptionJa: answer.descriptionJa ?? '',
     url: answer.url ?? '',
     urlZh: answer.urlZh ?? '',
     urlJa: answer.urlJa ?? '',
+    related: [],
     relatedZh: [],
     relatedJa: [],
   }
@@ -35,6 +37,12 @@ const makeAnswer = (length, answer) => {
   }
 
   // related site
+  if (answer.isrelated) {
+    if (answer.related1 !== '' && answer.related1 !== undefined) item.related.push(answer.related1)
+    if (answer.related2 !== '' && answer.related1 !== undefined) item.related.push(answer.related3)
+    if (answer.related2 !== '' && answer.related1 !== undefined) item.related.push(answer.related3)
+  }
+
   if (answer.isrelatedJa) {
     if (answer.relatedJa1 !== '' && answer.relatedJa1 !== undefined) item.relatedJa.push(answer.relatedJa1)
     if (answer.relatedJa2 !== '' && answer.relatedJa2 !== undefined) item.relatedJa.push(answer.relatedJa3)

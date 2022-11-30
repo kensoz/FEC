@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import GET_LOCALS_TEXT from '../../locales'
-import { navListZh, navListJa } from '../../scripts/constant'
+import { navListEn, navListZh, navListJa } from '../../scripts/constant'
 import type { IBreadcrumb } from '../../types'
 
 /**
@@ -25,7 +25,7 @@ const Breadcrumb = (props: IBreadcrumb): JSX.Element => {
   // パンくずリストのテキスト判定
   const handleText = (q: string | string[] | undefined): string => {
     if (Array.isArray(q) || q === undefined) return GET_LOCALS_TEXT(locale, 'homepage')
-    return (locale === 'ja' ? navListJa.get(q) : navListZh.get(q)) ?? ''
+    return (locale === 'ja' ? navListJa.get(q) : locale === 'zh' ? navListZh.get(q) : navListEn.get(q)) ?? ''
   }
 
   // ---------- TSX ----------

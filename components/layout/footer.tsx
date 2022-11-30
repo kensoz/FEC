@@ -25,7 +25,7 @@ const Footer = (): JSX.Element => {
         <Link href='mailto:renhoujob@gmail.com' passHref>
           <a className='block mr-4'>
             <FontAwesomeIcon className='mr-1.5' icon={faEnvelope} />
-            お問い合わせ
+            {GET_LOCALS_TEXT(locale, 'inquiry')}
           </a>
         </Link>
 

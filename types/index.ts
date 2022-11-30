@@ -13,6 +13,7 @@ export interface INav {
   id: string
   groupId: number
   groupName: string
+  groupNameEn: string
   groupNameZh: string
   groupNameJa: string
 }
@@ -30,11 +31,13 @@ export interface IList {
   groupName: string
   name: string
   color: string
+  description: string
   descriptionZh: string
   descriptionJa: string
   url: string
   urlZh: string
   urlJa: string
+  related: string[]
   relatedZh: string[]
   relatedJa: string[]
 }
@@ -63,6 +66,7 @@ export interface IYear {
 // ----- Layout -----
 // モバイルnavbar
 export interface INavBarValue {
+  nameEn: string
   nameJa: string
   nameZh: string
   value: string
