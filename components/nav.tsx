@@ -69,8 +69,15 @@ const Nav = (): JSX.Element => {
       {/* インフォメーション */}
       <div className='flex flex-col py-4 px-2.5 border-t-2 border-gray-200 dark:border-gray-600 text-gray-400 text-xs'>
         <div className='flex mb-1 ml-1'>
-          <Link href='https://twitter.com/share?ref_src=twsrc%5Etfw' passHref>
-            <a className='nav-list-btn' data-text='FEC' data-url='http://www.example.com/' data-show-count='false' data-lang='ja'>
+          <Link
+            href='https://twitter.com/share?ref_src=twsrc%5Etfw'
+            data-text='FEC'
+            data-url='http://www.example.com/'
+            data-show-count='false'
+            data-lang='ja'
+            passHref
+          >
+            <a className='nav-list-btn'>
               <FontAwesomeIcon icon={faTwitter} />
             </a>
           </Link>
