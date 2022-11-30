@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { TwitterShareButton } from 'react-share'
 import { getNavCollection } from '../firebase/collections'
 import GET_LOCALS_TEXT from '../locales'
 import { navHome, navIconList } from '../scripts/constant'
@@ -69,7 +70,7 @@ const Nav = (): JSX.Element => {
       {/* インフォメーション */}
       <div className='flex flex-col py-4 px-2.5 border-t-2 border-gray-200 dark:border-gray-600 text-gray-400 text-xs'>
         <div className='flex mb-1 ml-1'>
-          <Link
+          {/* <Link
             href='https://twitter.com/share?ref_src=twsrc%5Etfw'
             data-text='FEC'
             data-url='http://www.example.com/'
@@ -78,9 +79,12 @@ const Nav = (): JSX.Element => {
             passHref
           >
             <a className='nav-list-btn'>
-              <FontAwesomeIcon icon={faTwitter} />
             </a>
-          </Link>
+          </Link> */}
+
+          <TwitterShareButton url='http://www.example.com/' title='ページタイトル'>
+            <FontAwesomeIcon icon={faTwitter} />
+          </TwitterShareButton>
         </div>
 
         <div className=''>
