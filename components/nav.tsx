@@ -1,5 +1,5 @@
-import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faXmark, IconDefinition, faEnvelope, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faXmark, faCodePullRequest, IconDefinition, faEnvelopeCircleCheck, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -68,29 +68,27 @@ const Nav = (): JSX.Element => {
       </div>
 
       {/* インフォメーション */}
-      <div className='flex flex-col py-4 px-2.5 border-t-2 border-gray-200 dark:border-gray-600 text-gray-400 text-xs'>
-        <div className='flex mb-1 ml-1'>
-          {/* <Link
-            href='https://twitter.com/share?ref_src=twsrc%5Etfw'
-            data-text='FEC'
-            data-url='http://www.example.com/'
-            data-show-count='false'
-            data-lang='ja'
-            passHref
-          >
-            <a className='nav-list-btn'>
+      <div className='flex flex-col text-xs p-3 border-t-2 border-gray-200 dark:border-gray-600 text-gray-400'>
+        <div className=''>
+          <Link href='https://github.com/kensoz/FEC/issues' passHref>
+            <a className=''>
+              <FontAwesomeIcon className='mr-2' icon={faCodePullRequest} />
+              {GET_LOCALS_TEXT(locale, 'issue')}
             </a>
-          </Link> */}
+          </Link>
+        </div>
 
-          <TwitterShareButton url='http://www.example.com/' title='ページタイトル'>
+        <div className=''>
+          <TwitterShareButton url='https://fec-tau.vercel.app/' title='FEC'>
             <FontAwesomeIcon icon={faTwitter} />
+            <span className='ml-2'>{GET_LOCALS_TEXT(locale, 'twitter')}</span>
           </TwitterShareButton>
         </div>
 
         <div className=''>
           <Link href='mailto:renhoujob@gmail.com' passHref>
-            <a className='nav-list-btn'>
-              <FontAwesomeIcon className='mr-2' icon={faEnvelope} />
+            <a className=''>
+              <FontAwesomeIcon className='mr-2' icon={faEnvelopeCircleCheck} />
               {GET_LOCALS_TEXT(locale, 'inquiry')}
             </a>
           </Link>

@@ -1,9 +1,10 @@
-import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faCodePullRequest, faEnvelope, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { TwitterShareButton } from 'react-share'
 import Modal from '../../components/widgets/modal'
 import GET_LOCALS_TEXT from '../../locales'
 
@@ -19,15 +20,26 @@ const Footer = (): JSX.Element => {
 
   // ---------- TSX ----------
   return (
-    <footer className='text-xs mt-2 flex flex-col justify-center items-center text-gray-400'>
+    <footer className='text-xs mt-3 flex flex-col justify-center items-center text-gray-400'>
       {/* インフォメーション */}
-      <div className='md:hidden w-full text-xs py-2 flex flex-row justify-center font-normal border-t shadow-t-sm border-gray-200 dark:border-gray-600'>
+      <div className='md:hidden w-full text-xs py-3 flex flex-row justify-center font-normal border-t shadow-t-sm border-gray-200 dark:border-gray-600'>
+        <Link href='https://github.com/kensoz/FEC/issues' passHref>
+          <a className=''>
+            <FontAwesomeIcon className='mr-1' icon={faCodePullRequest} />
+            {GET_LOCALS_TEXT(locale, 'issue')}
+          </a>
+        </Link>
+
+        <div className='mx-1.5'>·</div>
+
         <Link href='mailto:renhoujob@gmail.com' passHref>
-          <a className='block mr-4'>
-            <FontAwesomeIcon className='mr-1.5' icon={faEnvelope} />
+          <a className='block'>
+            <FontAwesomeIcon className='mr-1' icon={faEnvelope} />
             {GET_LOCALS_TEXT(locale, 'inquiry')}
           </a>
         </Link>
+
+        <div className='mx-1.5'>·</div>
 
         <button
           type='button'
@@ -35,9 +47,16 @@ const Footer = (): JSX.Element => {
             setIsOpen(true)
           }}
         >
-          <FontAwesomeIcon className='mr-1.5' icon={faScaleBalanced} />
+          <FontAwesomeIcon className='mr-1' icon={faScaleBalanced} />
           {GET_LOCALS_TEXT(locale, 'disclaimer')}
         </button>
+
+        <div className='mx-1.5'>·</div>
+
+        <TwitterShareButton url='https://fec-tau.vercel.app/' title='FEC'>
+          <FontAwesomeIcon icon={faTwitter} />
+          <span className='ml-1'>Tweet</span>
+        </TwitterShareButton>
       </div>
 
       {/* FEC */}
