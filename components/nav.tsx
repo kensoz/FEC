@@ -68,21 +68,17 @@ const Nav = (): JSX.Element => {
 
       {/* インフォメーション */}
       <div className='flex flex-col py-4 px-2.5 border-t-2 border-gray-200 dark:border-gray-600 text-gray-400 text-xs'>
-        {/* TODO */}
-        {/* <div className='flex mb-1 ml-1'>
-          <Link href='/' passHref>
-            <a className='nav-list-btn'>
+        <div className='flex mb-1 ml-1'>
+          <Link href='https://twitter.com/share?ref_src=twsrc%5Etfw' passHref>
+            <a className='nav-list-btn' data-text='FEC' data-url='http://www.example.com/' data-show-count='false' data-lang='ja'>
               <FontAwesomeIcon icon={faTwitter} />
             </a>
           </Link>
-        </div> */}
-        <a href='https://twitter.com/share?ref_src=twsrc%5Etfw' className='twitter-share-button' data-show-count='false'>
-          Tweet
-        </a>
+        </div>
 
         <div className=''>
           <Link href='mailto:renhoujob@gmail.com' passHref>
-            <a className=''>
+            <a className='nav-list-btn'>
               <FontAwesomeIcon className='mr-2' icon={faEnvelope} />
               {GET_LOCALS_TEXT(locale, 'inquiry')}
             </a>
