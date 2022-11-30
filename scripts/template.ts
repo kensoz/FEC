@@ -8,7 +8,7 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         { h4: 'リスト' },
         {
           table: {
-            headers: ['スキル名', '実務経験', '個人経験'],
+            headers: ['スキル名', '実務経験 (年)', '個人経験 (年)'],
             rows: data,
           },
         },
@@ -22,7 +22,7 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         { h4: '列表' },
         {
           table: {
-            headers: ['技术名', '实务经验', '个人经验'],
+            headers: ['技术名', '实务经验 (年)', '个人经验 (年)'],
             rows: data,
           },
         },
@@ -35,7 +35,7 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         { h4: 'List' },
         {
           table: {
-            headers: ['Skill', 'Business Ex', 'Personal Ex'],
+            headers: ['Skill', 'Business Ex (Year)', 'Personal Ex (Year)'],
             rows: data,
           },
         },
