@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         mPlusRound: ['"M PLUS Rounded 1c"', 'sans-serif'],
+        mDisclaimer: ['sans-serif'],
       },
     },
   },
