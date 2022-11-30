@@ -63,7 +63,7 @@ const Card = (props: ICard): JSX.Element => {
     </div>
   ) : (
     // 正常の場合、カード表示
-    <div className='grid grid-cols-2 gap-2 md:grid-cols-6 md:gap-3'>
+    <div className='grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-6'>
       {sortedList().map((e: IList) => (
         <div className='flex flex-col base-box bg-slate-100 dark:bg-slate-700' key={e.id}>
           {/* カード写真 */}
@@ -90,7 +90,7 @@ const Card = (props: ICard): JSX.Element => {
             {/* 技術名 */}
             <div className='relative px-2 py-2 font-medium text-gray-400'>
               <Link href={e.url} passHref>
-                <a className='nav-list-btn py-0' target='_blank'>
+                <a className='text-btn py-0' target='_blank'>
                   {e.name}
                   <span className='ml-1 text-xs'>
                     <FontAwesomeIcon icon={faLink} />
@@ -120,7 +120,7 @@ const Card = (props: ICard): JSX.Element => {
                 {checkURL(e.urlJa, e.urlZh) !== '' && (
                   <div className='py-1 mr-1'>
                     <Link href={checkURL(e.urlJa, e.urlZh)} passHref>
-                      <a className='nav-list-btn py-0 mr-2' target='_blank'>
+                      <a className='text-btn py-0 mr-2' target='_blank'>
                         <span>{GET_LOCALS_TEXT(locale, 'offical')}</span>
                         <FontAwesomeIcon className='ml-0.5' icon={faLink} />
                       </a>
@@ -133,7 +133,7 @@ const Card = (props: ICard): JSX.Element => {
                     <div className='pr-1 text-gray-400'>{GET_LOCALS_TEXT(locale, 'about')}</div>
                     {checkRelatedURL(e.relatedJa, e.relatedZh, e.related).map((c: string) => (
                       <Link href={c} key={c} passHref>
-                        <a className='nav-list-btn py-0 mr-2' target='_blank'>
+                        <a className='text-btn py-0 mr-2' target='_blank'>
                           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                         </a>
                       </Link>

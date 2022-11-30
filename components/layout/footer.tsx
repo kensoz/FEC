@@ -23,8 +23,9 @@ const Footer = (): JSX.Element => {
     <footer className='text-xs mt-3 flex flex-col justify-center items-center text-gray-400'>
       {/* インフォメーション */}
       <div className='md:hidden w-full text-xs py-3 flex flex-row justify-center font-normal border-t shadow-t-sm border-gray-200 dark:border-gray-600'>
+        {/* issues */}
         <Link href='https://github.com/kensoz/FEC/issues' passHref>
-          <a className=''>
+          <a className='nav-text-btn'>
             <FontAwesomeIcon className='mr-1' icon={faCodePullRequest} />
             {GET_LOCALS_TEXT(locale, 'issue')}
           </a>
@@ -32,8 +33,9 @@ const Footer = (): JSX.Element => {
 
         <div className='mx-1.5'>·</div>
 
+        {/* mail */}
         <Link href='mailto:renhoujob@gmail.com' passHref>
-          <a className='block'>
+          <a className='nav-text-btn'>
             <FontAwesomeIcon className='mr-1' icon={faEnvelope} />
             {GET_LOCALS_TEXT(locale, 'inquiry')}
           </a>
@@ -41,8 +43,10 @@ const Footer = (): JSX.Element => {
 
         <div className='mx-1.5'>·</div>
 
+        {/* disclaimer */}
         <button
           type='button'
+          className='nav-text-btn'
           onClick={() => {
             setIsOpen(true)
           }}
@@ -53,9 +57,12 @@ const Footer = (): JSX.Element => {
 
         <div className='mx-1.5'>·</div>
 
+        {/* twitter */}
         <TwitterShareButton url='https://fec-tau.vercel.app/' title='FEC'>
-          <FontAwesomeIcon icon={faTwitter} />
-          <span className='ml-1'>Tweet</span>
+          <a className='nav-text-btn'>
+            <FontAwesomeIcon icon={faTwitter} />
+            <span className='ml-1'>Tweet</span>
+          </a>
         </TwitterShareButton>
       </div>
 

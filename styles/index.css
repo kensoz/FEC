@@ -5,11 +5,7 @@
  *
  * ### base style
  * round: rounded-md
- *
- * ### color
- * light-- base-bg: bg-slate-50, option-bg: bg-slate-100
- * dark--  base-bg: bg-slate-800, option-bg: bg-slate-700
- * light&dark-- text: text-gray-400
+ * main color: xxx-yellow-300
  *
  */
 
@@ -46,7 +42,15 @@
     @apply w-11 base-btn;
   }
 
+  .text-btn {
+    @apply inline-flex items-center justify-center text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50
+  }
+
   .nav-list-btn {
-    @apply inline-flex items-center justify-center py-2 text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50
+    @apply w-full inline-flex rounded-md items-center p-2 text-slate-500 dark:text-slate-200 hover:text-yellow-300 dark:hover:text-yellow-300 hover:bg-yellow-50
+  }
+
+  .nav-text-btn {
+    @apply inline-flex font-normal items-center pb-0.5 text-gray-400 hover:text-gray-300
   }
 }

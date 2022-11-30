@@ -64,14 +64,15 @@ const Navbar = (): JSX.Element => {
               {nav.map((e: INav) => (
                 <Listbox.Option
                   key={e.id}
-                  className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
+                  className={({ active }) => `relative cursor-default select-none ${active && 'bg-yellow-50 text-yellow-400'}`}
                   value={{ nameEn: e.groupNameEn, nameJa: e.groupNameJa, nameZh: e.groupNameZh, value: e.groupName }}
                 >
-                  <div className={isCurrentPath(asPath, e.groupName) ? 'text-yellow-400' : ''}>
+                  <div className={`${isCurrentPath(asPath, e.groupName) ? 'text-yellow-400 dark:text-yellow-300 bg-yellow-50' : ''} nav-list-btn`}>
                     <span className='mr-3'>
                       <FontAwesomeIcon icon={getIcon(e.groupName)} />
                     </span>
-                    {locale === 'ja' ? e.groupNameJa : locale === 'zh' ? e.groupNameZh : e.groupNameEn}
+
+                    <span>{locale === 'ja' ? e.groupNameJa : locale === 'zh' ? e.groupNameZh : e.groupNameEn}</span>
                   </div>
                 </Listbox.Option>
               ))}

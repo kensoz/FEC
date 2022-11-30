@@ -22,7 +22,7 @@ const zh: IStringObj = {
   personalEX: '个人经验（年）',
   mySKill: '快来星标自己的技能吧!',
   description: '',
-  issue: '有issue？',
+  issue: 'issue报告',
   twitter: '在Twitter分享',
   inquiry: '咨询与联系',
   disclaimer: '免责声明',
