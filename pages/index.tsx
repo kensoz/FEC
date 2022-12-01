@@ -1,6 +1,6 @@
 import Breadcrumb from '../components/pages/breadcrumb'
 import Card from '../components/pages/card'
-import { getListCollection } from '../firebase/collections'
+import { getListCollection } from '../firebase/api'
 import type { IList, IListStaticProps } from '../types'
 
 // ----- ホームページ -----

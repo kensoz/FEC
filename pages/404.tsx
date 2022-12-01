@@ -5,9 +5,9 @@ import Link from 'next/link'
 // ----- 404ページ -----
 const Custom404 = (): JSX.Element => {
   return (
-    <section className='h-full flex justify-center items-center pb-20'>
+    <section className='flex h-full items-center justify-center pb-20'>
       <div className='flex flex-col font-bold'>
-        <div className='text-gray-400 text-xl mb-5'>
+        <div className='mb-5 text-xl text-gray-400'>
           <span className='mr-2 text-5xl'>404</span>page not found
         </div>
 
@@ -16,7 +16,7 @@ const Custom404 = (): JSX.Element => {
 
         <div className='mt-3 text-xs'>
           <Link href='/' passHref>
-            <a className='inline-flex items-center px-4 py-2 rounded-md shadow-sm text-gray-500 bg-gray-100 hover:bg-gray-200 hover:text-gray-600'>
+            <a className='inline-flex items-center rounded-md bg-gray-100 px-4 py-2 text-gray-500 shadow-sm hover:bg-gray-200 hover:text-gray-600'>
               <span>
                 <FontAwesomeIcon className='mr-2' icon={faHome} />
               </span>

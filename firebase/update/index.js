@@ -2,13 +2,9 @@
 // *
 // * Firestoreにデータをインポート
 // *
-// * nav.json更新:ほぼ固定データなので、必要なとき使う
-// * import json from '../json/nav.json' { type: 'json' }
-// * const collectionKey = 'nav'
-// *
 // * ------------------------------
 import admin from 'firebase-admin'
-import json from '../json/list.json' assert { type: 'json' }
+import json from '../../_data/json/list.json' assert { type: 'json' }
 import serviceAccount from './serviceAccount.json' assert { type: 'json' }
 
 // コレクションとデータベース情報

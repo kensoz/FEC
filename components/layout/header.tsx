@@ -31,7 +31,7 @@ const Header = (): JSX.Element => {
 
   // ---------- TSX ----------
   return (
-    <div className='flex flex-row justify-between items-center py-2 px-3'>
+    <div className='flex flex-row items-center justify-between py-2 px-3'>
       {/* モバイルロゴ */}
       <Image className='block md:invisible' src='/logo.png' objectFit='contain' width={90} height={40} alt='logo' />
 
@@ -43,29 +43,29 @@ const Header = (): JSX.Element => {
         </button>
 
         {/* i18nボタン */}
-        <div className='relative inline mx-2'>
-          <button className='peer base-icon_btn text-slate-400' onClick={() => setIsDisplay(true)}>
+        <div className='relative mx-2 inline'>
+          <button className='base-icon_btn peer text-slate-400' onClick={() => setIsDisplay(true)}>
             <FontAwesomeIcon icon={faEarthAsia} />
           </button>
 
           {isDisplay && (
-            <div className='absolute right-0 hidden z-10 peer-hover:block hover:block base-box bg-slate-50 dark:bg-slate-800'>
-              <div className='flex flex-col w-32 p-2'>
-                <button className='p-2 inline-flex items-center rounded-md hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('ja')}>
+            <div className='base-box absolute right-0 z-10 hidden bg-slate-50 hover:block peer-hover:block dark:bg-slate-800'>
+              <div className='flex w-32 flex-col p-2'>
+                <button className='inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('ja')}>
                   <span className='mr-2'>
                     <Flag code='jp' width={20} />
                   </span>
                   <span className={locale === 'ja' ? 'text-yellow-400' : ''}>日本語</span>
                 </button>
 
-                <button className='p-2 inline-flex items-center rounded-md hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('zh')}>
+                <button className='inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('zh')}>
                   <span className='mr-2'>
                     <Flag code='cn' width={20} />
                   </span>
                   <span className={locale === 'zh' ? 'text-yellow-400' : ''}>简体中文</span>
                 </button>
 
-                <button className='p-2 inline-flex items-center rounded-md hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('en')}>
+                <button className='inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('en')}>
                   <span className='mr-2'>
                     <Flag code='us' width={20} />
                   </span>

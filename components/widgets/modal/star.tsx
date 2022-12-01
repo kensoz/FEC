@@ -12,8 +12,8 @@ import { useRouter } from 'next/router'
 import { Fragment, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../../locales'
-import { listState } from '../../../recoil'
 import { year } from '../../../scripts/constant'
+import { listState } from '../../../scripts/recoil'
 import makeTemplate from '../../../scripts/template'
 import type { IModalContent, IGlobalList } from '../../../types'
 
@@ -56,18 +56,18 @@ const Star = (props: IModalContent): JSX.Element => {
   // ---------- TSX ----------
   return (
     <div className='flex flex-col'>
-      <div className='m-2 rounded-md text-left font-bold px-3 py-1 relative text-white inline-block'>
-        <span className='absolute top-0 left-0 w-full h-full rounded-md opacity-50 filter blur-sm bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400'></span>
-        <span className='h-full w-full inset-0 absolute rounded-md bg-gradient-to-br filter opacity-50 from-pink-600 via-purple-700 to-blue-400'></span>
-        <span className='absolute inset-0 w-full h-full rounded-md transition-all duration-200 ease-out bg-gradient-to-br filter group-hover:blur-sm from-pink-600 via-purple-700 to-blue-400'></span>
-        <span className='absolute inset-0 w-full h-full rounded-md shadow-sm transition duration-200 ease-out bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400'></span>
-        <span className='relative flex flex-row justify-between items-center text-white'>
+      <div className='relative m-2 inline-block rounded-md px-3 py-1 text-left font-bold text-white'>
+        <span className='absolute top-0 left-0 h-full w-full rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 opacity-50 blur-sm filter'></span>
+        <span className='absolute inset-0 h-full w-full rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 opacity-50 filter'></span>
+        <span className='absolute inset-0 h-full w-full rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 filter transition-all duration-200 ease-out group-hover:blur-sm'></span>
+        <span className='absolute inset-0 h-full w-full rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 shadow-sm transition duration-200 ease-out'></span>
+        <span className='relative flex flex-row items-center justify-between text-white'>
           <span>
             <FontAwesomeIcon className='mr-2 text-yellow-300' icon={faStar} />
             {GET_LOCALS_TEXT(locale, 'download')}
           </span>
 
-          <button type='button' className='text-white hover:text-gray-100 text-lg' onClick={props.closeModalContent}>
+          <button type='button' className='text-lg text-white hover:text-gray-100' onClick={props.closeModalContent}>
             <FontAwesomeIcon icon={faClose} />
           </button>
         </span>
@@ -75,7 +75,7 @@ const Star = (props: IModalContent): JSX.Element => {
 
       {/* 技術確認と入力 */}
       {globalList.length === 0 ? (
-        <div className='flex flex-col justify-center items-center my-10 text-gray-400 text-sm font-medium'>
+        <div className='my-10 flex flex-col items-center justify-center text-sm font-medium text-gray-400'>
           <div>{GET_LOCALS_TEXT(locale, 'noData')}</div>
           <div>{GET_LOCALS_TEXT(locale, 'mySKill')}</div>
         </div>
@@ -88,12 +88,12 @@ const Star = (props: IModalContent): JSX.Element => {
           </div>
 
           {globalList.map((e: IGlobalList) => (
-            <div className='grid grid-cols-3 gap-2 my-1' key={e.id}>
+            <div className='my-1 grid grid-cols-3 gap-2' key={e.id}>
               {/* 削除ボタン&技術名称 */}
               <div className='flex flex-row items-center'>
                 <button
                   type='button'
-                  className='text-rose-300 hover:text-rose-400 mr-3'
+                  className='mr-3 text-rose-300 hover:text-rose-400'
                   onClick={(): void => {
                     deleteListItem(e.id)
                   }}
@@ -113,7 +113,7 @@ const Star = (props: IModalContent): JSX.Element => {
               >
                 <div className='relative'>
                   {/* ボタン */}
-                  <Listbox.Button className='z-20 relative w-full base-box cursor-default py-1 text-left focus:outline-none bg-white dark:bg-transparent focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500'>
+                  <Listbox.Button className='base-box relative z-20 w-full cursor-default bg-white py-1 text-left focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 dark:bg-transparent'>
                     <span className='pl-2'>{e.businessEX}</span>
                     <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
                       <FontAwesomeIcon icon={faSort} />
@@ -122,11 +122,11 @@ const Star = (props: IModalContent): JSX.Element => {
 
                   {/* オプション */}
                   <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-                    <Listbox.Options className='z-30 w-full absolute overflow-auto base-box bg-white dark:bg-slate-800 p-2'>
+                    <Listbox.Options className='base-box absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
                       {year.map((blist) => (
                         <Listbox.Option
                           key={blist.id}
-                          className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
+                          className={({ active }) => `relative cursor-default select-none rounded-md p-2 ${active && 'bg-yellow-50 text-yellow-400'}`}
                           value={blist.value}
                         >
                           {blist.value}
@@ -146,7 +146,7 @@ const Star = (props: IModalContent): JSX.Element => {
               >
                 <div className='relative'>
                   {/* ボタン */}
-                  <Listbox.Button className='z-20 relative w-full base-box cursor-default py-1 text-left focus:outline-none bg-white dark:bg-transparent focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500'>
+                  <Listbox.Button className='base-box relative z-20 w-full cursor-default bg-white py-1 text-left focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 dark:bg-transparent'>
                     <span className='pl-2'>{e.personalEX}</span>
                     <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
                       <FontAwesomeIcon icon={faSort} />
@@ -155,11 +155,11 @@ const Star = (props: IModalContent): JSX.Element => {
 
                   {/* オプション */}
                   <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-                    <Listbox.Options className='z-30 w-full absolute overflow-auto base-box bg-white dark:bg-slate-800 p-2'>
+                    <Listbox.Options className='base-box absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
                       {year.map((blist) => (
                         <Listbox.Option
                           key={blist.id}
-                          className={({ active }) => `relative cursor-default select-none p-2 rounded-md ${active && 'bg-yellow-50 text-yellow-400'}`}
+                          className={({ active }) => `relative cursor-default select-none rounded-md p-2 ${active && 'bg-yellow-50 text-yellow-400'}`}
                           value={blist.value}
                         >
                           {blist.value}
@@ -176,9 +176,9 @@ const Star = (props: IModalContent): JSX.Element => {
 
       {/* ボタングループ */}
       {globalList.length !== 0 && (
-        <div className='py-2 flex flex-row justify-center items-center border-t border-gray-200 dark:border-gray-600'>
+        <div className='flex flex-row items-center justify-center border-t border-gray-200 py-2 dark:border-gray-600'>
           <a
-            className='ml-2 inline-flex items-center px-3 py-1 font-medium text-sm leading-6 shadow-sm text-white bg-amber-400 rounded-md cursor-pointer select-none hover:bg-amber-500'
+            className='ml-2 inline-flex cursor-pointer select-none items-center rounded-md bg-amber-400 px-3 py-1 text-sm font-medium leading-6 text-white shadow-sm hover:bg-amber-500'
             href={markdown}
             download={filename}
             onClick={download}

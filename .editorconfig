@@ -1,8 +1,11 @@
 root = true
 
-[*.{js,ts,json}]
-indent_size = 2
-charset = utf-8
-indent_style = space
-trim_trailing_whitespace = true
-insert_final_newline = true
+[*.{js,ts,jsx,tsx}]
+charset=utf-8
+indent_size=2
+indent_style=space
+trim_trailing_whitespace=true
+end_of_line = crlf
+
+[_data/json/list.json]
+indent_size=2

@@ -8,49 +8,49 @@
  * main color: xxx-yellow-300
  *
  */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   /* ----- html,body ----- */
-  html,body {
-    @apply flex justify-center items-center  bg-slate-50 dark:bg-slate-800;
+  html,
+  body {
+    @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
   }
 
   /* ----- globalsスタイル ----- */
   .layout {
-    @apply flex flex-col grow min-h-screen overflow-y-auto
+    @apply flex min-h-screen grow flex-col overflow-y-auto;
   }
 
   .main {
-    max-width: 1700px;  /* セーフエリア距離 */
-    @apply font-mPlusRound flex h-screen w-screen overflow-hidden font-medium text-sm text-gray-600 dark:text-gray-200;
+    max-width: 2000px; /* セーフエリア距離 */
+    @apply flex h-screen w-screen overflow-hidden font-mPlusRound text-sm font-medium text-gray-600 dark:text-gray-200;
   }
 
   /* ----- baseスタイル ----- */
   .base-box {
-    @apply border border-gray-200 dark:border-gray-600 rounded-md shadow-sm
+    @apply rounded-md border border-gray-200 shadow-sm dark:border-gray-600;
   }
 
   .base-btn {
-    @apply border border-gray-200 dark:border-gray-400 rounded-md shadow-sm inline-flex items-center justify-center px-4 py-2 text-base leading-6 whitespace-nowrap bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-slate-600 focus:outline-none focus:shadow-none;
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-base leading-6 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none dark:border-gray-400 dark:bg-transparent dark:hover:bg-slate-600;
   }
 
   .base-icon_btn {
-    @apply w-11 base-btn;
+    @apply base-btn w-11;
   }
 
   .text-btn {
-    @apply inline-flex items-center justify-center text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50
+    @apply inline-flex items-center justify-center text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50;
   }
 
   .nav-list-btn {
-    @apply w-full inline-flex rounded-md items-center p-2 text-slate-500 dark:text-slate-200 hover:text-yellow-300 dark:hover:text-yellow-300 hover:bg-yellow-50
+    @apply inline-flex w-full items-center rounded-md p-2 text-slate-500 hover:bg-yellow-50 hover:text-yellow-300 dark:text-slate-200 dark:hover:text-yellow-300;
   }
 
   .nav-text-btn {
-    @apply inline-flex font-normal items-center pb-0.5 text-gray-400 hover:text-gray-300
+    @apply inline-flex items-center pb-0.5 font-normal text-gray-400 hover:text-gray-300;
   }
 }

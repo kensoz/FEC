@@ -20,9 +20,9 @@ const Footer = (): JSX.Element => {
 
   // ---------- TSX ----------
   return (
-    <footer className='text-xs mt-3 flex flex-col justify-center items-center text-gray-400'>
+    <footer className='mt-3 flex flex-col items-center justify-center text-xs text-gray-400'>
       {/* インフォメーション */}
-      <div className='md:hidden w-full text-xs py-3 flex flex-row justify-center font-normal border-t shadow-t-sm border-gray-200 dark:border-gray-600'>
+      <div className='shadow-t-sm flex w-full flex-row justify-center border-t border-gray-200 py-3 text-xs font-normal dark:border-gray-600 md:hidden'>
         {/* issues */}
         <Link href='https://github.com/kensoz/FEC/issues' passHref>
           <a className='nav-text-btn'>
@@ -67,7 +67,7 @@ const Footer = (): JSX.Element => {
       </div>
 
       {/* FEC */}
-      <div className='flex mb-3'>
+      <div className='mb-3 flex'>
         <p>© renhou</p>
         <p className='mx-2'>🍋</p>
         <p>Front-End-Collection</p>

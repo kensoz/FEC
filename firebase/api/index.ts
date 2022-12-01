@@ -4,9 +4,9 @@
 // *
 // * ------------------------------
 
-import { collection, getDocs, query, where, Query, CollectionReference } from 'firebase/firestore'
-import type { IList, INav } from '../types'
-import { db } from './index'
+import { collection, getDocs, query, where, CollectionReference } from 'firebase/firestore'
+import type { IList, INav } from '../../types'
+import { db } from '../index'
 
 /**
  * get Nav data from Firebase Collection

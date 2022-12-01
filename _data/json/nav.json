@@ -1,82 +1,82 @@
 [
   {
-    "id": "1",
-    "groupId": 1,
-    "groupName": "javascript",
-    "groupNameEn": "JS & Framework",
-    "groupNameZh": "JavaScript与框架",
-    "groupNameJa": "JSとフレームワーク"
+    "id":"1",
+    "groupId":1,
+    "groupName":"javascript",
+    "groupNameEn":"JS & Framework",
+    "groupNameZh":"JavaScript与框架",
+    "groupNameJa":"JSとフレームワーク"
   },
   {
-    "id": "2",
-    "groupId": 2,
-    "groupName": "css",
-    "groupNameEn": "CSS & UI Framework",
-    "groupNameZh": "CSS与UI相关",
-    "groupNameJa": "CSSとUI関連"
+    "id":"2",
+    "groupId":2,
+    "groupName":"css",
+    "groupNameEn":"CSS & UI Framework",
+    "groupNameZh":"CSS与UI相关",
+    "groupNameJa":"CSSとUI関連"
   },
   {
-    "id": "3",
-    "groupId": 3,
-    "groupName": "node",
-    "groupNameEn": "Node.js",
-    "groupNameZh": "Node.js相关",
-    "groupNameJa": "Node.js関連"
+    "id":"3",
+    "groupId":3,
+    "groupName":"node",
+    "groupNameEn":"Node.js",
+    "groupNameZh":"Node.js相关",
+    "groupNameJa":"Node.js関連"
   },
   {
-    "id": "4",
-    "groupId": 4,
-    "groupName": "project",
-    "groupNameEn": "Bundle & Build",
-    "groupNameZh": "前端工程化",
-    "groupNameJa": "バンドルとビルド"
+    "id":"4",
+    "groupId":4,
+    "groupName":"project",
+    "groupNameEn":"Bundle & Build",
+    "groupNameZh":"前端工程化",
+    "groupNameJa":"バンドルとビルド"
   },
   {
-    "id": "5",
-    "groupId": 5,
-    "groupName": "lib",
-    "groupNameEn": "Library",
-    "groupNameZh": "常用库",
-    "groupNameJa": "常用ライブラリ"
+    "id":"5",
+    "groupId":5,
+    "groupName":"lib",
+    "groupNameEn":"Library",
+    "groupNameZh":"常用库",
+    "groupNameJa":"常用ライブラリ"
   },
   {
-    "id": "6",
-    "groupId": 6,
-    "groupName": "deploy",
-    "groupNameEn": "Deploy",
-    "groupNameZh": "部署",
-    "groupNameJa": "デプロイ"
+    "id":"6",
+    "groupId":6,
+    "groupName":"deploy",
+    "groupNameEn":"Deploy",
+    "groupNameZh":"部署",
+    "groupNameJa":"デプロイ"
   },
   {
-    "id": "7",
-    "groupId": 7,
-    "groupName": "test",
-    "groupNameEn": "Test",
-    "groupNameZh": "测试",
-    "groupNameJa": "テスト"
+    "id":"7",
+    "groupId":7,
+    "groupName":"test",
+    "groupNameEn":"Test",
+    "groupNameZh":"测试",
+    "groupNameJa":"テスト"
   },
   {
-    "id": "8",
-    "groupId": 8,
-    "groupName": "mixed",
-    "groupNameEn": "Cross Platform",
-    "groupNameZh": "混合开发",
-    "groupNameJa": "クロスプラットフォーム"
+    "id":"8",
+    "groupId":8,
+    "groupName":"mixed",
+    "groupNameEn":"Cross Platform",
+    "groupNameZh":"混合开发",
+    "groupNameJa":"クロスプラットフォーム"
   },
   {
-    "id": "9",
-    "groupId": 9,
-    "groupName": "tool",
-    "groupNameEn": "Tool & Software",
-    "groupNameZh": "IDE与工具软件",
-    "groupNameJa": "IDEとソフトウェア"
+    "id":"9",
+    "groupId":9,
+    "groupName":"tool",
+    "groupNameEn":"Tool & Software",
+    "groupNameZh":"IDE与工具软件",
+    "groupNameJa":"IDEとソフトウェア"
   },
   {
-    "id": "10",
-    "groupId": 10,
-    "groupName": "other",
-    "groupNameEn": "Other",
-    "groupNameZh": "其他",
-    "groupNameJa": "その他"
+    "id":"10",
+    "groupId":10,
+    "groupName":"other",
+    "groupNameEn":"Other",
+    "groupNameZh":"其他",
+    "groupNameJa":"その他"
   }
 ]

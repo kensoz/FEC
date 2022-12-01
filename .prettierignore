@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -11,6 +9,7 @@
 # next.js
 /.next/
 /out/
+/.next
 
 # production
 /build
@@ -39,4 +38,7 @@ yarn-error.log*
 *.code-workspace
 
 # fec
+*.md
+list.json
+nav.json
 serviceAccount.json

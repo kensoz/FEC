@@ -1,6 +1,6 @@
 import Breadcrumb from '../components/pages/breadcrumb'
 import Card from '../components/pages/card'
-import { getListCollection } from '../firebase/collections'
+import { getListCollection } from '../firebase/api'
 import { ssgPath } from '../scripts/constant'
 import type { IGroupSSGPath, IList, IListStaticProps } from '../types'
 
