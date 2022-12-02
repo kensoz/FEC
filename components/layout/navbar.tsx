@@ -48,7 +48,7 @@ const Navbar = (): JSX.Element => {
       <Listbox value={selected} onChange={onChange}>
         <div className='relative mt-1 w-full'>
           {/* ボタン */}
-          <Listbox.Button className='fec-box relative w-full cursor-default bg-white py-2 pl-3 pr-10 text-left focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 dark:bg-transparent'>
+          <Listbox.Button className='fec-box fec-clear-input relative w-full cursor-default bg-white py-2 pl-3 pr-10 text-left dark:bg-transparent'>
             <span className='pointer-events-none absolute inset-y-0 left-3 flex items-center'>
               <FontAwesomeIcon icon={getIcon(selected.value)} />
             </span>
@@ -60,11 +60,11 @@ const Navbar = (): JSX.Element => {
 
           {/* オプション */}
           <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-            <Listbox.Options className='fec-box absolute z-10 max-h-60 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
+            <Listbox.Options className='fec-box fec-clear-input absolute z-10 max-h-60 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
               {nav.map((e: INav) => (
                 <Listbox.Option
                   key={e.id}
-                  className={({ active }) => `relative cursor-default select-none ${active && 'bg-yellow-50 text-yellow-400'}`}
+                  className={({ active }) => `fec-clear-input relative cursor-default ${active && 'bg-yellow-50 text-yellow-400'}`}
                   value={{ nameEn: e.groupNameEn, nameJa: e.groupNameJa, nameZh: e.groupNameZh, value: e.groupName }}
                 >
                   <div className={`${isCurrentPath(asPath, e.groupName) ? 'bg-yellow-50 text-yellow-400 dark:text-yellow-300' : ''} nav-list-btn`}>

@@ -22,7 +22,7 @@ const Footer = (): JSX.Element => {
   return (
     <footer className='mt-3 flex flex-col items-center justify-center text-xs text-gray-400'>
       {/* インフォメーション */}
-      <div className='shadow-t-sm flex w-full flex-row justify-center border-t border-gray-200 py-3 text-xs font-normal dark:border-gray-600 md:hidden'>
+      <div className='shadow-t-sm flex w-full flex-row justify-center border-t border-gray-200 py-3 text-xs font-normal dark:border-gray-600 lg:hidden'>
         {/* issues */}
         <Link href='https://github.com/kensoz/FEC/issues' passHref>
           <a className='nav-text-btn'>
@@ -61,7 +61,7 @@ const Footer = (): JSX.Element => {
         <TwitterShareButton url='https://fec-tau.vercel.app/' title='FEC'>
           <a className='nav-text-btn'>
             <FontAwesomeIcon icon={faTwitter} />
-            <span className='ml-1'>Tweet</span>
+            <span className='ml-1'>{GET_LOCALS_TEXT(locale, 'twitter')}</span>
           </a>
         </TwitterShareButton>
       </div>

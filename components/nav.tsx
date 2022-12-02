@@ -38,7 +38,7 @@ const Nav = (): JSX.Element => {
   return (
     <nav className='my-2 ml-1 hidden max-h-[1300px] min-w-[13rem] flex-col rounded-md border border-gray-200 bg-slate-100 shadow-sm dark:border-gray-600 dark:bg-slate-800 lg:ml-2 lg:flex xl:min-w-[14rem]'>
       {/* ロゴ */}
-      <div className='flex justify-center border-b-2 border-gray-200 py-2 dark:border-gray-600 lg:py-3 xl:py-4'>
+      <div className='flex justify-center border-b-2 border-gray-200 py-2 dark:border-gray-600 lg:py-4'>
         <Link href='/' passHref>
           <a>
             <Image src='/logo.png' objectFit='contain' width={115} height={40} alt='logo' />
@@ -65,15 +65,7 @@ const Nav = (): JSX.Element => {
 
       {/* インフォメーション */}
       <div className='flex flex-col border-t-2 border-gray-200 p-3 text-xs text-gray-400 dark:border-gray-600'>
-        {/* issues */}
-        <Link href='https://github.com/kensoz/FEC/issues' passHref>
-          <a className='nav-text-btn'>
-            <FontAwesomeIcon className='mr-2' icon={faCodePullRequest} />
-            {GET_LOCALS_TEXT(locale, 'issue')}
-          </a>
-        </Link>
-
-        {/* twitter */}
+        {/* Tweet */}
         <div>
           <TwitterShareButton url='https://fec-tau.vercel.app/' title='FEC'>
             <a className='nav-text-btn'>
@@ -82,6 +74,14 @@ const Nav = (): JSX.Element => {
             </a>
           </TwitterShareButton>
         </div>
+
+        {/* issues */}
+        <Link href='https://github.com/kensoz/FEC/issues' passHref>
+          <a className='nav-text-btn'>
+            <FontAwesomeIcon className='mr-2' icon={faCodePullRequest} />
+            {GET_LOCALS_TEXT(locale, 'issue')}
+          </a>
+        </Link>
 
         {/* mail */}
         <Link href='mailto:renhoujob@gmail.com' passHref>

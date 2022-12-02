@@ -88,12 +88,12 @@ const Star = (props: IModalContent): JSX.Element => {
           </div>
 
           {globalList.map((e: IGlobalList) => (
-            <div className='my-1 grid grid-cols-3 gap-2' key={e.id}>
+            <div className='my-1 grid grid-cols-3 gap-1 md:gap-2' key={e.id}>
               {/* 削除ボタン&技術名称 */}
               <div className='flex flex-row items-center'>
                 <button
                   type='button'
-                  className='mr-3 text-rose-300 hover:text-rose-400'
+                  className='fec-clear-input mr-1 text-rose-300 hover:text-rose-400 md:mr-3'
                   onClick={(): void => {
                     deleteListItem(e.id)
                   }}
@@ -101,7 +101,7 @@ const Star = (props: IModalContent): JSX.Element => {
                   <FontAwesomeIcon icon={faCircleXmark} />
                 </button>
 
-                <div className='font-bold'>{e.name}</div>
+                <div className='truncate text-sm font-bold md:text-base'>{e.name}</div>
               </div>
 
               {/* 実務経験 */}
@@ -113,7 +113,7 @@ const Star = (props: IModalContent): JSX.Element => {
               >
                 <div className='relative'>
                   {/* ボタン */}
-                  <Listbox.Button className='fec-box relative z-20 w-full cursor-default bg-white py-1 text-left focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 dark:bg-transparent'>
+                  <Listbox.Button className='fec-box fec-clear-inputdark:bg-transparent relative z-20 w-full cursor-default bg-white py-1 text-left'>
                     <span className='pl-2'>{e.businessEX}</span>
                     <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
                       <FontAwesomeIcon icon={faSort} />
@@ -122,11 +122,11 @@ const Star = (props: IModalContent): JSX.Element => {
 
                   {/* オプション */}
                   <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-                    <Listbox.Options className='fec-box absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
+                    <Listbox.Options className='fec-box fec-clear-input absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
                       {year.map((blist) => (
                         <Listbox.Option
                           key={blist.id}
-                          className={({ active }) => `relative cursor-default select-none rounded-md p-2 ${active && 'bg-yellow-50 text-yellow-400'}`}
+                          className={({ active }) => `fec-clear-input relative cursor-default rounded-md p-2 ${active && 'bg-yellow-50 text-yellow-400'}`}
                           value={blist.value}
                         >
                           {blist.value}
@@ -146,7 +146,7 @@ const Star = (props: IModalContent): JSX.Element => {
               >
                 <div className='relative'>
                   {/* ボタン */}
-                  <Listbox.Button className='fec-box relative z-20 w-full cursor-default bg-white py-1 text-left focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 dark:bg-transparent'>
+                  <Listbox.Button className='fec-box fec-clear-inputdark:bg-transparent relative z-20 w-full cursor-default bg-white py-1 text-left'>
                     <span className='pl-2'>{e.personalEX}</span>
                     <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
                       <FontAwesomeIcon icon={faSort} />
@@ -155,11 +155,11 @@ const Star = (props: IModalContent): JSX.Element => {
 
                   {/* オプション */}
                   <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-                    <Listbox.Options className='fec-box absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
+                    <Listbox.Options className='fec-box fec-clear-input absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
                       {year.map((blist) => (
                         <Listbox.Option
                           key={blist.id}
-                          className={({ active }) => `relative cursor-default select-none rounded-md p-2 ${active && 'bg-yellow-50 text-yellow-400'}`}
+                          className={({ active }) => `fec-clear-input relative cursor-default rounded-md p-2 ${active && 'bg-yellow-50 text-yellow-400'}`}
                           value={blist.value}
                         >
                           {blist.value}

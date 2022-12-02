@@ -80,7 +80,7 @@ const Card = (props: ICard): JSX.Element => {
                   />
                 )}
 
-                <div className={`${e.color !== '' ? 'ml-2' : 'min-h-[40px] pt-2'} text-lg font-bold`}>{e.name}</div>
+                <div className={`${e.color !== '' ? 'ml-2' : 'min-h-[40px] pt-2'} truncate text-lg font-bold`}>{e.name}</div>
               </div>
             </a>
           </Link>
@@ -90,7 +90,7 @@ const Card = (props: ICard): JSX.Element => {
             {/* 技術名 */}
             <div className='relative px-2 py-2 font-medium text-gray-400'>
               <Link href={e.url} passHref>
-                <a className='text-btn py-0' target='_blank'>
+                <a className='text-btn truncate py-0' target='_blank'>
                   {e.name}
                   <span className='ml-1 text-xs'>
                     <FontAwesomeIcon icon={faLink} />
@@ -116,11 +116,11 @@ const Card = (props: ICard): JSX.Element => {
 
             {/* 関連リンク */}
             {checkURL(e.urlJa, e.urlZh) === '' && checkRelatedURL(e.relatedJa, e.relatedZh, e.related).length === 0 ? null : (
-              <div className='flex flex-row items-center border-t border-gray-200 px-2 text-xs dark:border-gray-500'>
+              <div className='flex flex-row flex-wrap items-center border-t border-gray-200 px-2 text-xs dark:border-gray-500'>
                 {checkURL(e.urlJa, e.urlZh) !== '' && (
-                  <div className='mr-1 py-1'>
+                  <div className='mr-2 py-1'>
                     <Link href={checkURL(e.urlJa, e.urlZh)} passHref>
-                      <a className='text-btn mr-2 py-0' target='_blank'>
+                      <a className='text-btn py-0' target='_blank'>
                         <span>{GET_LOCALS_TEXT(locale, 'offical')}</span>
                         <FontAwesomeIcon className='ml-0.5' icon={faLink} />
                       </a>
@@ -130,11 +130,11 @@ const Card = (props: ICard): JSX.Element => {
 
                 {checkRelatedURL(e.relatedJa, e.relatedZh, e.related).length !== 0 && (
                   <div className='flex flex-row items-center py-1'>
-                    <div className='pr-1 text-gray-400'>{GET_LOCALS_TEXT(locale, 'about')}</div>
                     {checkRelatedURL(e.relatedJa, e.relatedZh, e.related).map((c: string) => (
                       <Link href={c} key={c} passHref>
-                        <a className='text-btn mr-2 py-0' target='_blank'>
-                          <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                        <a className='text-btn py-0 first:mr-2' target='_blank'>
+                          {GET_LOCALS_TEXT(locale, 'about')}
+                          <FontAwesomeIcon className='ml-0.5' icon={faArrowUpRightFromSquare} />
                         </a>
                       </Link>
                     ))}

@@ -33,6 +33,10 @@
     @apply rounded-md border border-gray-200 shadow-sm dark:border-gray-600;
   }
 
+  .fec-clear-input {
+    @apply outline-none ring-0 hover:outline-none hover:ring-0 focus:outline-none focus:ring-0 active:outline-none active:ring-0
+  }
+
   /* ----- ボタン ----- */
   .icon-btn {
     @apply inline-flex w-11 items-center justify-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-base leading-6 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none dark:border-gray-400 dark:bg-transparent dark:hover:bg-slate-600;
