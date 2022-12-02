@@ -124,7 +124,6 @@ const Card = (props: ICard): JSX.Element => {
                     <Link href={checkURL(e.urlJa, e.urlZh)} passHref>
                       <a className='text-btn py-0' target='_blank'>
                         <span>{GET_LOCALS_TEXT(locale, 'offical')}</span>
-                        <FontAwesomeIcon className='ml-0.5' icon={faLink} />
                       </a>
                     </Link>
                   </div>
