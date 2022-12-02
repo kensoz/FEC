@@ -16,9 +16,12 @@
   /* ----- html,body ----- */
   html,
   body {
-    min-height: 100svh;
     @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
   }
+
+  body{
+  min-height: 100svh;
+}
 
   /* ----- FECベース ----- */
   .fec-layout {
