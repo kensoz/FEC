@@ -36,7 +36,7 @@ const Nav = (): JSX.Element => {
 
   // ---------- TSX ----------
   return (
-    <nav className='my-2 ml-1 hidden max-h-[1300px] min-w-[13rem] flex-col rounded-md border border-gray-200 bg-slate-100 shadow-sm dark:border-gray-600 dark:bg-slate-800 lg:ml-2 lg:flex xl:min-w-[14rem]'>
+    <nav className='my-2 ml-1 hidden h-screen max-h-[1300px] min-w-[13rem] flex-col rounded-md border border-gray-200 bg-slate-100 shadow-sm dark:border-gray-600 dark:bg-slate-800 lg:ml-2 lg:flex xl:min-w-[14rem]'>
       {/* ロゴ */}
       <div className='flex justify-center border-b-2 border-gray-200 py-2 dark:border-gray-600 lg:py-4'>
         <Link href='/' passHref>
