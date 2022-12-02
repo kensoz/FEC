@@ -3,7 +3,7 @@
  * Common CSS (PostCSS)
  * 2022-11-01 renhou　新規作成
  *
- * ### base style
+ * ### main style
  * round: rounded-md
  * main color: xxx-yellow-300
  *
@@ -19,27 +19,23 @@
     @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
   }
 
-  /* ----- globalsスタイル ----- */
-  .layout {
+  /* ----- ベーススタイル ----- */
+  .fec-layout {
     @apply flex min-h-screen grow flex-col overflow-y-auto;
   }
 
-  .main {
+  .fec-main {
     max-width: 2000px; /* セーフエリア距離 */
     @apply flex h-screen w-screen overflow-hidden font-mPlusRound text-sm font-medium text-gray-600 dark:text-gray-200;
   }
 
-  /* ----- baseスタイル ----- */
-  .base-box {
+  .fec-box {
     @apply rounded-md border border-gray-200 shadow-sm dark:border-gray-600;
   }
 
-  .base-btn {
-    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-base leading-6 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none dark:border-gray-400 dark:bg-transparent dark:hover:bg-slate-600;
-  }
-
-  .base-icon_btn {
-    @apply base-btn w-11;
+  /* ----- ボタン ----- */
+  .icon-btn {
+    @apply inline-flex w-11 items-center justify-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-base leading-6 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none dark:border-gray-400 dark:bg-transparent dark:hover:bg-slate-600;
   }
 
   .text-btn {

@@ -11,7 +11,7 @@ import Toolbar from './layout/toolbar'
 const Layout = ({ children }: Record<'children', React.ReactNode>): JSX.Element => {
   return (
     // レイアウト
-    <div className='layout'>
+    <div className='fec-layout'>
       {/* ヘーダ */}
       <Header />
 

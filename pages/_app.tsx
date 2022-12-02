@@ -28,7 +28,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
       {/* ページレイアウト */}
       <ThemeProvider attribute='class'>
         <RecoilRoot>
-          <main className='main'>
+          <main className='fec-main'>
             {/* ナビバー */}
             <Nav />
 

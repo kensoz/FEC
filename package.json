@@ -15,7 +15,7 @@
     "editorconfig:check": "editorconfig-checker",
     "json:add": "node ./_data/index.js",
     "json:check": "node ./_data/lint.js",
-    "firebase:update": "node ./firebase/update/index.js",
+    "firebase:update": "node ./_data/update/index.js",
     "fix:all": "run-s js:fix format:fix",
     "check:all": "run-s js:check format:check editorconfig:check json:check"
   },

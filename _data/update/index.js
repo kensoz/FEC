@@ -4,7 +4,7 @@
 // *
 // * ------------------------------
 import admin from 'firebase-admin'
-import json from '../../_data/json/list.json' assert { type: 'json' }
+import json from '../json/list.json' assert { type: 'json' }
 import serviceAccount from './serviceAccount.json' assert { type: 'json' }
 
 // コレクションとデータベース情報

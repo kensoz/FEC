@@ -38,18 +38,18 @@ const Header = (): JSX.Element => {
       {/* ボタングループ */}
       <div className='flex flex-row items-center'>
         {/* ダークモードボタン */}
-        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className='base-icon_btn text-yellow-300'>
+        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className='icon-btn text-yellow-300'>
           {isMounted && <>{theme === 'dark' ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}</>}
         </button>
 
         {/* i18nボタン */}
         <div className='relative mx-2 inline'>
-          <button className='base-icon_btn peer text-slate-400' onClick={() => setIsDisplay(true)}>
+          <button className='icon-btn peer text-slate-400' onClick={() => setIsDisplay(true)}>
             <FontAwesomeIcon icon={faEarthAsia} />
           </button>
 
           {isDisplay && (
-            <div className='base-box absolute right-0 z-10 hidden bg-slate-50 hover:block peer-hover:block dark:bg-slate-800'>
+            <div className='fec-box absolute right-0 z-10 hidden bg-slate-50 hover:block peer-hover:block dark:bg-slate-800'>
               <div className='flex w-32 flex-col p-2'>
                 <button className='inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('ja')}>
                   <span className='mr-2'>
@@ -78,7 +78,7 @@ const Header = (): JSX.Element => {
 
         {/* GitHubボタン */}
         <Link href={github} passHref>
-          <a className='base-icon_btn text-slate-400' target='_blank'>
+          <a className='icon-btn text-slate-400' target='_blank'>
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </Link>

@@ -44,7 +44,7 @@ const Modal = (props: IModal): JSX.Element => {
               leaveTo='opacity-0 scale-95'
             >
               {/* Modal本体 */}
-              <Dialog.Panel className='base-box mt-3 w-11/12 transform bg-slate-50 transition-all dark:bg-slate-800 md:w-1/3'>
+              <Dialog.Panel className='fec-box mt-3 w-11/12 transform bg-slate-50 transition-all dark:bg-slate-800 md:w-1/3'>
                 {props.mode === 'star' ? (
                   // マイスキル
                   <Star

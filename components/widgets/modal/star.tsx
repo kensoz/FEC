@@ -113,7 +113,7 @@ const Star = (props: IModalContent): JSX.Element => {
               >
                 <div className='relative'>
                   {/* ボタン */}
-                  <Listbox.Button className='base-box relative z-20 w-full cursor-default bg-white py-1 text-left focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 dark:bg-transparent'>
+                  <Listbox.Button className='fec-box relative z-20 w-full cursor-default bg-white py-1 text-left focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 dark:bg-transparent'>
                     <span className='pl-2'>{e.businessEX}</span>
                     <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
                       <FontAwesomeIcon icon={faSort} />
@@ -122,7 +122,7 @@ const Star = (props: IModalContent): JSX.Element => {
 
                   {/* オプション */}
                   <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-                    <Listbox.Options className='base-box absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
+                    <Listbox.Options className='fec-box absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
                       {year.map((blist) => (
                         <Listbox.Option
                           key={blist.id}
@@ -146,7 +146,7 @@ const Star = (props: IModalContent): JSX.Element => {
               >
                 <div className='relative'>
                   {/* ボタン */}
-                  <Listbox.Button className='base-box relative z-20 w-full cursor-default bg-white py-1 text-left focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 dark:bg-transparent'>
+                  <Listbox.Button className='fec-box relative z-20 w-full cursor-default bg-white py-1 text-left focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 dark:bg-transparent'>
                     <span className='pl-2'>{e.personalEX}</span>
                     <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
                       <FontAwesomeIcon icon={faSort} />
@@ -155,7 +155,7 @@ const Star = (props: IModalContent): JSX.Element => {
 
                   {/* オプション */}
                   <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-                    <Listbox.Options className='base-box absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
+                    <Listbox.Options className='fec-box absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
                       {year.map((blist) => (
                         <Listbox.Option
                           key={blist.id}

@@ -32,11 +32,11 @@ const Toolbar = (): JSX.Element => {
 
   // ---------- TSX ----------
   return (
-    <div className='base-box mx-3 flex flex-row items-center justify-between bg-slate-100 px-2 py-1.5 dark:bg-slate-700'>
+    <div className='fec-box mx-3 flex flex-row items-center justify-between bg-slate-100 px-2 py-1.5 dark:bg-slate-700'>
       <div className='flex flex-row'>
         {/* ソート順ID */}
         <button
-          className='base-icon_btn'
+          className='icon-btn'
           onClick={() => {
             setIsSortID(!isSortID)
           }}

@@ -185,5 +185,39 @@
     "related": [],
     "relatedZh": [],
     "relatedJa": []
+  },
+  {
+    "id": "12",
+    "groupId": 1,
+    "groupName": "javascript",
+    "name": "Nuxt.js",
+    "color": "00DC82",
+    "description": "The Intuitive Web Framework",
+    "descriptionZh": "使用简便的Vue.js框架",
+    "descriptionJa": "Web開発をシンプルにかつパワフルにするオープンソースフレームワーク",
+    "url": "https://nuxt.com/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
+  },
+  {
+    "id": "13",
+    "groupId": 1,
+    "groupName": "javascript",
+    "name": "Next.js",
+    "color": "000000",
+    "description": "The React Framework",
+    "descriptionZh": "一个用于生产环境的React框架",
+    "descriptionJa": "オープンソースのReactフレームワーク",
+    "url": "https://nextjs.org/",
+    "urlZh": "https://www.nextjs.cn/",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": [
+      "https://nextjs-ja-translation-docs.vercel.app/"
+    ]
   }
 ]
