@@ -1,7 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-git stash -q --keep-index
-yarn format:fix
 git add .
-git stash pop -q
