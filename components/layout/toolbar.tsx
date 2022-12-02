@@ -1,7 +1,8 @@
 import { faStar, faArrowDownWideShort, faArrowUpShortWide, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRecoilValue, useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
 import { sortIDState, listState } from '../../scripts/recoil'
@@ -16,7 +17,6 @@ const Toolbar = (): JSX.Element => {
   // recoil
   const globalList = useRecoilValue(listState)
   const [isSortID, setIsSortID] = useRecoilState(sortIDState)
-
   // ---------- 関数 ----------
   // Modal
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -30,6 +30,12 @@ const Toolbar = (): JSX.Element => {
       query: { key: query },
     })
   }
+
+  // badge
+  const [isShow, setIsShow] = useState<boolean>(false)
+  useEffect((): void => {
+    setIsShow(() => (globalList.length === 0 ? false : true))
+  }, [globalList.length])
 
   // ---------- TSX ----------
   return (
@@ -85,7 +91,20 @@ const Toolbar = (): JSX.Element => {
           <FontAwesomeIcon className='text-yellow-400' icon={faStar} />
           <span className='ml-2 hidden text-xs font-bold text-white md:inline'>{GET_LOCALS_TEXT(locale, 'download')}</span>
         </span>
-        {globalList.length !== 0 && <div className='exportmodal-btn-badge'>{globalList.length}</div>}
+
+        <Transition
+          show={isShow}
+          enter='ease-out duration-300'
+          enterFrom='opacity-0'
+          enterTo='opacity-100'
+          leave='ease-in duration-200'
+          leaveFrom='opacity-100'
+          leaveTo='opacity-0'
+        >
+          <div className='absolute -top-2 -right-2 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-rose-400 text-xs font-bold text-white'>
+            <span>{globalList.length}</span>
+          </div>
+        </Transition>
       </button>
 
       {/* Modal コンポーネント */}

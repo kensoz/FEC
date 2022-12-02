@@ -19,9 +19,9 @@
     @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
   }
 
-  body{
-  min-height: 100svh;
-}
+  body {
+    min-height: 100svh;
+  }
 
   /* ----- FECベース ----- */
   .fec-layout {
@@ -70,9 +70,5 @@
   /* ----- その他 ----- */
   .star_translate {
     @apply translate-y-0 delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-110;
-  }
-
-  .exportmodal-btn-badge {
-    @apply absolute -top-2 -right-2 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-rose-400 text-xs font-bold text-white;
   }
 }
