@@ -21,7 +21,7 @@ const Disclaimer = (props: IModalContent): JSX.Element => {
 
   // ---------- TSX ----------
   return (
-    <div className='flex flex-col p-2 font-mDisclaimer text-gray-600 dark:text-gray-300'>
+    <div className='flex flex-col p-2 text-gray-600 dark:text-gray-300'>
       {/* タイトル */}
       <div className='flex flex-row items-center justify-between rounded-md border border-gray-200 bg-slate-100 px-2 py-1 shadow-sm dark:border-gray-600 dark:bg-slate-700'>
         <div className='font-bold'>{GET_LOCALS_TEXT(locale, 'disclaimer')}</div>

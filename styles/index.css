@@ -26,7 +26,7 @@
 
   .fec-main {
     max-width: 2000px; /* セーフエリア距離 */
-    @apply flex h-screen w-screen overflow-hidden font-mPlusRound text-sm font-medium text-gray-600 dark:text-gray-200;
+    @apply flex h-screen w-screen overflow-hidden font-fec text-sm font-medium text-gray-600 dark:text-gray-200;
   }
 
   .fec-box {
@@ -66,5 +66,9 @@
   /* ----- その他 ----- */
   .star_translate {
     @apply translate-y-0 delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-110;
+  }
+
+  .exportmodal-btn-badge {
+    @apply absolute -top-2 -right-2 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-rose-400 text-xs font-bold text-white;
   }
 }

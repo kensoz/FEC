@@ -14,7 +14,7 @@ const zh: IStringObj = {
   skillType: '技术分类',
   offical: '中文官网',
   about: '相关',
-  downloadTitle: '导出技能清单',
+  downloadTitle: '技能清单',
   download: '导出',
   close: '返回',
   delete: '删除',

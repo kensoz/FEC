@@ -14,7 +14,7 @@ const ja: IStringObj = {
   skillType: '技術分類',
   offical: '日本語公式',
   about: '関連',
-  downloadTitle: '「マイスキル」 エクスポート',
+  downloadTitle: 'マイスキル',
   download: 'エクスポート',
   close: 'もどる',
   delete: '削除',

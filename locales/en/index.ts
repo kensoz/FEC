@@ -14,7 +14,7 @@ const en: IStringObj = {
   skillType: 'Technology classification',
   offical: 'official',
   about: 'Related',
-  downloadTitle: 'Export MySkill',
+  downloadTitle: 'MySkill',
   download: 'Export',
   close: 'close',
   delete: 'delete',

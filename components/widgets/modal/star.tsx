@@ -64,7 +64,7 @@ const Star = (props: IModalContent): JSX.Element => {
         <span className='relative flex flex-row items-center justify-between text-white'>
           <span>
             <FontAwesomeIcon className='mr-2 text-yellow-300' icon={faStar} />
-            {GET_LOCALS_TEXT(locale, 'downloadTitle')}
+            {GET_LOCALS_TEXT(locale, 'downloadTitle') + ' ' + GET_LOCALS_TEXT(locale, 'download')}
           </span>
 
           <button type='button' className='fec-clear-input text-lg text-white xl:hover:opacity-70' onClick={props.closeModalContent}>
