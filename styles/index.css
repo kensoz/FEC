@@ -19,7 +19,7 @@
     @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
   }
 
-  /* ----- ベーススタイル ----- */
+  /* ----- FECベース ----- */
   .fec-layout {
     @apply flex min-h-screen grow flex-col overflow-y-auto;
   }
@@ -34,7 +34,7 @@
   }
 
   .fec-clear-input {
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent; /* タッチパネルデバイス対応 */
     @apply touch-manipulation outline-none ring-0 hover:shadow-none hover:outline-none hover:ring-0 focus:shadow-none focus:outline-none focus:ring-0 active:shadow-none active:outline-none active:ring-0;
   }
 
@@ -44,7 +44,7 @@
 
   /* ----- ボタン ----- */
   .icon-btn {
-    @apply fec-clear-input inline-flex w-11 items-center justify-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-base leading-6 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none dark:border-gray-400 dark:bg-transparent dark:hover:bg-slate-600;
+    @apply fec-clear-input inline-flex w-11 items-center justify-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-base leading-6 shadow-sm hover:bg-gray-50 focus:shadow-none dark:border-gray-400 dark:bg-transparent dark:hover:bg-slate-600;
   }
 
   .text-btn {
@@ -65,6 +65,6 @@
 
   /* ----- その他 ----- */
   .star_translate {
-    @apply translate-y-0 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110;
+    @apply translate-y-0 delay-100 duration-150 ease-in-out hover:-translate-y-1 hover:scale-110;
   }
 }

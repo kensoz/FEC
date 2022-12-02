@@ -51,7 +51,7 @@ const Toolbar = (): JSX.Element => {
           </div>
           <input
             type='text'
-            className='fec-clear-input w-44 whitespace-nowrap rounded-md border border-gray-200 bg-white py-2 pl-8 font-normal shadow-sm dark:border-gray-400 dark:bg-transparent'
+            className='fec-clear-input w-44 whitespace-nowrap rounded-md border border-gray-200 bg-white py-2 pl-8 font-normal shadow-sm dark:border-gray-400 dark:bg-transparent xl:hover:border-gray-300'
             placeholder={GET_LOCALS_TEXT(locale, 'sreach')}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setQuery(e.target.value)

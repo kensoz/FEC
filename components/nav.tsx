@@ -40,7 +40,7 @@ const Nav = (): JSX.Element => {
       {/* ロゴ */}
       <div className='flex justify-center border-b-2 border-gray-200 py-2 dark:border-gray-600 lg:py-4'>
         <Link href='/' passHref>
-          <a className='fec-clear-input'>
+          <a className='fec-clear-input xl:hover:opacity-70'>
             <Image src='/logo.png' objectFit='contain' width={115} height={40} alt='logo' />
           </a>
         </Link>

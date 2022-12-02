@@ -67,10 +67,8 @@ const Footer = (): JSX.Element => {
       </div>
 
       {/* FEC */}
-      <div className='mb-3 flex'>
-        <p>© renhou</p>
-        <p className='mx-2'>🍋</p>
-        <p>Front-End-Collection</p>
+      <div className='mb-3 flex font-medium'>
+        <p>© 2022 renhou FEC</p>
       </div>
 
       {/* Modal コンポーネント */}
