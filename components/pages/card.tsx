@@ -68,7 +68,7 @@ const Card = (props: ICard): JSX.Element => {
         <div className='fec-box flex flex-col bg-slate-100 dark:bg-slate-700' key={e.id}>
           {/* カード写真 */}
           <Link href={e.url} passHref>
-            <a className='block rounded-t-md' target='_blank'>
+            <a className='block rounded-t-md hover:opacity-70' target='_blank'>
               <div className='flex flex-row items-center justify-center rounded-t-md border-b border-gray-200 bg-gray-50 py-5 dark:border-gray-500 dark:bg-gray-700'>
                 {e.color !== '' && (
                   <Image
@@ -98,9 +98,11 @@ const Card = (props: ICard): JSX.Element => {
                 </a>
               </Link>
 
+              {/* ⭐STAR⭐ */}
               <div className='absolute right-2 top-[-10px] rounded-full border border-gray-200 bg-white py-0.5 px-1 text-xl text-yellow-300 shadow-sm dark:border-gray-500 dark:bg-slate-700'>
                 <button
                   type='button'
+                  className='fec-clear-input hover:opacity-50'
                   onClick={() => onClick({ id: e.id, name: e.name, groupId: e.groupId, groupName: e.groupName, businessEX: '-', personalEX: '-' })}
                 >
                   {/* <button> */}

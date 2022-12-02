@@ -19,6 +19,12 @@
     @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
   }
 
+  *:focus {
+    -webkit-tap-highlight-color: transparent;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
   /* ----- ベーススタイル ----- */
   .fec-layout {
     @apply flex min-h-screen grow flex-col overflow-y-auto;
@@ -34,23 +40,23 @@
   }
 
   .fec-clear-input {
-    @apply outline-none ring-0 hover:outline-none hover:ring-0 focus:outline-none focus:ring-0 active:outline-none active:ring-0
+    @apply outline-none ring-0 hover:shadow-none hover:outline-none hover:ring-0 focus:shadow-none focus:outline-none focus:ring-0 active:shadow-none active:outline-none active:ring-0
   }
 
   /* ----- ボタン ----- */
   .icon-btn {
-    @apply inline-flex w-11 items-center justify-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-base leading-6 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none dark:border-gray-400 dark:bg-transparent dark:hover:bg-slate-600;
+    @apply fec-clear-input inline-flex w-11 items-center justify-center whitespace-nowrap rounded-md border border-gray-200 bg-white px-4 py-2 text-base leading-6 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none dark:border-gray-400 dark:bg-transparent dark:hover:bg-slate-600;
   }
 
   .text-btn {
-    @apply inline-flex items-center justify-center text-slate-500 hover:text-slate-400 dark:text-slate-200 dark:hover:text-slate-50;
+    @apply fec-clear-input inline-flex items-center justify-center text-slate-500 hover:opacity-50 dark:text-slate-200 dark:hover:opacity-50;
   }
 
   .nav-list-btn {
-    @apply inline-flex w-full items-center rounded-md p-2 text-slate-500 hover:bg-yellow-50 hover:text-yellow-300 dark:text-slate-200 dark:hover:text-yellow-300;
+    @apply fec-clear-input inline-flex w-full items-center rounded-md p-2 text-slate-500 hover:bg-yellow-50 hover:text-yellow-300 dark:text-slate-200 dark:hover:text-yellow-300;
   }
 
   .nav-text-btn {
-    @apply inline-flex items-center pb-0.5 font-normal text-gray-400 hover:text-gray-300;
+    @apply fec-clear-input inline-flex items-center pb-0.5 font-normal text-gray-400 hover:opacity-50;
   }
 }
