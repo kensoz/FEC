@@ -12,25 +12,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@supports (-webkit-touch-callout: none) {
-  body {
-    /* The hack for Safari */
-    height: -webkit-fill-available;
-  }
-}
-
 @layer base {
   /* ----- html,body ----- */
   html,
   body {
-    min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    min-height: calc(var(--vh, 1vh) * 100);
     @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
   }
 
+  @supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
+
   /* ----- FECベース ----- */
   .fec-layout {
-    @apply flex grow flex-col overflow-y-auto;
+    @apply flex min-h-screen grow flex-col overflow-y-auto;
   }
 
   .fec-main {
