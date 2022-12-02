@@ -16,12 +16,14 @@
   /* ----- html,body ----- */
   html,
   body {
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
     @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
   }
 
   /* ----- FECベース ----- */
   .fec-layout {
-    @apply flex min-h-screen grow flex-col overflow-y-auto;
+    @apply flex grow flex-col overflow-y-auto;
   }
 
   .fec-main {
