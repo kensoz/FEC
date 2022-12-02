@@ -19,12 +19,6 @@
     @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
   }
 
-  *:focus {
-    -webkit-tap-highlight-color: transparent;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-}
-
   /* ----- ベーススタイル ----- */
   .fec-layout {
     @apply flex min-h-screen grow flex-col overflow-y-auto;
@@ -40,7 +34,12 @@
   }
 
   .fec-clear-input {
-    @apply outline-none ring-0 hover:shadow-none hover:outline-none hover:ring-0 focus:shadow-none focus:outline-none focus:ring-0 active:shadow-none active:outline-none active:ring-0
+    -webkit-tap-highlight-color: transparent;
+    @apply outline-none ring-0 hover:shadow-none hover:outline-none hover:ring-0 focus:shadow-none focus:outline-none focus:ring-0 active:shadow-none active:outline-none active:ring-0 touch-manipulation
+  }
+
+  .fec-clear-input:hover:focus:active {
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* ----- ボタン ----- */

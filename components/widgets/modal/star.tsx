@@ -67,7 +67,7 @@ const Star = (props: IModalContent): JSX.Element => {
             {GET_LOCALS_TEXT(locale, 'download')}
           </span>
 
-          <button type='button' className='text-lg text-white hover:text-gray-100' onClick={props.closeModalContent}>
+          <button type='button' className='fec-clear-input text-lg text-white hover:text-gray-100' onClick={props.closeModalContent}>
             <FontAwesomeIcon icon={faClose} />
           </button>
         </span>
