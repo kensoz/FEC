@@ -33,7 +33,7 @@ const Breadcrumb = (props: IBreadcrumb): JSX.Element => {
     <div className='flex flex-row items-center justify-between py-2 text-xs text-gray-400'>
       <div className='flex flex-row'>
         <Link href='/' passHref>
-          <a className='block'>
+          <a className='fec-clear-input block'>
             <FontAwesomeIcon className='mr-1' icon={faHome} />
           </a>
         </Link>

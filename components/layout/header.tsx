@@ -31,9 +31,13 @@ const Header = (): JSX.Element => {
 
   // ---------- TSX ----------
   return (
-    <div className='flex flex-row items-center justify-between py-2 px-3'>
+    <div className='flex flex-row items-center justify-between px-3 pt-2 pb-1'>
       {/* モバイルロゴ */}
-      <Image className='block lg:invisible' src='/logo.png' objectFit='contain' width={90} height={40} alt='logo' />
+      <Link href='/' passHref>
+        <a className='fec-clear-input block lg:invisible'>
+          <Image src='/logo.png' objectFit='contain' width={90} height={40} alt='logo' />
+        </a>
+      </Link>
 
       {/* ボタングループ */}
       <div className='flex flex-row items-center'>
@@ -51,25 +55,25 @@ const Header = (): JSX.Element => {
           {isDisplay && (
             <div className='fec-box absolute right-0 z-10 hidden bg-slate-50 hover:block peer-hover:block dark:bg-slate-800'>
               <div className='flex w-32 flex-col p-2'>
-                <button className='inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('ja')}>
+                <button className={`i18n-list-btn ${locale === 'ja' && 'bg-yellow-50'}`} onClick={() => changeLanage('ja')}>
                   <span className='mr-2'>
                     <Flag code='jp' width={20} />
                   </span>
-                  <span className={locale === 'ja' ? 'text-yellow-400' : ''}>日本語</span>
+                  <span className={locale === 'ja' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>日本語</span>
                 </button>
 
-                <button className='inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('zh')}>
+                <button className={`i18n-list-btn ${locale === 'zh' && 'bg-yellow-50'}`} onClick={() => changeLanage('zh')}>
                   <span className='mr-2'>
                     <Flag code='cn' width={20} />
                   </span>
-                  <span className={locale === 'zh' ? 'text-yellow-400' : ''}>简体中文</span>
+                  <span className={locale === 'zh' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>简体中文</span>
                 </button>
 
-                <button className='inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400' onClick={() => changeLanage('en')}>
+                <button className={`i18n-list-btn ${locale === 'en' && 'bg-yellow-50'}`} onClick={() => changeLanage('en')}>
                   <span className='mr-2'>
                     <Flag code='us' width={20} />
                   </span>
-                  <span className={locale === 'en' ? 'text-yellow-400' : ''}>English</span>
+                  <span className={locale === 'en' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>English</span>
                 </button>
               </div>
             </div>

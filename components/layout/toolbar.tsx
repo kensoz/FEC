@@ -74,7 +74,7 @@ const Toolbar = (): JSX.Element => {
         onClick={() => {
           setIsOpen(true)
         }}
-        className='group relative inline-block w-24 rounded-md px-4 py-2 text-white'
+        className='fec-clear-input group relative inline-block w-24 rounded-md px-4 py-2 text-white'
       >
         <span className='absolute top-0 left-0 h-full w-full rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 opacity-50 blur-sm filter'></span>
         <span className='absolute inset-0 h-full w-full rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 opacity-50 filter group-active:opacity-0'></span>

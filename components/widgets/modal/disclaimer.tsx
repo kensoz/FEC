@@ -26,7 +26,7 @@ const Disclaimer = (props: IModalContent): JSX.Element => {
       <div className='flex flex-row items-center justify-between rounded-md border border-gray-200 bg-slate-100 px-2 py-1 shadow-sm dark:border-gray-600 dark:bg-slate-700'>
         <div className='font-bold'>{GET_LOCALS_TEXT(locale, 'disclaimer')}</div>
 
-        <button type='button' className='fec-clear-input text-lg' onClick={props.closeModalContent}>
+        <button type='button' className='fec-clear-input text-lg xl:hover:opacity-70' onClick={props.closeModalContent}>
           <FontAwesomeIcon icon={faCircleXmark} />
         </button>
       </div>

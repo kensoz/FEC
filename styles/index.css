@@ -35,7 +35,7 @@
 
   .fec-clear-input {
     -webkit-tap-highlight-color: transparent;
-    @apply outline-none ring-0 hover:shadow-none hover:outline-none hover:ring-0 focus:shadow-none focus:outline-none focus:ring-0 active:shadow-none active:outline-none active:ring-0 touch-manipulation
+    @apply touch-manipulation outline-none ring-0 hover:shadow-none hover:outline-none hover:ring-0 focus:shadow-none focus:outline-none focus:ring-0 active:shadow-none active:outline-none active:ring-0;
   }
 
   .fec-clear-input:hover:focus:active {
@@ -48,7 +48,7 @@
   }
 
   .text-btn {
-    @apply fec-clear-input inline-flex items-center justify-center text-slate-500 hover:opacity-50 dark:text-slate-200 dark:hover:opacity-50;
+    @apply fec-clear-input inline-flex items-center justify-center text-slate-500 dark:text-slate-200 xl:hover:opacity-50 dark:xl:hover:opacity-50;
   }
 
   .nav-list-btn {
@@ -56,6 +56,15 @@
   }
 
   .nav-text-btn {
-    @apply fec-clear-input inline-flex items-center pb-0.5 font-normal text-gray-400 hover:opacity-50;
+    @apply fec-clear-input inline-flex items-center pb-0.5 font-normal text-gray-400 xl:hover:opacity-50;
+  }
+
+  .i18n-list-btn {
+    @apply fec-clear-input inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400;
+  }
+
+  /* ----- その他 ----- */
+  .star_translate {
+    @apply translate-y-0 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110;
   }
 }

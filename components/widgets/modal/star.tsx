@@ -15,7 +15,7 @@ import GET_LOCALS_TEXT from '../../../locales'
 import { year } from '../../../scripts/constant'
 import { listState } from '../../../scripts/recoil'
 import makeTemplate from '../../../scripts/template'
-import type { IModalContent, IGlobalList } from '../../../types'
+import type { IModalContent, IGlobalList, IYear } from '../../../types'
 
 /**
  * Star Modal content
@@ -64,10 +64,10 @@ const Star = (props: IModalContent): JSX.Element => {
         <span className='relative flex flex-row items-center justify-between text-white'>
           <span>
             <FontAwesomeIcon className='mr-2 text-yellow-300' icon={faStar} />
-            {GET_LOCALS_TEXT(locale, 'download')}
+            {GET_LOCALS_TEXT(locale, 'downloadTitle')}
           </span>
 
-          <button type='button' className='fec-clear-input text-lg text-white hover:text-gray-100' onClick={props.closeModalContent}>
+          <button type='button' className='fec-clear-input text-lg text-white xl:hover:opacity-70' onClick={props.closeModalContent}>
             <FontAwesomeIcon icon={faClose} />
           </button>
         </span>
@@ -113,7 +113,7 @@ const Star = (props: IModalContent): JSX.Element => {
               >
                 <div className='relative'>
                   {/* ボタン */}
-                  <Listbox.Button className='fec-box fec-clear-inputdark:bg-transparent relative z-20 w-full cursor-default bg-white py-1 text-left'>
+                  <Listbox.Button className='fec-box fec-clear-input relative z-20 w-full cursor-default bg-white py-1 text-center font-bold dark:bg-transparent'>
                     <span className='pl-2'>{e.businessEX}</span>
                     <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
                       <FontAwesomeIcon icon={faSort} />
@@ -122,11 +122,13 @@ const Star = (props: IModalContent): JSX.Element => {
 
                   {/* オプション */}
                   <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-                    <Listbox.Options className='fec-box fec-clear-input absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
-                      {year.map((blist) => (
+                    <Listbox.Options className='fec-box fec-clear-input absolute z-30 w-full overflow-auto bg-white p-2 font-bold dark:bg-slate-800'>
+                      {year.map((blist: IYear) => (
                         <Listbox.Option
                           key={blist.id}
-                          className={({ active }) => `fec-clear-input relative cursor-default rounded-md p-2 ${active && 'bg-yellow-50 text-yellow-400'}`}
+                          className={({ active }) =>
+                            `fec-clear-input relative cursor-default rounded-md py-1 text-center ${active && 'bg-yellow-50 text-yellow-400'}`
+                          }
                           value={blist.value}
                         >
                           {blist.value}
@@ -146,8 +148,8 @@ const Star = (props: IModalContent): JSX.Element => {
               >
                 <div className='relative'>
                   {/* ボタン */}
-                  <Listbox.Button className='fec-box fec-clear-inputdark:bg-transparent relative z-20 w-full cursor-default bg-white py-1 text-left'>
-                    <span className='pl-2'>{e.personalEX}</span>
+                  <Listbox.Button className='fec-box fec-clear-input relative z-20 w-full cursor-default bg-white py-1 text-center font-bold dark:bg-transparent'>
+                    {e.personalEX}
                     <span className='pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400'>
                       <FontAwesomeIcon icon={faSort} />
                     </span>
@@ -155,11 +157,13 @@ const Star = (props: IModalContent): JSX.Element => {
 
                   {/* オプション */}
                   <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-                    <Listbox.Options className='fec-box fec-clear-input absolute z-30 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
-                      {year.map((blist) => (
+                    <Listbox.Options className='fec-box fec-clear-input absolute z-30 w-full overflow-auto bg-white p-2 font-bold dark:bg-slate-800'>
+                      {year.map((blist: IYear) => (
                         <Listbox.Option
                           key={blist.id}
-                          className={({ active }) => `fec-clear-input relative cursor-default rounded-md p-2 ${active && 'bg-yellow-50 text-yellow-400'}`}
+                          className={({ active }) =>
+                            `fec-clear-input relative cursor-default rounded-md py-1 text-center ${active && 'bg-yellow-50 text-yellow-400'}`
+                          }
                           value={blist.value}
                         >
                           {blist.value}
@@ -178,7 +182,7 @@ const Star = (props: IModalContent): JSX.Element => {
       {globalList.length !== 0 && (
         <div className='flex flex-row items-center justify-center border-t border-gray-200 py-2 dark:border-gray-600'>
           <a
-            className='ml-2 inline-flex cursor-pointer select-none items-center rounded-md bg-amber-400 px-3 py-1 text-sm font-medium leading-6 text-white shadow-sm hover:bg-amber-500'
+            className='fec-clear-input ml-2 inline-flex items-center rounded-md bg-yellow-400 px-3 py-2 text-sm font-medium text-white shadow-sm xl:hover:opacity-70'
             href={markdown}
             download={filename}
             onClick={download}

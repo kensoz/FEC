@@ -60,7 +60,7 @@ const Navbar = (): JSX.Element => {
 
           {/* オプション */}
           <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
-            <Listbox.Options className='fec-box fec-clear-input absolute z-10 max-h-60 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
+            <Listbox.Options className='fec-box fec-clear-input absolute z-10 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
               {nav.map((e: INav) => (
                 <Listbox.Option
                   key={e.id}
