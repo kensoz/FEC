@@ -37,7 +37,7 @@ const Navbar = (): JSX.Element => {
 
   // ---------- TSX ----------
   return (
-    <div className='shadow-b-sm mb-3 flex flex-col border-b border-gray-200 px-3 pb-2 dark:border-gray-600 md:hidden'>
+    <div className='shadow-b-sm mb-3 flex flex-col border-b border-gray-200 px-3 pb-2 dark:border-gray-600 lg:hidden'>
       {/* タイトル */}
       <div className='text-xs font-bold text-gray-400'>
         <FontAwesomeIcon className='ml-1 mr-2' icon={faList} />

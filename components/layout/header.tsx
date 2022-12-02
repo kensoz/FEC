@@ -33,7 +33,7 @@ const Header = (): JSX.Element => {
   return (
     <div className='flex flex-row items-center justify-between py-2 px-3'>
       {/* モバイルロゴ */}
-      <Image className='block md:invisible' src='/logo.png' objectFit='contain' width={90} height={40} alt='logo' />
+      <Image className='block lg:invisible' src='/logo.png' objectFit='contain' width={90} height={40} alt='logo' />
 
       {/* ボタングループ */}
       <div className='flex flex-row items-center'>

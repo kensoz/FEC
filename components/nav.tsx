@@ -36,9 +36,9 @@ const Nav = (): JSX.Element => {
 
   // ---------- TSX ----------
   return (
-    <nav className='my-2 ml-1 hidden max-h-[1300px] min-w-[14rem] flex-col rounded-md border border-gray-200 bg-slate-100 shadow-sm dark:border-gray-600 dark:bg-slate-800 md:flex lg:ml-2'>
+    <nav className='my-2 ml-1 hidden max-h-[1300px] min-w-[13rem] flex-col rounded-md border border-gray-200 bg-slate-100 shadow-sm dark:border-gray-600 dark:bg-slate-800 lg:ml-2 lg:flex xl:min-w-[14rem]'>
       {/* ロゴ */}
-      <div className='flex justify-center border-b-2 border-gray-200 py-2 dark:border-gray-600 lg:py-4'>
+      <div className='flex justify-center border-b-2 border-gray-200 py-2 dark:border-gray-600 lg:py-3 xl:py-4'>
         <Link href='/' passHref>
           <a>
             <Image src='/logo.png' objectFit='contain' width={115} height={40} alt='logo' />
@@ -47,7 +47,7 @@ const Nav = (): JSX.Element => {
       </div>
 
       {/* ナビリスト */}
-      <div className='flex flex-grow flex-col p-2 text-sm font-bold lg:p-3'>
+      <div className='flex flex-grow flex-col p-1 text-sm font-bold xl:p-3'>
         {nav.map((e: INav) => (
           <div key={e.id} className='flex flex-row'>
             <Link as={e.groupName === '/' ? undefined : `/${e.groupName}`} href={e.groupName === '/' ? '/' : '/[group]'} passHref>

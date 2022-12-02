@@ -22,7 +22,7 @@ const Layout = ({ children }: Record<'children', React.ReactNode>): JSX.Element 
       <Toolbar />
 
       {/* コンテンツ */}
-      <div className='grow px-3'>{children}</div>
+      <div className='grow px-2 lg:px-3'>{children}</div>
 
       {/* フッター */}
       <Footer />

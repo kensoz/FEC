@@ -63,7 +63,7 @@ const Card = (props: ICard): JSX.Element => {
     </div>
   ) : (
     // 正常の場合、カード表示
-    <div className='grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-6'>
+    <div className='grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-6 xl:gap-3'>
       {sortedList().map((e: IList) => (
         <div className='fec-box flex flex-col bg-slate-100 dark:bg-slate-700' key={e.id}>
           {/* カード写真 */}
