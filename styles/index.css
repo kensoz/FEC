@@ -64,7 +64,7 @@
   }
 
   .i18n-list-btn {
-     @apply fec-clear-input inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400;
+    @apply fec-clear-input inline-flex items-center rounded-md p-2 hover:bg-yellow-50 hover:text-yellow-400;
   }
 
   /* ----- その他 ----- */
