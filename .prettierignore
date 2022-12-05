@@ -5,6 +5,7 @@
 
 # testing
 /coverage
+/.swc
 
 # next.js
 /.next/
@@ -42,3 +43,4 @@ yarn-error.log*
 list.json
 nav.json
 serviceAccount.json
+.dockerignore

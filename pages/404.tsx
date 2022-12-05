@@ -16,7 +16,7 @@ const Custom404 = (): JSX.Element => {
 
         <div className='mt-3 text-xs'>
           <Link href='/' passHref>
-            <a className='inline-flex items-center rounded-md bg-gray-100 px-4 py-2 text-gray-500 shadow-sm hover:bg-gray-200 hover:text-gray-600'>
+            <a className='fec-clear-input inline-flex items-center rounded-md bg-gray-100 px-4 py-2 text-gray-500 shadow-sm xl:hover:opacity-50'>
               <span>
                 <FontAwesomeIcon className='mr-2' icon={faHome} />
               </span>

@@ -34,7 +34,8 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         { hr: '' },
         { link: { title: '🍋 FEC', source: github } },
       ]
-    : [
+    : lang === 'en'
+    ? [
         { h1: 'MySkill' },
         { h4: 'List' },
         {
@@ -47,6 +48,7 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         { hr: '' },
         { link: { title: '🍋 FEC', source: github } },
       ]
+    : []
 }
 
 export default makeTemplate
