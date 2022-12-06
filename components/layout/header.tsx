@@ -53,7 +53,7 @@ const Header = (): JSX.Element => {
           </button>
 
           {isDisplay && (
-            <div className='fec-box absolute right-0 z-10 hidden bg-slate-50 hover:block peer-hover:block dark:bg-slate-800'>
+            <div className={`${isDisplay ? 'hidden' : 'block'} fec-box absolute right-0 z-10 bg-slate-50 hover:block peer-hover:block dark:bg-slate-800`}>
               <div className='flex w-32 flex-col p-2'>
                 <button className={`i18n-list-btn ${locale === 'ja' && 'bg-yellow-50'}`} onClick={() => changeLanage('ja')}>
                   <span className='mr-2'>
