@@ -23,7 +23,7 @@ const Header = (): JSX.Element => {
   useEffect((): void => setIsMounted(true), [])
 
   // i18nメニュー
-  const [isDisplay, setIsDisplay] = useState<boolean>(true)
+  const [isDisplay, setIsDisplay] = useState<boolean>(false)
   const changeLanage = (lang: 'zh' | 'ja' | 'en'): void => {
     router.push(asPath, undefined, { locale: lang })
     setIsDisplay(false)
@@ -47,7 +47,6 @@ const Header = (): JSX.Element => {
         </button>
 
         {/* i18nボタン */}
-        {/* TODO */}
         <div className='relative mx-2 inline'>
           <button className='icon-btn peer text-slate-400' onClick={() => setIsDisplay(true)}>
             <FontAwesomeIcon icon={faEarthAsia} />
