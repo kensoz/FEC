@@ -67,10 +67,10 @@ const Nav = (): JSX.Element => {
       <div className='flex flex-col border-t-2 border-gray-200 p-3 text-xs text-gray-400 dark:border-gray-600'>
         {/* Tweet */}
         <div>
-          <TwitterShareButton url='https://fec-tau.vercel.app/' title='FEC'>
+          <TwitterShareButton url='https://fec-tau.vercel.app/' title={GET_LOCALS_TEXT(locale, 'twitter')}>
             <a className='nav-text-btn'>
               <FontAwesomeIcon className='' icon={faTwitter} />
-              <span className='ml-2'>{GET_LOCALS_TEXT(locale, 'twitter')}</span>
+              <span className='ml-2'>Tweet</span>
             </a>
           </TwitterShareButton>
         </div>

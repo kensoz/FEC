@@ -24,7 +24,7 @@ const en: IStringObj = {
   mySKill: 'Let`s star a skill !',
   description: '',
   issue: 'Report Issues',
-  twitter: 'Tweet',
+  twitter: 'Front-end technology collection website FEC: ',
   inquiry: 'Inquiry',
   disclaimer: 'Disclaimer',
   dtBehavior: 'Your Behavior',

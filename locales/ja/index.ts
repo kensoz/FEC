@@ -24,7 +24,7 @@ const ja: IStringObj = {
   mySKill: '早速「マイスキル」をスタァしましょう!',
   description: '',
   issue: 'Report Issues',
-  twitter: 'Tweet',
+  twitter: 'フロントエンド技術コレクションサイトFEC: ',
   inquiry: 'お問い合わせ',
   disclaimer: '免責事項',
   dtBehavior: '訪問者の皆様へ',

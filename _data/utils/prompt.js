@@ -26,7 +26,7 @@ const prompt = [
   {
     type: 'confirm',
     name: 'isColor',
-    message: 'Is there an Icon in Simple Icons ?',
+    message: 'Is there an Icon in Simple Icons（https://simpleicons.org） ?',
   },
   {
     type: 'input',

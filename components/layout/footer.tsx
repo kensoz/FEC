@@ -58,10 +58,10 @@ const Footer = (): JSX.Element => {
         <div className='mx-1.5'>·</div>
 
         {/* twitter */}
-        <TwitterShareButton url='https://fec-tau.vercel.app/' title='FEC'>
+        <TwitterShareButton url='https://fec-tau.vercel.app/' title={GET_LOCALS_TEXT(locale, 'twitter')}>
           <a className='nav-text-btn'>
             <FontAwesomeIcon icon={faTwitter} />
-            <span className='ml-1'>{GET_LOCALS_TEXT(locale, 'twitter')}</span>
+            <span className='ml-1'>Tweet</span>
           </a>
         </TwitterShareButton>
       </div>

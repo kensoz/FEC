@@ -24,7 +24,7 @@ const zh: IStringObj = {
   mySKill: '快来星标自己的技能吧!',
   description: '',
   issue: 'Report Issues',
-  twitter: 'Tweet',
+  twitter: '前端技术收集网站FEC: ',
   inquiry: '咨询与联系',
   disclaimer: '免责声明',
   dtBehavior: '您的行为',
