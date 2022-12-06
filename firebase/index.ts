@@ -17,4 +17,5 @@ const app = initializeApp({
   appId: '1:69090820909:web:19835a8c2a78ac753ec9a4',
 })
 
+// 初期化Firestore
 export const db = getFirestore(app)

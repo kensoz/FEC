@@ -48,7 +48,7 @@ const Header = (): JSX.Element => {
 
         {/* i18nボタン */}
         <div className='relative mx-2 inline'>
-          <button className='icon-btn peer text-slate-400' onClick={() => setIsDisplay(true)}>
+          <button data-testid='test-i18n-btn' className='icon-btn peer text-slate-400' onClick={() => setIsDisplay(true)}>
             <FontAwesomeIcon icon={faEarthAsia} />
           </button>
 

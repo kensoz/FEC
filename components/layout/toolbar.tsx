@@ -75,7 +75,7 @@ const Toolbar = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Modalのボタン */}
+      {/* Export Modalのボタン */}
       <button
         type='button'
         onClick={() => {

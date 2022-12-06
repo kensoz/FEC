@@ -1,4 +1,4 @@
-import { faList, faSort, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { faList, faSort } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Listbox, Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
