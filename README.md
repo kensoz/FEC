@@ -4,7 +4,7 @@
 
 Front-End-Collection (FEC) is under development, This is a website that collects Web front-end technologies and tools.
 
-![](https://raw.githubusercontent.com/kensoz/FEC/main/public/logo.png)
+![logo](https://raw.githubusercontent.com/kensoz/FEC/main/public/logo.png)
 
 
 
