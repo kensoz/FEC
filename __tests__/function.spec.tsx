@@ -10,6 +10,7 @@ import makeTemplate from '../scripts/template'
 import { getIcon, isCurrentPath } from '../scripts/utils'
 import '@testing-library/jest-dom'
 
+// test
 describe('関数テスト', (): void => {
   it('現在のパス判断', (): void => {
     // 正常

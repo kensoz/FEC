@@ -1,7 +1,7 @@
 // * ------------------------------
 // *
 // * FEC Unit Test
-// * Widgetテスト
+// * Widget コンポーネントテスト
 // *
 // * ------------------------------
 import { render, screen } from '@testing-library/react'
@@ -17,13 +17,15 @@ const initializeState = ({ set }: any) => {
   set(listState, [{ id: '1', name: 'test', groupId: 1, groupName: 'javascript', businessEX: '-', personalEX: '-' }])
 }
 
+// mock
 jest.mock('next/router', () => ({
   useRouter: () => ({
     locale: 'ja',
   }),
 }))
 
-describe('Widgetsテスト', () => {
+// test
+describe('Widgets コンポーネントテスト', () => {
   it('modal.tsx', (): void => {
     render(<Modal isOpen={true} mode={'star'} closeModal={() => {}} />, {
       wrapper: RecoilRoot,

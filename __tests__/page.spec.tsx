@@ -4,16 +4,24 @@
 // * Pageテスト
 // *
 // * ------------------------------
-import { render, screen } from '@testing-library/react'
-import { RecoilRoot } from 'recoil'
-import Breadcrumb from '../components/pages/breadcrumb'
-import Card from '../components/pages/card'
+import { screen } from '@testing-library/react'
+import { getPage } from 'next-page-tester'
 import '@testing-library/jest-dom'
-import type { IList } from '../types'
+import type { INav, IList } from '../types'
 
-// props
-const propsBreadcrumb: number = 1
-const propsCard: IList[] = [
+// mock
+const searchKey: string = 'テスト'
+const nav: INav[] = [
+  {
+    id: '1',
+    groupId: 1,
+    groupName: 'css',
+    groupNameEn: 'JS & Framework',
+    groupNameZh: 'JavaScript与框架',
+    groupNameJa: 'JSとフレームワーク',
+  },
+]
+const list: IList[] = [
   {
     id: '9999',
     groupId: 1,
@@ -39,30 +47,86 @@ jest.mock('next/router', () => ({
   }),
 }))
 
-describe('Pageテスト', () => {
-  it('breadcrumb.tsx', (): void => {
-    render(<Breadcrumb length={propsBreadcrumb} />)
+jest.mock('../firebase/api', () => ({
+  getNavCollection: () => nav,
+  getListCollection: () => list,
+}))
 
-    expect(screen.getByText('ホームページ')).toBeInTheDocument()
-    expect(screen.getByText(`トータル：${propsBreadcrumb}`)).toBeInTheDocument()
+// test
+describe('Pageテスト', (): void => {
+  beforeAll((): void => {
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(),
+        removeListener: jest.fn(),
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+      })),
+    })
   })
 
-  it('card.tsx -normal', (): void => {
-    // 正常
-    render(<Card list={propsCard} />, {
-      wrapper: RecoilRoot,
+  // ホームページ
+  it('/index', async (): Promise<void> => {
+    const { render } = await getPage({
+      route: '/index',
     })
 
-    expect(screen.getByText('日本語公式')).toBeInTheDocument()
-    expect(screen.getByAltText('javascript')).toBeInTheDocument()
+    render()
+    expect(screen.getByText(list[0].descriptionJa)).toBeInTheDocument()
   })
 
-  it('card.tsx -error', (): void => {
-    // 異常またはundfined
-    render(<Card list={[]} />, {
-      wrapper: RecoilRoot,
+  // グループ
+  it('/css', async (): Promise<void> => {
+    const { render } = await getPage({
+      route: '/css',
     })
 
+    render()
+    expect(screen.getByText(list[0].descriptionZh)).toBeInTheDocument()
+  })
+
+  // グループ中国語
+  it('/css/zh', async (): Promise<void> => {
+    const { render } = await getPage({
+      route: '/css',
+    })
+
+    render()
+    expect(screen.getByText(list[0].description)).toBeInTheDocument()
+  })
+
+  // グループ英語
+  it('/css/en', async (): Promise<void> => {
+    const { render } = await getPage({
+      route: '/css',
+    })
+
+    render()
+    expect(screen.getByText('Test Description')).toBeInTheDocument()
+  })
+
+  // 検索
+  it('/search', async (): Promise<void> => {
+    const { render } = await getPage({
+      route: `/search/?key=${searchKey}`,
+    })
+
+    render()
     expect(screen.getByText('該当データはありません!')).toBeInTheDocument()
+  })
+
+  // 404
+  it('/404', async (): Promise<void> => {
+    const { render } = await getPage({
+      route: '/404',
+    })
+
+    render()
+    expect(screen.getByText('404')).toBeInTheDocument()
   })
 })

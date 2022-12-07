@@ -1,5 +1,5 @@
-import Breadcrumb from '../components/pages/breadcrumb'
-import Card from '../components/pages/card'
+import Breadcrumb from '../components/contents/breadcrumb'
+import Card from '../components/contents/card'
 import { getListCollection } from '../firebase/api'
 import type { IList, IListStaticProps } from '../types'
 

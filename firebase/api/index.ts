@@ -27,7 +27,7 @@ export const getNavCollection = async (): Promise<INav[]> => {
     })
     .catch((err): void => console.log(err))
 
-  return await nav
+  return nav
 }
 
 /**
