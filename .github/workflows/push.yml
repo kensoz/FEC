@@ -14,5 +14,7 @@ jobs:
       # Install & Build
       - name: Install Projest
         run: npm install
+      - name: Run Fix Format
+        run: npm run format:fix
       - name: Run Unit Test
         run: npm run test
