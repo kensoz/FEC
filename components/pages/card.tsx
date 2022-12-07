@@ -105,7 +105,6 @@ const Card = (props: ICard): JSX.Element => {
                   className='fec-clear-input opacity-100 xl:hover:opacity-70'
                   onClick={() => onClick({ id: e.id, name: e.name, groupId: e.groupId, groupName: e.groupName, businessEX: '-', personalEX: '-' })}
                 >
-                  {/* <button> */}
                   <FontAwesomeIcon icon={globalList.findIndex((i): boolean => i.id === e.id) !== -1 ? faStar : faRStar} />
                 </button>
               </div>
