@@ -1,8 +1,8 @@
 # ----- Github Action -----
 name: FEC-push
 # 実行のタイミング
-# on: workflow_dispatch
-on: [push]
+on: workflow_dispatch
+# on: [push]
 # 実行の流れ
 jobs:
   FEC-Push:
