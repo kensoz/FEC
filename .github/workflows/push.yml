@@ -14,9 +14,9 @@ jobs:
       # Install
       - name: Install Projest
         run: npm install
-      # Fix Format
-      - name: Run Fix Format
-        run: npm run format:fix
+      # Fix
+      - name: Run Fix
+        run: npm run fix:all
       # Check
       - name: Run Check
         run: npm run check:all
