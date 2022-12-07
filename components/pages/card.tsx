@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
 import { useRecoilValue, useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
 import { sortIDState, listState } from '../../scripts/recoil'
@@ -53,10 +52,6 @@ const Card = (props: ICard): JSX.Element => {
   const checkRelatedURL = (ja: string[], zh: string[], en: string[]): string[] => {
     return locale === 'ja' ? ja : locale === 'zh' ? zh : en
   }
-
-  useEffect((): void => {
-    setListState(globalList)
-  }, [globalList, setListState])
 
   // ---------- TSX ----------
   return props.list.length === 0 ? (
