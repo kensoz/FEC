@@ -8,10 +8,7 @@ import { recoilPersist } from 'recoil-persist'
 import type { IGlobalList } from '../types/index'
 
 // 永続化
-const { persistAtom } = recoilPersist({
-  key: 'recoil-persist',
-  storage: typeof window === 'undefined' ? undefined : window.sessionStorage,
-})
+const { persistAtom } = recoilPersist()
 
 // ソート順
 export const sortIDState = atom<boolean>({
