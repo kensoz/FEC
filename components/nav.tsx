@@ -6,9 +6,10 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { TwitterShareButton } from 'react-share'
+import { useRecoilValue } from 'recoil'
 import { getNavCollection } from '../firebase/api'
 import GET_LOCALS_TEXT from '../locales'
-import { navHome } from '../scripts/constant'
+import { navState } from '../scripts/recoil'
 import { getIcon, isCurrentPath } from '../scripts/utils'
 import type { INav } from '../types'
 import Modal from './widgets/modal'
@@ -18,6 +19,8 @@ const Nav = (): JSX.Element => {
   // ---------- Hooksインポート ----------
   // router
   const { asPath, locale } = useRouter()
+  // recoil
+  const globalNav = useRecoilValue(navState)
 
   // ---------- 関数 ----------
   // Modal
@@ -25,14 +28,17 @@ const Nav = (): JSX.Element => {
 
   // navデータ取得
   const [nav, setNav] = useState<INav[]>([])
-  const getNavData = async (): Promise<void> => {
-    const navRes = await getNavCollection()
-    navRes.unshift(navHome)
-    setNav(navRes)
-  }
-  useEffect((): void => {
-    getNavData()
-  }, [])
+  // const getNavData = async (): Promise<void> => {
+  //   const navRes = await getNavCollection()
+  //   setNav(navRes)
+  // }
+  // useEffect((): void => {
+  //   getNavData()
+  // }, [])
+
+  // useEffect((): void => {
+  //   const globalNav = useRecoilValue(navState)
+  // }, [globalNav])
 
   // ---------- TSX ----------
   return (
@@ -48,7 +54,7 @@ const Nav = (): JSX.Element => {
 
       {/* ナビリスト */}
       <div className='flex flex-grow flex-col p-1 text-sm font-bold xl:p-3'>
-        {nav.map((e: INav) => (
+        {globalNav.map((e: INav) => (
           <div key={e.id} className='flex flex-row'>
             <Link as={e.groupName === '/' ? undefined : `/${e.groupName}`} href={e.groupName === '/' ? '/' : '/[group]'} passHref>
               <a className={isCurrentPath(asPath, e.groupName) ? 'nav-list-btn bg-yellow-50 text-yellow-300 dark:text-yellow-300' : 'nav-list-btn'}>

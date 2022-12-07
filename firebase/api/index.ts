@@ -5,6 +5,7 @@
 // * ------------------------------
 
 import { collection, getDocs, query, where, CollectionReference } from 'firebase/firestore'
+import { navHome } from '../../scripts/constant'
 import type { IList, INav } from '../../types'
 import { db } from '../index'
 
@@ -15,7 +16,7 @@ import { db } from '../index'
  */
 export const getNavCollection = async (): Promise<INav[]> => {
   const queryRef = collection(db, 'nav') as CollectionReference<INav>
-  let nav: INav[] = []
+  let nav: INav[] = [navHome]
 
   await getDocs(queryRef)
     .then((res): void => {
@@ -26,7 +27,7 @@ export const getNavCollection = async (): Promise<INav[]> => {
     })
     .catch((err): void => console.log(err))
 
-  return nav
+  return await nav
 }
 
 /**

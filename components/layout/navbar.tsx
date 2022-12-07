@@ -3,9 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Listbox, Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
 import { Fragment, useState, useEffect } from 'react'
+import { useRecoilValue } from 'recoil'
 import { getNavCollection } from '../../firebase/api'
 import GET_LOCALS_TEXT from '../../locales'
 import { navHome } from '../../scripts/constant'
+import { navState } from '../../scripts/recoil'
 import { getIcon, isCurrentPath } from '../../scripts/utils'
 import type { INav, INavBarValue } from '../../types'
 
@@ -15,6 +17,8 @@ const Navbar = (): JSX.Element => {
   // router
   const router = useRouter()
   const { asPath, locale } = useRouter()
+  // recoil
+  const globalNav = useRecoilValue(navState)
 
   // ---------- 関数 ----------
   // value処理
@@ -25,15 +29,15 @@ const Navbar = (): JSX.Element => {
   }
 
   // navデータ取得
-  const [nav, setNav] = useState<INav[]>([])
-  const getNavData = async (): Promise<void> => {
-    const navRes = await getNavCollection()
-    navRes.unshift(navHome)
-    setNav(navRes)
-  }
-  useEffect(() => {
-    getNavData()
-  }, [])
+  // const [nav, setNav] = useState<INav[]>([])
+  // const getNavData = async (): Promise<void> => {
+  //   const navRes = await getNavCollection()
+  //   navRes.unshift(navHome)
+  //   setNav(navRes)
+  // }
+  // useEffect(() => {
+  //   getNavData()
+  // }, [])
 
   // ---------- TSX ----------
   return (
@@ -61,7 +65,7 @@ const Navbar = (): JSX.Element => {
           {/* オプション */}
           <Transition as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
             <Listbox.Options className='fec-box fec-clear-input absolute z-10 w-full overflow-auto bg-white p-2 dark:bg-slate-800'>
-              {nav.map((e: INav) => (
+              {globalNav.map((e: INav) => (
                 <Listbox.Option
                   key={e.id}
                   className={({ active }) => `fec-clear-input relative cursor-default ${active && 'bg-yellow-50 text-yellow-400'}`}
