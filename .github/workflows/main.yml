@@ -1,1 +1,18 @@
-#
+# ----- Github Action -----
+name: FEC-push
+# 実行のタイミング
+# on: workflow_dispatch
+on: [push]
+# 実行の流れ
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+      # codecov
+      - name: send codecov
+        uses: actions/checkout@master
+      - name: install Dependencies
+        run: npm install
+      - name: run Test
+        run: npm run check:all
