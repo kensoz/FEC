@@ -16,7 +16,7 @@ Front-End-Collection (FEC) website is under development, This is a website that 
 - ⚙️ TypeScript
 - 🎨 TailwindCSS
 - 📑 ESLint + Prettier
-- 🔌 Vitest + React Testing Library
+- 🔌 Jest + React Testing Library
 - 🔩 GitHub Actions
 - 💽 Firebase Cloud Firestore
 - 🚀 Vercel
