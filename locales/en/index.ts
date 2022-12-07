@@ -29,7 +29,7 @@ const en: IStringObj = {
   disclaimer: 'Disclaimer',
   dtBehavior: 'Your Behavior',
   dcBehavior:
-    'This site asks that its users read this disclaimer. When you visit this site, it means that you have agreed and accepted all the information on this page. ',
+    'This site asks that its users read this disclaimer. When you visit this site, it means that you have agreed and accepted all the information on this page. (Since automatic translation is used, please use Japanese or Chinese as the standard)',
   dtCopyright: 'Copyright Information',
   dcCopyright:
     'Text, icon and URL published by the Front-End-Collection(FEC) is collected from the Internet(see Content Information). FEC is for personal study and research purposes, and the accuracy of the content is not guaranteed only. The risks associated with using FEC have nothing to do with FEC. Visitors are bound by the legal rights of this site and related creators for their personal learning, research and other non-commercial purposes while at the same time complying with Licenses of  each contents, copyright laws and other relevant legal provisions. ',
