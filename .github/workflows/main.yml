@@ -5,14 +5,14 @@ name: FEC-push
 on: [push]
 # 実行の流れ
 jobs:
-  deploy:
-    name: deploy
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # codecov
-      - name: send codecov
-        uses: actions/checkout@master
-      - name: install Dependencies
+      # Checkout Code
+      - name: Checkout
+        uses: actions/checkout@main
+      # Install & Build
+      - name: Install
         run: npm install
-      - name: run Test
-        run: npm run check:all
+      - name: Build
+        run: npm run build
