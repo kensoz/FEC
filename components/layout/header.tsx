@@ -23,10 +23,8 @@ const Header = (): JSX.Element => {
   useEffect((): void => setIsMounted(true), [])
 
   // i18nメニュー
-  const [isDisplay, setIsDisplay] = useState<boolean>(false)
   const changeLanage = (lang: 'zh' | 'ja' | 'en'): void => {
     router.push(asPath, undefined, { locale: lang })
-    setIsDisplay(false)
   }
 
   // ---------- TSX ----------
@@ -48,36 +46,34 @@ const Header = (): JSX.Element => {
 
         {/* i18nボタン */}
         <div className='relative mx-2 inline'>
-          <button data-testid='test-i18n-btn' className='icon-btn peer text-slate-400' onClick={() => setIsDisplay(true)}>
+          <button data-testid='test-i18n-btn' className='icon-btn peer text-slate-400'>
             <FontAwesomeIcon icon={faEarthAsia} />
           </button>
 
-          {isDisplay && (
-            <div className={`${isDisplay ? 'hidden' : 'block'} fec-box absolute right-0 z-10 bg-slate-50 hover:block peer-hover:block dark:bg-slate-800`}>
-              <div className='flex w-32 flex-col p-2'>
-                <button className={`i18n-list-btn ${locale === 'ja' && 'bg-yellow-50'}`} onClick={() => changeLanage('ja')}>
-                  <span className='mr-2'>
-                    <Flag code='jp' width={20} />
-                  </span>
-                  <span className={locale === 'ja' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>日本語</span>
-                </button>
+          <div className='fec-box absolute right-0 z-10 hidden bg-slate-50 hover:block peer-hover:block dark:bg-slate-800'>
+            <div className='flex w-32 flex-col p-2'>
+              <button className={`i18n-list-btn ${locale === 'ja' && 'bg-yellow-50'}`} onClick={() => changeLanage('ja')}>
+                <span className='mr-2'>
+                  <Flag code='jp' width={20} />
+                </span>
+                <span className={locale === 'ja' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>日本語</span>
+              </button>
 
-                <button className={`i18n-list-btn ${locale === 'zh' && 'bg-yellow-50'}`} onClick={() => changeLanage('zh')}>
-                  <span className='mr-2'>
-                    <Flag code='cn' width={20} />
-                  </span>
-                  <span className={locale === 'zh' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>简体中文</span>
-                </button>
+              <button className={`i18n-list-btn ${locale === 'zh' && 'bg-yellow-50'}`} onClick={() => changeLanage('zh')}>
+                <span className='mr-2'>
+                  <Flag code='cn' width={20} />
+                </span>
+                <span className={locale === 'zh' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>简体中文</span>
+              </button>
 
-                <button className={`i18n-list-btn ${locale === 'en' && 'bg-yellow-50'}`} onClick={() => changeLanage('en')}>
-                  <span className='mr-2'>
-                    <Flag code='us' width={20} />
-                  </span>
-                  <span className={locale === 'en' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>English</span>
-                </button>
-              </div>
+              <button className={`i18n-list-btn ${locale === 'en' && 'bg-yellow-50'}`} onClick={() => changeLanage('en')}>
+                <span className='mr-2'>
+                  <Flag code='us' width={20} />
+                </span>
+                <span className={locale === 'en' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>English</span>
+              </button>
             </div>
-          )}
+          </div>
         </div>
 
         {/* GitHubボタン */}
