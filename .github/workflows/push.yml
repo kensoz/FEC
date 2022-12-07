@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout Code
-      - name: Checkout
+      - name: Checkout Branch
         uses: actions/checkout@main
       # Install & Build
-      - name: Install
+      - name: Install Projest
         run: npm install
-      - name: Build
-        run: npm run check:all
+      - name: Run Unit Test
+        run: npm run test
