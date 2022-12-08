@@ -43,7 +43,7 @@ docker build . -t fec
 docker run --name fec -p 8011:8011 -d fec
 ```
 
-HOST：http://localhost:8011](http://localhost:8011)
+HOST：http://localhost:8011
 
 
 
@@ -56,5 +56,5 @@ HOST：http://localhost:8011](http://localhost:8011)
 
 ## Disclaimer
 
-- For content, copyright, etc., please see [disclaimer](https://github.com/kensoz/FEC/blob/main/.github/doc/disclaimer/en.md).
+- For content, copyright, etc., please see [Disclaimer](https://github.com/kensoz/FEC/blob/main/.github/doc/disclaimer/en.md).
 - FEC code license：MIT
