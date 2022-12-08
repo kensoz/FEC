@@ -99,8 +99,9 @@ Simple Iconsに入力したい技術のアイコンはありますでしょう�
 
 #### サンプル
 
+`list.json`にて
+
 ```json
-// list.json
 [{
     "id": "1",
     "groupId": 1,
