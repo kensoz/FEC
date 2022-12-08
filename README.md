@@ -6,10 +6,6 @@ Front-End-Collection (FEC) is under development, This is a website that collects
 
 ![logo](https://raw.githubusercontent.com/kensoz/FEC/main/public/logo.png)
 
-
-
-
-
 ## スタック
 
 - ⚡️ Next.js
