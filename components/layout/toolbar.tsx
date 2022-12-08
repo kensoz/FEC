@@ -17,6 +17,7 @@ const Toolbar = (): JSX.Element => {
   // recoil
   const globalList = useRecoilValue(listState)
   const [isSortID, setIsSortID] = useRecoilState(sortIDState)
+
   // ---------- 関数 ----------
   // Modal
   const [isOpen, setIsOpen] = useState<boolean>(false)

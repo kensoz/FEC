@@ -34,7 +34,7 @@ describe('Widgets コンポーネントテスト', () => {
     })
 
     // 動きとデータなし
-    expect(screen.getByText('該当データはありません!')).toBeInTheDocument()
+    expect(screen.getByText('該当データはありません !')).toBeInTheDocument()
   })
 
   it('modal/star.tsx', (): void => {
@@ -49,9 +49,9 @@ describe('Widgets コンポーネントテスト', () => {
     expect(screen.getByText('技術名称')).toBeInTheDocument()
     expect(screen.getByText('実務経験（年）')).toBeInTheDocument()
     expect(screen.getByText('個人経験（年）')).toBeInTheDocument()
-    expect(screen.getByText('エクスポート')).toBeInTheDocument()
+    expect(screen.getByText('MD エクスポート')).toBeInTheDocument()
     fireEvent.click(screen.getByTestId('test-starDelete-btn'))
-    expect(screen.getByText('該当データはありません!')).toBeInTheDocument()
+    expect(screen.getByText('該当データはありません !')).toBeInTheDocument()
   })
 
   it('modal/disclaimer.tsx', (): void => {

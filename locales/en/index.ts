@@ -21,7 +21,8 @@ const en: IStringObj = {
   skillName: 'Name',
   businessEX: 'Business Ex (Year)',
   personalEX: 'Personal Ex (Year)',
-  mySKill: 'Let`s star a skill !',
+  mySKill:
+    'Select experienced skills, Set the period of experience, and Export a MarkDown file of 「My Skills」 that can be used in resume.Let`s create 「My Skills」 right away !',
   description: '',
   issue: 'Report Issues',
   twitter: 'Front-end technology collection website FEC: ',

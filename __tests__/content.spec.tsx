@@ -66,6 +66,6 @@ describe('Contentsコンポーネントテスト', () => {
       wrapper: RecoilRoot,
     })
 
-    expect(screen.getByText('該当データはありません!')).toBeInTheDocument()
+    expect(screen.getByText('該当データはありません !')).toBeInTheDocument()
   })
 })

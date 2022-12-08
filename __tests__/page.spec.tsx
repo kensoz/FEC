@@ -83,7 +83,7 @@ describe('Pageテスト', (): void => {
     })
 
     expect(screen.getByText('ホームページ')).toBeInTheDocument()
-    expect(screen.getByText('該当データはありません!')).toBeInTheDocument()
+    expect(screen.getByText('該当データはありません !')).toBeInTheDocument()
   })
 
   it('404.tsx', async (): Promise<void> => {

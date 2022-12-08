@@ -40,7 +40,7 @@ const Star = (props: IModalContent): JSX.Element => {
   }
 
   // MarkDownのダウンロード
-  const filename: string = 'FEC-list.md'
+  const filename: string = 'fec.md'
   const [markdown, setMarkDown] = useState<string>('')
 
   const download = async (): Promise<void> => {
@@ -77,7 +77,7 @@ const Star = (props: IModalContent): JSX.Element => {
       {globalList.length === 0 ? (
         <div className='my-10 flex flex-col items-center justify-center text-sm font-medium text-gray-400'>
           <div>{GET_LOCALS_TEXT(locale, 'noData')}</div>
-          <div>{GET_LOCALS_TEXT(locale, 'mySKill')}</div>
+          <div className='mt-5 px-5 text-xs font-normal'>{GET_LOCALS_TEXT(locale, 'mySKill')}</div>
         </div>
       ) : (
         <div className='flex flex-col px-2 py-4'>
@@ -189,7 +189,7 @@ const Star = (props: IModalContent): JSX.Element => {
             onClick={download}
           >
             <FontAwesomeIcon className='mr-2' icon={faCloudArrowDown} />
-            {'MD' + GET_LOCALS_TEXT(locale, 'download')}
+            {'MD ' + GET_LOCALS_TEXT(locale, 'download')}
           </a>
         </div>
       )}
