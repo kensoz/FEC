@@ -1,7 +1,7 @@
 // * ------------------------------
 // *
 // * FEC Unit Test
-// * Layoutテスト
+// * Layout コンポーネントテスト
 // *
 // * ------------------------------
 import { render, screen, fireEvent } from '@testing-library/react'

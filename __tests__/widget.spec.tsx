@@ -4,17 +4,19 @@
 // * Widget コンポーネントテスト
 // *
 // * ------------------------------
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { RecoilRoot } from 'recoil'
 import Modal from '../components/widgets/modal'
 import Disclaimer from '../components/widgets/modal/disclaimer'
 import Star from '../components/widgets/modal/star'
 import '@testing-library/jest-dom'
 import { listState } from '../scripts/recoil'
+import type { IGlobalList } from '../types'
 
 // recoil
+const mock: IGlobalList[] = [{ id: '1', name: 'test', groupId: 1, groupName: 'javascript', businessEX: '--', personalEX: '-' }]
 const initializeState = ({ set }: any) => {
-  set(listState, [{ id: '1', name: 'test', groupId: 1, groupName: 'javascript', businessEX: '-', personalEX: '-' }])
+  set(listState, mock)
 }
 
 // mock
@@ -31,6 +33,7 @@ describe('Widgets コンポーネントテスト', () => {
       wrapper: RecoilRoot,
     })
 
+    // 動きとデータなし
     expect(screen.getByText('該当データはありません!')).toBeInTheDocument()
   })
 
@@ -41,8 +44,14 @@ describe('Widgets コンポーネントテスト', () => {
       </RecoilRoot>,
     )
 
-    expect(screen.getByText('test')).toBeInTheDocument()
+    // データあり
+    expect(screen.getByText(mock[0].name)).toBeInTheDocument()
+    expect(screen.getByText('技術名称')).toBeInTheDocument()
+    expect(screen.getByText('実務経験（年）')).toBeInTheDocument()
+    expect(screen.getByText('個人経験（年）')).toBeInTheDocument()
     expect(screen.getByText('エクスポート')).toBeInTheDocument()
+    fireEvent.click(screen.getByTestId('test-starDelete-btn'))
+    expect(screen.getByText('該当データはありません!')).toBeInTheDocument()
   })
 
   it('modal/disclaimer.tsx', (): void => {

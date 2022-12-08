@@ -56,7 +56,8 @@ describe('Contentsコンポーネントテスト', () => {
     })
 
     expect(screen.getByText('日本語公式')).toBeInTheDocument()
-    expect(screen.getByAltText('javascript')).toBeInTheDocument()
+    expect(screen.getByText(propsCard[0].description)).toBeInTheDocument()
+    expect(screen.getByAltText(propsCard[0].name)).toBeInTheDocument()
   })
 
   it('card.tsx -error', (): void => {

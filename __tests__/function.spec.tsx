@@ -5,6 +5,7 @@
 // *
 // * ------------------------------
 import { faXmark, faHouse } from '@fortawesome/free-solid-svg-icons'
+import GET_LOCALS_TEXT from '../locales/index'
 import { ssgPath, navHome, navIconList, navListZh, navListJa, navListEn, year } from '../scripts/constant'
 import makeTemplate from '../scripts/template'
 import { getIcon, isCurrentPath } from '../scripts/utils'
@@ -42,5 +43,12 @@ describe('関数テスト', (): void => {
     expect(navListEn.get('javascript')).toBe('JS & Framework')
     expect(navIconList.get('/')).toEqual(faHouse)
     expect(year.length).toEqual(6)
+  })
+
+  it('i18n', (): void => {
+    expect(GET_LOCALS_TEXT(undefined, 'test')).toBe('No text')
+    expect(GET_LOCALS_TEXT('zh', 'i18n')).toBe('ZH')
+    expect(GET_LOCALS_TEXT('en', 'i18n')).toBe('EN')
+    expect(GET_LOCALS_TEXT('ja', 'i18n')).toBe('JA')
   })
 })

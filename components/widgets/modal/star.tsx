@@ -93,6 +93,7 @@ const Star = (props: IModalContent): JSX.Element => {
               <div className='flex flex-row items-center'>
                 <button
                   type='button'
+                  data-testid='test-starDelete-btn'
                   className='fec-clear-input mr-1 text-rose-300 hover:text-rose-400 md:mr-3'
                   onClick={(): void => {
                     deleteListItem(e.id)
