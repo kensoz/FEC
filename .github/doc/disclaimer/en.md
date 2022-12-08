@@ -18,7 +18,7 @@ Text, icon and URL published by the Front-End-Collection(FEC) is collected  from
 
 ### Content information
 
-FEC use the icons from Simple Icons(https://simpleicons.org) and follow the site License. Technical descriptions come from the official websites of each technology(including its machine translation), Wikipedia, MDN. The associated URL comes from the search engine.
+FEC use the icons from [Simple Icons](https://simpleicons.org) and follow the site License. Technical descriptions come from the official websites of each technology(including its machine translation), Wikipedia, MDN. The associated URL comes from the search engine.
 
 
 
