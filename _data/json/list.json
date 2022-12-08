@@ -5,7 +5,7 @@
     "groupName": "javascript",
     "name": "JavaScript",
     "color": "F7DF1E",
-    "description": "One of the core technologies of the website",
+    "description": "A scripting language that enables you to create dynamically website",
     "descriptionZh": "为了使操作网页动起来的编程语言",
     "descriptionJa": "ページを動かすためのプログラム言語",
     "url": "https://www.ecma-international.org/",
@@ -28,8 +28,8 @@
     "name": "TypeScript",
     "color": "3178C6",
     "description": "JavaScript with syntax for types",
-    "descriptionZh": "JavaScript的超集",
-    "descriptionJa": "JavaScriptのスーパーセット",
+    "descriptionZh": "给与JavaScript类型的的超集",
+    "descriptionJa": "JavaScriptの静的型付けができるスーパーセット",
     "url": "https://www.typescriptlang.org/",
     "urlZh": "",
     "urlJa": "https://www.typescriptlang.org/ja/",
@@ -219,5 +219,129 @@
     "relatedJa": [
       "https://nextjs-ja-translation-docs.vercel.app/"
     ]
+  },
+  {
+    "id": "14",
+    "groupId": 10,
+    "groupName": "other",
+    "name": "HTML5",
+    "color": "E34F26",
+    "description": " The code that is used to structure a web page and its content",
+    "descriptionZh": "是一种用来结构化 Web 网页及其内容的标记语言",
+    "descriptionJa": "ウェブサイトのコンテンツの構造を作るために使うコード",
+    "url": "https://www.w3.org/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [
+      "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics"
+    ],
+    "relatedZh": [
+      "https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/HTML_basics"
+    ],
+    "relatedJa": [
+      "https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web/HTML_basics"
+    ]
+  },
+  {
+    "id": "15",
+    "groupId": 2,
+    "groupName": "css",
+    "name": "CSS3",
+    "color": "1572B6",
+    "description": "A stylesheet language used to describe the presentation of a document written in HTML or XML",
+    "descriptionZh": "一种用来表现HTML或XML等文件样式的计算机语言",
+    "descriptionJa": "HTMLやXMLの要素をどのように修飾するかを指示する仕様の一つ",
+    "url": "https://www.w3.org/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [
+      "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    ],
+    "relatedZh": [
+      "https://developer.mozilla.org/zh-CN/docs/Web/CSS"
+    ],
+    "relatedJa": [
+      "https://developer.mozilla.org/ja/docs/Web/CSS"
+    ]
+  },
+  {
+    "id": "16",
+    "groupId": 5,
+    "groupName": "lib",
+    "name": "jQuery",
+    "color": "0769AD",
+    "description": "jQuery is a fast, small, and feature-rich JavaScript library",
+    "descriptionZh": "一个快速、简洁的JavaScript库",
+    "descriptionJa": "JSコードをより容易に記述できるようにするために設計されたライブラリ",
+    "url": "https://jquery.com/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
+  },
+  {
+    "id": "17",
+    "groupId": 3,
+    "groupName": "node",
+    "name": "Node.js",
+    "color": "339933",
+    "description": "an open-source, cross-platform JavaScript runtime environment",
+    "descriptionZh": "免费的、开源的、跨平台的 JavaScript 运行时环境",
+    "descriptionJa": "ChromeのV8 JavaScript エンジン で動作する JavaScript 環境",
+    "url": "https://nodejs.org/en/",
+    "urlZh": "",
+    "urlJa": "https://nodejs.org/ja/",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
+  },
+  {
+    "id": "18",
+    "groupId": 4,
+    "groupName": "project",
+    "name": "Git",
+    "color": "F05032",
+    "description": "A distributed version control system",
+    "descriptionZh": "分散式版本控制软件",
+    "descriptionJa": "プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システム",
+    "url": "https://git-scm.com/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
+  },
+  {
+    "id": "19",
+    "groupId": 1,
+    "groupName": "javascript",
+    "name": "Alpine.js",
+    "color": "8BC0D0",
+    "description": "A rugged, minimal tool for composing behavior directly in your markup",
+    "descriptionZh": "通过很低的成本提供了与 Vue 或 React 这类大型框架相近的响应式和声明式特性",
+    "descriptionJa": "Web UI構築のためのJSフレームワーク",
+    "url": "https://alpinejs.dev/",
+    "urlZh": "https://www.alpinejs.cn/",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
+  },
+  {
+    "id": "20",
+    "groupId": 10,
+    "groupName": "other",
+    "name": "GitHub",
+    "color": "181717",
+    "description": "An Internet hosting service for software development and version control using Git",
+    "descriptionZh": "面向开源及私有软件项目的托管平台",
+    "descriptionJa": "ソフトウェア開発のプラットフォーム",
+    "url": "https://github.com/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
   }
 ]

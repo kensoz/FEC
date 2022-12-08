@@ -189,7 +189,7 @@ const Star = (props: IModalContent): JSX.Element => {
             onClick={download}
           >
             <FontAwesomeIcon className='mr-2' icon={faCloudArrowDown} />
-            {GET_LOCALS_TEXT(locale, 'download')}
+            {'MD' + GET_LOCALS_TEXT(locale, 'download')}
           </a>
         </div>
       )}
