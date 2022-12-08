@@ -1,5 +1,5 @@
 # ----- Github Action -----
-# 必要な時に手で実行
+# Testレポートをアップロード
 name: workflow_dispatch
 
 on: workflow_dispatch
@@ -19,6 +19,9 @@ jobs:
         run: npm run fix:all
       # Test
       - name: Run Test
+        run: npm run test
+      # Test Coverage
+      - name: Run Test Coverage
         run: npm run test:coverage
       # Check
       - name: Upload coverage to Codecov
