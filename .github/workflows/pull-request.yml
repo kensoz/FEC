@@ -1,11 +1,11 @@
 # ----- Github Action -----
-name: FEC-pull_request
-# 実行のタイミング
+name: pull_request
+
 # on: workflow_dispatch
 on: [pull_request]
-# 実行の流れ
+
 jobs:
-  FEC-Pull-Request:
+  FEC-pull_request:
     runs-on: ubuntu-latest
     steps:
       # Checkout Code

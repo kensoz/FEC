@@ -1,10 +1,10 @@
 # ----- Github Action -----
-name: FEC-push
+name: workflow_dispatch
 # 実行のタイミング
 on: workflow_dispatch
 # 実行の流れ
 jobs:
-  FEC-Push:
+  FEC-dispatch:
     runs-on: ubuntu-latest
     steps:
       # Checkout Code
