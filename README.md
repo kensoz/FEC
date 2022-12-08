@@ -16,13 +16,13 @@ Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)で
 
 ## スタック
 
-- ⚡️ Next.js + TypeScript：SSGの静的Web サイト作成
-- 🎨 TailwindCSS：レスポンシブ、ダックモードに対応
-- 📑 ESLint + Prettier：コードチェックと整形
-- 🔌 Jest + Testing Library：自動Unitテスト、カバレッジ80%以上
-- 🔩 GitHub Actions + Vercel：CD/CIと自動デプロイ
-- 🔗 Node.js + Inquirer.js：データ入力CLI作成
-- 💽 Firebase：データ管理
+- ⚡️ **Next.js + TypeScript**：SSGの静的Web サイト作成
+- 🎨 **TailwindCSS**：レスポンシブ、ダックモードに対応
+- 📑 **ESLint + Prettier**：コードチェックと整形
+- 🔌 **Jest + Testing Library**：自動Unitテスト、カバレッジ80%以上
+- 🔩 **GitHub Actions + Vercel**：CD/CIと自動デプロイ
+- 🔗 **Node.js + Inquirer.js**：データ入力CLI作成
+- 💽 **Firebase**：データ管理
 
 
 
@@ -46,7 +46,7 @@ yarn dev
 
 
 
-## データと貢献
+# Contributing&Issues
 
 11111
 
