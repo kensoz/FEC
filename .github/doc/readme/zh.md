@@ -50,7 +50,7 @@ docker run --name fec -p 8011:8011 -d fec
 ## Contributing & Issues
 
 + BUG，过时的内容请在[Issues](https://github.com/kensoz/FEC/issues)报告
-+ 内容追加请参考[データ追加と更新](https://github.com/kensoz/FEC/blob/main/.github/doc/contri.md)
++ 内容追加请参考[データ追加と更新](https://github.com/kensoz/FEC/blob/main/.github/doc/data.md)（目前只有日语版）
 
 
 
