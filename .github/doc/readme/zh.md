@@ -16,7 +16,7 @@
 - 🎨 TailwindCSS
 - 📑 ESLint + Prettier
 - 🔌 Jest + Testing Library
-- 🔩 GitHub Actions + Vercel**
+- 🔩 GitHub Actions + Vercel
 - 🔗 Node.js + Inquirer.js
 - 💽 Firebase
 
@@ -50,11 +50,11 @@ docker run --name fec -p 8011:8011 -d fec
 # Contributing & Issues
 
 + BUG，过时的内容请在[Issues](https://github.com/kensoz/FEC/issues)报告
-+ 内容追加请参考[Contributing手順](https://github.com/kensoz/FEC/blob/main/.github/doc/contri.md)
++ 内容追加请参考[Contributing方法](https://github.com/kensoz/FEC/blob/main/.github/doc/contri.md)
 
 
 
 ## 免责声明
 
-- 内容，著作权等请参考免责[声明](https://github.com/kensoz/FEC/blob/main/.github/doc/disclaimer/zh.md)
+- 内容，著作权等请参考[免责声明](https://github.com/kensoz/FEC/blob/main/.github/doc/disclaimer/zh.md)
 - FEC代码的许可证：MIT
