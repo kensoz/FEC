@@ -1,6 +1,6 @@
 # ----- Github Action -----
 # Testレポートをアップロード
-name: workflow_dispatch
+name: tests
 
 on: workflow_dispatch
 
