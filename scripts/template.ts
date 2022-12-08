@@ -3,7 +3,7 @@
 // * MarkDownファイルテンプレート
 // *
 // * ------------------------------
-import { github } from './constant'
+import { fecUrl } from './constant'
 
 const makeTemplate = (lang: string | undefined, data: string[][]) => {
   return lang === 'ja'
@@ -16,9 +16,9 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
             rows: data,
           },
         },
-        { p: `リスト作成時間：${new Date().toLocaleDateString()}` },
+        { p: `作成時間：${new Date().toLocaleDateString()}` },
         { hr: '' },
-        { link: { title: '🍋 FEC', source: github } },
+        { link: { title: '🍋 FEC', source: fecUrl } },
       ]
     : lang === 'zh'
     ? [
@@ -30,9 +30,9 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
             rows: data,
           },
         },
-        { p: `清单生成时间：${new Date().toLocaleDateString()}` },
+        { p: `生成时间：${new Date().toLocaleDateString()}` },
         { hr: '' },
-        { link: { title: '🍋 FEC', source: github } },
+        { link: { title: '🍋 FEC', source: fecUrl } },
       ]
     : lang === 'en'
     ? [
@@ -46,7 +46,7 @@ const makeTemplate = (lang: string | undefined, data: string[][]) => {
         },
         { p: `time：${new Date().toLocaleDateString()}` },
         { hr: '' },
-        { link: { title: '🍋 FEC', source: github } },
+        { link: { title: '🍋 FEC', source: fecUrl } },
       ]
     : []
 }

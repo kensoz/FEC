@@ -23,6 +23,8 @@ import type { INav, IGroupSSGPath, IYear } from '../types/index'
 
 // ----- Common -----
 export const github: string = 'https://github.com/kensoz/FEC'
+export const fecUrl: string = 'https://fec-tau.vercel.app'
+export const mailto: string = 'mailto:renhoujob@gmail.com'
 
 // ----- SSG -----
 export const ssgPath: IGroupSSGPath[] = [

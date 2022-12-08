@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { TwitterShareButton } from 'react-share'
 import { getNavCollection } from '../firebase/api'
 import GET_LOCALS_TEXT from '../locales'
+import { fecUrl, github, mailto } from '../scripts/constant'
 import { getIcon, isCurrentPath } from '../scripts/utils'
 import type { INav } from '../types'
 import Modal from './widgets/modal'
@@ -65,7 +66,7 @@ const Nav = (): JSX.Element => {
       <div className='flex flex-col border-t-2 border-gray-200 p-3 text-xs text-gray-400 dark:border-gray-600'>
         {/* Tweet */}
         <div>
-          <TwitterShareButton url='https://fec-tau.vercel.app/' title={GET_LOCALS_TEXT(locale, 'twitter')}>
+          <TwitterShareButton url={fecUrl} title={GET_LOCALS_TEXT(locale, 'twitter')}>
             <a className='nav-text-btn'>
               <FontAwesomeIcon className='' icon={faTwitter} />
               <span className='ml-2'>Tweet</span>
@@ -74,7 +75,7 @@ const Nav = (): JSX.Element => {
         </div>
 
         {/* issues */}
-        <Link href='https://github.com/kensoz/FEC/issues' passHref>
+        <Link href={github + '/issues'} passHref>
           <a className='nav-text-btn'>
             <FontAwesomeIcon className='mr-2' icon={faCodePullRequest} />
             {GET_LOCALS_TEXT(locale, 'issue')}
@@ -82,7 +83,7 @@ const Nav = (): JSX.Element => {
         </Link>
 
         {/* mail */}
-        <Link href='mailto:renhoujob@gmail.com' passHref>
+        <Link href={mailto} passHref>
           <a className='nav-text-btn'>
             <FontAwesomeIcon className='mr-2' icon={faEnvelopeCircleCheck} />
             {GET_LOCALS_TEXT(locale, 'inquiry')}

@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { TwitterShareButton } from 'react-share'
 import Modal from '../../components/widgets/modal'
 import GET_LOCALS_TEXT from '../../locales'
+import { fecUrl, github, mailto } from '../../scripts/constant'
 
 // Footer
 const Footer = (): JSX.Element => {
@@ -24,7 +25,7 @@ const Footer = (): JSX.Element => {
       {/* インフォメーション */}
       <div className='shadow-t-sm flex w-full flex-row justify-center border-t border-gray-200 py-3 text-xs font-normal dark:border-gray-600 lg:hidden'>
         {/* issues */}
-        <Link href='https://github.com/kensoz/FEC/issues' passHref>
+        <Link href={github + '/issues'} passHref>
           <a className='nav-text-btn'>
             <FontAwesomeIcon className='mr-1' icon={faCodePullRequest} />
             {GET_LOCALS_TEXT(locale, 'issue')}
@@ -34,7 +35,7 @@ const Footer = (): JSX.Element => {
         <div className='mx-1.5'>·</div>
 
         {/* mail */}
-        <Link href='mailto:renhoujob@gmail.com' passHref>
+        <Link href={mailto} passHref>
           <a className='nav-text-btn'>
             <FontAwesomeIcon className='mr-1' icon={faEnvelope} />
             {GET_LOCALS_TEXT(locale, 'inquiry')}
@@ -58,7 +59,7 @@ const Footer = (): JSX.Element => {
         <div className='mx-1.5'>·</div>
 
         {/* twitter */}
-        <TwitterShareButton url='https://fec-tau.vercel.app/' title={GET_LOCALS_TEXT(locale, 'twitter')}>
+        <TwitterShareButton url={fecUrl} title={GET_LOCALS_TEXT(locale, 'twitter')}>
           <a className='nav-text-btn'>
             <FontAwesomeIcon icon={faTwitter} />
             <span className='ml-1'>Tweet</span>
