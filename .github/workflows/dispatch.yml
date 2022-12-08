@@ -17,6 +17,9 @@ jobs:
       # Fix
       - name: Run Fix
         run: npm run fix:all
+      # Test
+      - name: Run Test
+        run: npm run test:coverage
       # Check
-      - name: Run Check
-        run: npm run check:all
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
