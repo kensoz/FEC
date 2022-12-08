@@ -8,7 +8,7 @@
 
 简体中文 ・ English
 
-Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)です。モダンなフロントエンド技術を探し、経験した技術を出力することによって、学習、研究、就活転職で活用できます！詳しくはサイトを確認しましょう。
+Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)です。モダンなフロントエンド技術を探し、経験した技術を出力することによって、学習、研究、就活転職で活用できます。詳しくはサイトを確認しましょう！
 
 🍋 [FEC Site](https://fec-tau.vercel.app/)
 
@@ -16,19 +16,17 @@ Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)で
 
 ## スタック
 
-- ⚡️ Next.js
-- ⚙️ TypeScript
-- 🎨 TailwindCSS
-- 📑 ESLint + Prettier
-- 🔌 Jest + React Testing Library
-- 🔩 GitHub Actions
-- 💽 Firebase Cloud Firestore
-- 🚀 Vercel
-- 📦 Yarn
+- ⚡️ Next.js + TypeScript：SSGの静的Web サイト作成
+- 🎨 TailwindCSS：レスポンシブ、ダックモードに対応
+- 📑 ESLint + Prettier：コードチェックと整形
+- 🔌 Jest + Testing Library：自動Unitテスト、カバレッジ80%以上
+- 🔩 GitHub Actions + Vercel：CD/CIと自動デプロイ
+- 🔗 Node.js + Inquirer.js：データ入力CLI作成
+- 💽 Firebase：データ管理
 
 
 
-## 使用
+## リポジトリ使用
 
 ##### インストール
 
@@ -38,20 +36,26 @@ yarn install
 
 ##### 開発
 
-[http://localhost:8011](http://localhost:8011)で起動
+[http://localhost:8011](http://localhost:8011)にて起動
 
 ```shell
 yarn dev
 ```
 
-##### ビルド
-
-```shell
-yarn build
-```
+**Lint**、**Test**などは`package.json`にてご確認お願い致します
 
 
 
+## データと貢献
+
+11111
 
 
-🍋
+
+## 免責事項
+
+11111
+
+
+
+🍋 FEC
