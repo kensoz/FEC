@@ -47,7 +47,7 @@ HOST：http://localhost:8011](http://localhost:8011)
 
 
 
-# Contributing & Issues
+## Contributing & Issues
 
 + Please report outdated content and bug in [Issues](https://github.com/kensoz/FEC/issues).
 + For additional content, please refer to [Contributing手順](https://github.com/kensoz/FEC/blob/main/.github/doc/contri.md)（Japanese only）.

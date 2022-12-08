@@ -49,7 +49,7 @@ docker run --name fec -p 8011:8011 -d fec
 
 
 
-# Contributing & Issues
+## Contributing & Issues
 
 + BUGや古くなっている情報のIssues Reportは[ここ](https://github.com/kensoz/FEC/issues)にてお願いいたします
 + データの追加などのContributingは[Contributing手順](https://github.com/kensoz/FEC/blob/main/.github/doc/contri.md)にて参照ください
