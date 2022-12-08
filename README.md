@@ -4,9 +4,9 @@
 
 ![example workflow](https://github.com/kensoz/FEC/actions/workflows/dispatch.yml/badge.svg)  [![codecov](https://codecov.io/gh/kensoz/FEC/branch/main/graph/badge.svg?token=2THJ19HFZW)](https://codecov.io/gh/kensoz/FEC)  ![Node](https://img.shields.io/badge/Node.js-v18.7.0-fb7185.svg?logo=&style=flat-square)  ![npm](https://img.shields.io/badge/npm-v0.3.0-84CC16.svg?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-0284C7.svg?logo=&style=flat-square)
 
-简体中文 ・ English
+[简体中文](https://github.com/kensoz/FEC/blob/main/.github/doc/readme/zh.md) ・ [English](https://github.com/kensoz/FEC/blob/main/.github/doc/readme/en.md)
 
-Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)です。モダンなフロントエンド技術を探し、経験した技術を出力することによって、学習、研究、就活転職で活用できます。詳しくはサイトを確認しましょう！
+Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)です。モダンなフロントエンド技術を探し、経験した技術を出力することによって、学習、研究、就活転職で活用できます。詳しくは[サイト](https://fec-tau.vercel.app/)にて確認しましょう！
 
 🍋 [FEC Site](https://fec-tau.vercel.app/)
 
@@ -51,12 +51,12 @@ docker run --name fec -p 8011:8011 -d fec
 
 # Contributing & Issues
 
-+ BUGや古くなっている情報のIssues Reportはここでお願いいたします
-+ データの追加などのContributingはContributing手順ご参照ください
++ BUGや古くなっている情報のIssues Reportは[ここ](https://github.com/kensoz/FEC/issues)にてお願いいたします
++ データの追加などのContributingは[Contributing手順](https://github.com/kensoz/FEC/blob/main/.github/doc/contri.md)にて参照ください
 
 
 
 ## 免責事項
 
-詳しくは免責事項でご確認お願いいたします
-FECソースコードのライセンス：MIT
+- 詳しくは[免責事項](https://github.com/kensoz/FEC/tree/main/.github/doc/disclaimer)にてご確認お願いいたします
+- FECソースコードのライセンス：MIT
