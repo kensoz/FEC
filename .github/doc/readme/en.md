@@ -50,7 +50,7 @@ HOST：http://localhost:8011
 ## Contributing & Issues
 
 + Please report outdated content and bug in [Issues](https://github.com/kensoz/FEC/issues).
-+ For additional content, please refer to [Contributing手順](https://github.com/kensoz/FEC/blob/main/.github/doc/contri.md)（Japanese only）.
++ For additional content, please refer to [データ追加と更新](https://github.com/kensoz/FEC/blob/main/.github/doc/contri.md)（Japanese only）.
 
 
 
