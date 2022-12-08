@@ -40,7 +40,7 @@ const Star = (props: IModalContent): JSX.Element => {
   }
 
   // MarkDownのダウンロード
-  const filename: string = 'fec.md'
+  const filename: string = 'mySKill.md'
   const [markdown, setMarkDown] = useState<string>('')
 
   const download = async (): Promise<void> => {
