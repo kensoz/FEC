@@ -1,6 +1,6 @@
 # 🍋 FEC
 
-![Node](https://img.shields.io/badge/Node.js-v18.7.0-fb7185.svg?logo=&style=flat-square) ![npm](https://img.shields.io/badge/npm-v0.3.0-84CC16.svg?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-0284C7.svg?logo=&style=flat-square)
+![Node](https://img.shields.io/badge/Node.js-v18.7.0-fb7185.svg?logo=&style=flat-square) [![codecov](https://codecov.io/gh/kensoz/FEC/branch/main/graph/badge.svg?token=2THJ19HFZW)](https://codecov.io/gh/kensoz/FEC)  ![npm](https://img.shields.io/badge/npm-v0.3.0-84CC16.svg?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-0284C7.svg?logo=&style=flat-square)
 
 Front-End-Collection (FEC) is under development, This is a website that collects Web front-end technologies and tools.
 
