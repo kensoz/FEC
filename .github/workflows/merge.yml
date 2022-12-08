@@ -1,10 +1,14 @@
 # ----- Github Action -----
-name: workflow_dispatch
-# 実行のタイミング
-on: workflow_dispatch
-# 実行の流れ
+# branch mergeの時、コード、コードフォーマット、JSONファイルをチェック
+name: merge
+
+on:
+  pull_request:
+    types:
+      - closed
+
 jobs:
-  FEC-dispatch:
+  FEC-merge:
     runs-on: ubuntu-latest
     steps:
       # Checkout Code

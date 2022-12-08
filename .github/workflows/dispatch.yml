@@ -1,13 +1,11 @@
 # ----- Github Action -----
-# pull_requestの時、コード、コードフォーマット、JSONファイルをチェック
-name: pull_request
+# 必要な時に手で実行
+name: workflow_dispatch
 
-# on: [pull_request, push]
-# on: workflow_dispatch
-on: [pull_request]
+on: workflow_dispatch
 
 jobs:
-  FEC-pull_request:
+  FEC-dispatch:
     runs-on: ubuntu-latest
     steps:
       # Checkout Code
