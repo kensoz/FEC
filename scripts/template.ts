@@ -5,6 +5,12 @@
 // * ------------------------------
 import { fecUrl } from './constant'
 
+/**
+ * テンプレート
+ * @param { String | Undefined } lang
+ * @param { String[][] } data
+ * @return { Array }
+ */
 const makeTemplate = (lang: string | undefined, data: string[][]) => {
   return lang === 'ja'
     ? [

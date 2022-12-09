@@ -5,8 +5,8 @@ const json = await fs.readFile('./_data/json/list.json', 'utf8').then((res) => J
 
 /**
  * 名称
- * @param {undefined | string} input
- * @return {boolean | string}
+ * @param { Undefined | String} input
+ * @return { Boolean | String}
  */
 const nameValidate = (input) => {
   if (!input) return 'name is required'
@@ -16,8 +16,8 @@ const nameValidate = (input) => {
 
 /**
  * カラー
- * @param {undefined | string} input
- * @return {boolean | string}
+ * @param { Undefined | String} input
+ * @return { Boolean | String}
  */
 const colorValidate = (input) => {
   const reg = /(^#?[0-9A-Fa-f]{6}$)|(^#?[0-9A-Fa-f]{3}$)/
@@ -26,9 +26,9 @@ const colorValidate = (input) => {
 
 /**
  * URL
- * @param {'must' | 'any'} key
- * @param {undefined | string} input
- * @return {boolean | string}
+ * @param { 'must' | 'any' } key
+ * @param { Undefined | String} input
+ * @return { Boolean | String}
  */
 const urlValidate = (key, input) => {
   const reg = /^(https:\/\/|http:\/\/)/
@@ -44,8 +44,8 @@ const urlValidate = (key, input) => {
 
 /**
  * テキスト
- * @param {undefined | string} input
- * @return {boolean | string}
+ * @param { Undefined | String} input
+ * @return { Boolean | String}
  */
 const textValidate = (input) => {
   return input ? true : 'description is required'

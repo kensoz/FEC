@@ -19,8 +19,8 @@ import type { IModalContent, IGlobalList, IYear } from '../../../types'
 
 /**
  * Star Modal content
- * @param {IModalContent} props
- * @return {JSX.Element}
+ * @param { IModalContent } props
+ * @return { JSX.Element }
  */
 const Star = (props: IModalContent): JSX.Element => {
   // ---------- Hooksインポート ----------

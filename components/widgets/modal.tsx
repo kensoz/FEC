@@ -11,8 +11,8 @@ import Star from './modal/star'
 
 /**
  * Modal Template
- * @param {IModal} props
- * @return {JSX.Element}
+ * @param { IModal } props
+ * @return { JSX.Element }
  */
 const Modal = (props: IModal): JSX.Element => {
   return (

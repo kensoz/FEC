@@ -13,8 +13,8 @@ import type { IBreadcrumb } from '../../types'
 
 /**
  * パンくずリスト
- * @param {IBreadcrumb} props
- * @return {JSX.Element}
+ * @param { IBreadcrumb } props
+ * @return { JSX.Element }
  */
 const Breadcrumb = (props: IBreadcrumb): JSX.Element => {
   // ---------- Hooksインポート ----------

@@ -11,8 +11,8 @@ import type { IModalContent } from '../../../types'
 
 /**
  * Disclaimer Modal content
- * @param {IModalContent} props
- * @return {JSX.Element}
+ * @param { IModalContent } props
+ * @return { JSX.Element }
  */
 const Disclaimer = (props: IModalContent): JSX.Element => {
   // ---------- Hooksインポート ----------

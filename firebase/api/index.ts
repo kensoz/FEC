@@ -11,8 +11,7 @@ import { db } from '../index'
 
 /**
  * get Nav data from Firebase Collection
- * @param {}
- * @return {Promise<INav[]>}
+ * @return { Promise<INav[]> }
  */
 export const getNavCollection = async (): Promise<INav[]> => {
   const queryRef = collection(db, 'nav') as CollectionReference<INav>
@@ -32,8 +31,8 @@ export const getNavCollection = async (): Promise<INav[]> => {
 
 /**
  * get List data from Firebase Collection
- * @param {undefined | string} e
- * @return {Promise<IList[]>}
+ * @param { Undefined | String } e
+ * @return { Promise<IList[]> }
  */
 export const getListCollection = async (e?: string): Promise<IList[]> => {
   const queryRef = e ? query(collection(db, 'list'), where('groupName', '==', e)) : collection(db, 'list')

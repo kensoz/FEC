@@ -16,8 +16,8 @@ import type { ICard, IList, IGlobalList } from '../../types'
 
 /**
  * カード
- * @param {ICard} props
- * @return {JSX.Element}
+ * @param { ICard } props
+ * @return { JSX.Element }
  */
 const Card = (props: ICard): JSX.Element => {
   // ---------- Hooksインポート ----------

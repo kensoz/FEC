@@ -21,7 +21,7 @@ import ja from '../locales/ja'
 import zh from '../locales/zh'
 import type { INav, IGroupSSGPath, IYear } from '../types/index'
 
-// ----- Common -----
+// ----- URL -----
 export const github: string = 'https://github.com/kensoz/FEC'
 export const fecUrl: string = 'https://fec-tau.vercel.app'
 export const mailto: string = 'mailto:renhoujob@gmail.com'

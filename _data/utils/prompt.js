@@ -14,6 +14,7 @@ const choicesList = [
   '10.Other',
 ]
 
+// prompt
 const prompt = [
   // 名称
   {

@@ -2,9 +2,9 @@
 
 /**
  * 結果を整理、データ処理
- * @param {number} length
- * @param {undefined | Object} answer
- * @return {Object} item
+ * @param { Number } length
+ * @param { Undefined | Object } answer
+ * @return { Object } item
  */
 const makeAnswer = (length, answer) => {
   let item = {
