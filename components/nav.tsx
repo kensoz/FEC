@@ -79,7 +79,7 @@ const Nav = (): JSX.Element => {
 
         {/* issues */}
         <Link href={github + '/issues'} passHref>
-          <a className='nav-text-btn w-max' aria-label='issues'>
+          <a className='nav-text-btn w-max' aria-label='issues' target='_blank'>
             <FontAwesomeIcon className='mr-2' icon={faCodePullRequest} />
             {GET_LOCALS_TEXT(locale, 'issue')}
           </a>

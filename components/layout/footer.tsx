@@ -26,7 +26,7 @@ const Footer = (): JSX.Element => {
       <div className='shadow-t-sm flex w-full flex-row justify-center border-t border-gray-200 py-3 text-xs font-normal dark:border-gray-600 lg:hidden'>
         {/* issues */}
         <Link href={github + '/issues'} passHref>
-          <a className='nav-text-btn' aria-label='issues'>
+          <a className='nav-text-btn' aria-label='issues' target='_blank'>
             <FontAwesomeIcon className='mr-1' icon={faCodePullRequest} />
             {GET_LOCALS_TEXT(locale, 'issue')}
           </a>
