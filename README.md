@@ -6,7 +6,7 @@
 
 [简体中文](https://github.com/kensoz/FEC/blob/main/.github/doc/readme/zh.md) ・ [English](https://github.com/kensoz/FEC/blob/main/.github/doc/readme/en.md)
 
-Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)です。モダンなフロントエンド技術を探し、経験した技術を出力することによって、学習、研究、就活転職で活用できます。詳しくは[サイト](https://fec-tau.vercel.app/)にて確認しましょう！
+Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)です。モダンな技術を探し、経験した技術を出力することが可能で、学習、研究、就活や転職の様々なシーンで活用できます。詳しくは[サイト](https://fec-tau.vercel.app/)にて確認しましょう！
 
 🍋 [FEC Site](https://fec-tau.vercel.app/)
 
@@ -45,14 +45,14 @@ docker build . -t fec
 docker run --name fec -p 8011:8011 -d fec
 ```
 
-プロジェクトは[http://localhost:8011](http://localhost:8011)にて起動で、**Lint**、**Test**などは`package.json`にてご確認お願いいたします
+プロジェクトは[http://localhost:8011](http://localhost:8011)にて起動でします
 
 
 
 ## Contributing & Issues
 
 + BUGや古くなっている情報のは[Issues](https://github.com/kensoz/FEC/issues)にてお願いいたします
-+ データの追加や更新は[データ追加と更新](https://github.com/kensoz/FEC/blob/main/.github/doc/data.md)にて参照ください
++ データの追加や更新したい場合は[データ追加と更新](https://github.com/kensoz/FEC/blob/main/.github/doc/data.md)にて参照ください
 
 
 

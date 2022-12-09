@@ -43,7 +43,7 @@ docker build . -t fec
 docker run --name fec -p 8011:8011 -d fec
 ```
 
-项目将在[http://localhost:8011](http://localhost:8011)启动，**Lint**、**Test**等等脚本请参考`package.json`文件
+项目将在[http://localhost:8011](http://localhost:8011)启动
 
 
 
