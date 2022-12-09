@@ -67,7 +67,7 @@ const Star = (props: IModalContent): JSX.Element => {
             {GET_LOCALS_TEXT(locale, 'downloadTitle') + ' ' + GET_LOCALS_TEXT(locale, 'download')}
           </span>
 
-          <button type='button' className='fec-clear-input text-lg text-white xl:hover:opacity-70' onClick={props.closeModalContent}>
+          <button type='button' aria-label='close modal' className='fec-clear-input text-lg text-white xl:hover:opacity-70' onClick={props.closeModalContent}>
             <FontAwesomeIcon icon={faClose} />
           </button>
         </span>
@@ -93,6 +93,7 @@ const Star = (props: IModalContent): JSX.Element => {
               <div className='flex flex-row items-center'>
                 <button
                   type='button'
+                  aria-label='delete selected list'
                   data-testid='test-starDelete-btn'
                   className='fec-clear-input mr-1 text-rose-300 hover:text-rose-400 md:mr-3'
                   onClick={(): void => {
@@ -179,10 +180,11 @@ const Star = (props: IModalContent): JSX.Element => {
         </div>
       )}
 
-      {/* ボタングループ */}
+      {/* ダウンロード */}
       {globalList.length !== 0 && (
         <div className='flex flex-row items-center justify-center border-t border-gray-200 py-2 dark:border-gray-600'>
           <a
+            aria-label='download'
             className='fec-clear-input ml-2 inline-flex items-center rounded-md bg-yellow-400 px-3 py-2 text-sm font-medium text-white shadow-sm xl:hover:opacity-70'
             href={markdown}
             download={filename}

@@ -45,6 +45,7 @@ const Toolbar = (): JSX.Element => {
       <div className='flex flex-row'>
         {/* ソート順ID */}
         <button
+          aria-label='sort list'
           className='icon-btn'
           onClick={() => {
             setIsSortID(!isSortID)
@@ -80,6 +81,7 @@ const Toolbar = (): JSX.Element => {
       {/* Export Modalのボタン */}
       <button
         type='button'
+        aria-label='check export modal'
         onClick={() => {
           setIsOpen(true)
         }}

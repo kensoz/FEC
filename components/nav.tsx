@@ -39,7 +39,7 @@ const Nav = (): JSX.Element => {
       {/* ロゴ */}
       <div className='flex justify-center border-b-2 border-gray-200 py-2 dark:border-gray-600 lg:py-4'>
         <Link href='/' passHref>
-          <a className='fec-clear-input xl:hover:opacity-70'>
+          <a className='fec-clear-input xl:hover:opacity-70' aria-label='homepage'>
             <Image src='/logo.png' objectFit='contain' width={115} height={40} alt='logo' />
           </a>
         </Link>
@@ -50,7 +50,10 @@ const Nav = (): JSX.Element => {
         {nav.map((e: INav) => (
           <div key={e.id} className='flex flex-row'>
             <Link as={e.groupName === '/' ? undefined : `/${e.groupName}`} href={e.groupName === '/' ? '/' : '/[group]'} passHref>
-              <a className={isCurrentPath(asPath, e.groupName) ? 'nav-list-btn bg-yellow-50 text-yellow-300 dark:text-yellow-300' : 'nav-list-btn'}>
+              <a
+                aria-label={e.groupName}
+                className={isCurrentPath(asPath, e.groupName) ? 'nav-list-btn bg-yellow-50 text-yellow-300 dark:text-yellow-300' : 'nav-list-btn'}
+              >
                 <span className='mr-3'>
                   <FontAwesomeIcon icon={getIcon(e.groupName)} />
                 </span>
@@ -67,7 +70,7 @@ const Nav = (): JSX.Element => {
         {/* Tweet */}
         <div>
           <TwitterShareButton url={fecUrl} title={GET_LOCALS_TEXT(locale, 'twitter')}>
-            <a className='nav-text-btn'>
+            <a className='nav-text-btn' aria-label='Tweet'>
               <FontAwesomeIcon className='' icon={faTwitter} />
               <span className='ml-2'>Tweet</span>
             </a>
@@ -76,7 +79,7 @@ const Nav = (): JSX.Element => {
 
         {/* issues */}
         <Link href={github + '/issues'} passHref>
-          <a className='nav-text-btn w-max'>
+          <a className='nav-text-btn w-max' aria-label='issues'>
             <FontAwesomeIcon className='mr-2' icon={faCodePullRequest} />
             {GET_LOCALS_TEXT(locale, 'issue')}
           </a>
@@ -84,7 +87,7 @@ const Nav = (): JSX.Element => {
 
         {/* mail */}
         <Link href={mailto} passHref>
-          <a className='nav-text-btn w-max'>
+          <a className='nav-text-btn w-max' aria-label='contact'>
             <FontAwesomeIcon className='mr-2' icon={faEnvelopeCircleCheck} />
             {GET_LOCALS_TEXT(locale, 'inquiry')}
           </a>
@@ -93,6 +96,7 @@ const Nav = (): JSX.Element => {
         {/* disclaimer */}
         <button
           type='button'
+          aria-label='check disclaimer'
           className='nav-text-btn w-max'
           onClick={() => {
             setIsOpen(true)

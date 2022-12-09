@@ -68,7 +68,7 @@ const Card = (props: ICard): JSX.Element => {
         <div className='fec-box flex flex-col bg-slate-100 dark:bg-slate-700' key={e.id}>
           {/* カード写真 */}
           <Link href={e.url} passHref>
-            <a className='fec-clear-input block rounded-t-md opacity-100 xl:hover:opacity-70' target='_blank'>
+            <a className='fec-clear-input block rounded-t-md opacity-100 xl:hover:opacity-70' aria-label={e.name} target='_blank'>
               <div className='flex flex-row items-center justify-center rounded-t-md border-b border-gray-200 bg-gray-50 py-5 dark:border-gray-500 dark:bg-gray-700'>
                 {e.color !== '' && (
                   <Image
@@ -90,7 +90,7 @@ const Card = (props: ICard): JSX.Element => {
             {/* 技術名 */}
             <div className='relative px-2 py-2 font-medium text-gray-400'>
               <Link href={e.url} passHref>
-                <a className='text-btn truncate py-0' target='_blank'>
+                <a className='text-btn truncate py-0' aria-label={e.name} target='_blank'>
                   {e.name}
                   <span className='ml-1 text-xs'>
                     <FontAwesomeIcon icon={faLink} />
@@ -102,6 +102,7 @@ const Card = (props: ICard): JSX.Element => {
               <div className='xl:star_translate absolute right-2 top-[-10px] rounded-full border border-gray-200 bg-white py-0.5 px-1 text-xl text-yellow-300 shadow-sm dark:border-gray-500 dark:bg-slate-700'>
                 <button
                   type='button'
+                  aria-label='star a skill'
                   className='fec-clear-input opacity-100 xl:hover:opacity-70'
                   onClick={() => onClick({ id: e.id, name: e.name, groupId: e.groupId, groupName: e.groupName, businessEX: '-', personalEX: '-' })}
                 >
@@ -121,7 +122,7 @@ const Card = (props: ICard): JSX.Element => {
                 {checkURL(e.urlJa, e.urlZh) !== '' && (
                   <div className='mr-2 py-1'>
                     <Link href={checkURL(e.urlJa, e.urlZh)} passHref>
-                      <a className='text-btn py-0' target='_blank'>
+                      <a className='text-btn py-0' aria-label={e.name} target='_blank'>
                         <span>{GET_LOCALS_TEXT(locale, 'offical')}</span>
                       </a>
                     </Link>
@@ -132,7 +133,7 @@ const Card = (props: ICard): JSX.Element => {
                   <div className='flex flex-row items-center py-1'>
                     {checkRelatedURL(e.relatedJa, e.relatedZh, e.related).map((c: string) => (
                       <Link href={c} key={c} passHref>
-                        <a className='text-btn py-0 first:mr-2' target='_blank'>
+                        <a className='text-btn py-0 first:mr-2' aria-label={e.name} target='_blank'>
                           {GET_LOCALS_TEXT(locale, 'about')}
                           <FontAwesomeIcon className='ml-0.5' icon={faArrowUpRightFromSquare} />
                         </a>

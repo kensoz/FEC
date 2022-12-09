@@ -26,7 +26,7 @@ const Footer = (): JSX.Element => {
       <div className='shadow-t-sm flex w-full flex-row justify-center border-t border-gray-200 py-3 text-xs font-normal dark:border-gray-600 lg:hidden'>
         {/* issues */}
         <Link href={github + '/issues'} passHref>
-          <a className='nav-text-btn'>
+          <a className='nav-text-btn' aria-label='issues'>
             <FontAwesomeIcon className='mr-1' icon={faCodePullRequest} />
             {GET_LOCALS_TEXT(locale, 'issue')}
           </a>
@@ -36,7 +36,7 @@ const Footer = (): JSX.Element => {
 
         {/* mail */}
         <Link href={mailto} passHref>
-          <a className='nav-text-btn'>
+          <a className='nav-text-btn' aria-label='contact'>
             <FontAwesomeIcon className='mr-1' icon={faEnvelopeCircleCheck} />
             {GET_LOCALS_TEXT(locale, 'inquiry')}
           </a>
@@ -47,6 +47,7 @@ const Footer = (): JSX.Element => {
         {/* disclaimer */}
         <button
           type='button'
+          aria-label='check disclaimer'
           className='nav-text-btn'
           onClick={() => {
             setIsOpen(true)
@@ -60,7 +61,7 @@ const Footer = (): JSX.Element => {
 
         {/* twitter */}
         <TwitterShareButton url={fecUrl} title={GET_LOCALS_TEXT(locale, 'twitter')}>
-          <a className='nav-text-btn'>
+          <a className='nav-text-btn' aria-label='Tweet'>
             <FontAwesomeIcon icon={faTwitter} />
             <span className='ml-1'>Tweet</span>
           </a>

@@ -18,7 +18,7 @@ const Custom404 = (): JSX.Element => {
           <Link href='/' passHref>
             <a className='fec-clear-input inline-flex items-center rounded-md bg-gray-100 px-4 py-2 text-gray-500 shadow-sm xl:hover:opacity-50'>
               <span>
-                <FontAwesomeIcon className='mr-2' icon={faHome} />
+                <FontAwesomeIcon className='mr-2' icon={faHome} aria-label='homepage' />
               </span>
               <span>HOME</span>
             </a>

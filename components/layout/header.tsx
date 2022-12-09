@@ -40,33 +40,33 @@ const Header = (): JSX.Element => {
       {/* ボタングループ */}
       <div className='flex flex-row items-center'>
         {/* ダークモードボタン */}
-        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className='icon-btn text-yellow-300'>
+        <button type='button' aria-label='darkmode' onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className='icon-btn text-yellow-300'>
           {isMounted && <>{theme === 'dark' ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}</>}
         </button>
 
         {/* i18nボタン */}
         <div className='relative mx-2 inline'>
-          <button data-testid='test-i18n-btn' className='icon-btn peer text-slate-400'>
+          <button type='button' aria-label='i18n' data-testid='test-i18n-btn' className='icon-btn peer text-slate-400'>
             <FontAwesomeIcon icon={faEarthAsia} />
           </button>
 
           <div className='fec-box absolute right-0 z-10 hidden bg-slate-50 hover:block peer-hover:block dark:bg-slate-800'>
             <div className='flex w-32 flex-col p-2'>
-              <button className={`i18n-list-btn ${locale === 'ja' && 'bg-yellow-50'}`} onClick={() => changeLanage('ja')}>
+              <button type='button' aria-label='i18n-ja' className={`i18n-list-btn ${locale === 'ja' && 'bg-yellow-50'}`} onClick={() => changeLanage('ja')}>
                 <span className='mr-2'>
                   <Flag code='jp' width={20} />
                 </span>
                 <span className={locale === 'ja' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>日本語</span>
               </button>
 
-              <button className={`i18n-list-btn ${locale === 'zh' && 'bg-yellow-50'}`} onClick={() => changeLanage('zh')}>
+              <button type='button' aria-label='i18n-zh' className={`i18n-list-btn ${locale === 'zh' && 'bg-yellow-50'}`} onClick={() => changeLanage('zh')}>
                 <span className='mr-2'>
                   <Flag code='cn' width={20} />
                 </span>
                 <span className={locale === 'zh' ? 'bg-yellow-50 text-yellow-300 dark:text-yellow-300' : ''}>简体中文</span>
               </button>
 
-              <button className={`i18n-list-btn ${locale === 'en' && 'bg-yellow-50'}`} onClick={() => changeLanage('en')}>
+              <button type='button' aria-label='i18n-en' className={`i18n-list-btn ${locale === 'en' && 'bg-yellow-50'}`} onClick={() => changeLanage('en')}>
                 <span className='mr-2'>
                   <Flag code='us' width={20} />
                 </span>
@@ -78,7 +78,7 @@ const Header = (): JSX.Element => {
 
         {/* GitHubボタン */}
         <Link href={github} passHref>
-          <a className='icon-btn text-slate-400' target='_blank'>
+          <a className='icon-btn text-slate-400' aria-label='github' target='_blank'>
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </Link>
