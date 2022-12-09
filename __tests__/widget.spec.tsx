@@ -14,7 +14,7 @@ import { listState } from '../scripts/recoil'
 import type { IGlobalList } from '../types'
 
 // recoil
-const mock: IGlobalList[] = [{ id: '1', name: 'test', groupId: 1, groupName: 'javascript', businessEX: '--', personalEX: '-' }]
+const mock: IGlobalList[] = [{ id: '1', name: 'test', groupId: 1, groupName: 'javascript', businessEX: '-', personalEX: '-' }]
 const initializeState = ({ set }: any) => {
   set(listState, mock)
 }

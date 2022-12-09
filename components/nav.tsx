@@ -76,7 +76,7 @@ const Nav = (): JSX.Element => {
 
         {/* issues */}
         <Link href={github + '/issues'} passHref>
-          <a className='nav-text-btn'>
+          <a className='nav-text-btn w-max'>
             <FontAwesomeIcon className='mr-2' icon={faCodePullRequest} />
             {GET_LOCALS_TEXT(locale, 'issue')}
           </a>
@@ -84,7 +84,7 @@ const Nav = (): JSX.Element => {
 
         {/* mail */}
         <Link href={mailto} passHref>
-          <a className='nav-text-btn'>
+          <a className='nav-text-btn w-max'>
             <FontAwesomeIcon className='mr-2' icon={faEnvelopeCircleCheck} />
             {GET_LOCALS_TEXT(locale, 'inquiry')}
           </a>
@@ -93,7 +93,7 @@ const Nav = (): JSX.Element => {
         {/* disclaimer */}
         <button
           type='button'
-          className='nav-text-btn'
+          className='nav-text-btn w-max'
           onClick={() => {
             setIsOpen(true)
           }}

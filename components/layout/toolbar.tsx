@@ -1,3 +1,4 @@
+import { faStar as faRStar } from '@fortawesome/free-regular-svg-icons'
 import { faStar, faArrowDownWideShort, faArrowUpShortWide, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Transition } from '@headlessui/react'
@@ -89,7 +90,7 @@ const Toolbar = (): JSX.Element => {
         <span className='absolute inset-0 h-full w-full rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 shadow-xl filter transition-all duration-200 ease-out group-hover:blur-sm group-active:opacity-0'></span>
         <span className='absolute inset-0 h-full w-full rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 transition duration-200 ease-out'></span>
         <span className='relative'>
-          <FontAwesomeIcon className='text-yellow-400' icon={faStar} />
+          <FontAwesomeIcon className='text-yellow-400 ' icon={isShow ? faStar : faRStar} />
           <span className='ml-2 hidden text-xs font-bold text-white md:inline'>{GET_LOCALS_TEXT(locale, 'download')}</span>
         </span>
 

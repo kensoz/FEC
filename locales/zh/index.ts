@@ -21,7 +21,7 @@ const zh: IStringObj = {
   skillName: '技术名',
   businessEX: '实务经验（年）',
   personalEX: '个人经验（年）',
-  mySKill: '选择熟悉的技术，设置经验时间，然后导出可以作用为简历中技能清单的MarkDown文件 ！',
+  mySKill: '选择熟悉的技术，设置经验过的时间，然后导出可以作用为简历中技能清单的MarkDown文件 ！',
   description: '',
   issue: 'Report Issues',
   twitter: '前端技术收集网站FEC: ',

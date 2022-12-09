@@ -1,5 +1,5 @@
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faCodePullRequest, faEnvelope, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
+import { faCodePullRequest, faEnvelopeCircleCheck, faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -37,7 +37,7 @@ const Footer = (): JSX.Element => {
         {/* mail */}
         <Link href={mailto} passHref>
           <a className='nav-text-btn'>
-            <FontAwesomeIcon className='mr-1' icon={faEnvelope} />
+            <FontAwesomeIcon className='mr-1' icon={faEnvelopeCircleCheck} />
             {GET_LOCALS_TEXT(locale, 'inquiry')}
           </a>
         </Link>

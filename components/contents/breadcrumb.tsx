@@ -38,7 +38,9 @@ const Breadcrumb = (props: IBreadcrumb): JSX.Element => {
           </a>
         </Link>
 
-        <div className='mx-1'>{handleText(query.group)}</div>
+        <div className='mx-2'>/</div>
+
+        <div>{handleText(query.group)}</div>
       </div>
 
       <div>
