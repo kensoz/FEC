@@ -2,7 +2,7 @@
 
 
 
-![example workflow](https://github.com/kensoz/FEC/actions/workflows/dispatch.yml/badge.svg)  [![codecov](https://codecov.io/gh/kensoz/FEC/branch/main/graph/badge.svg?token=2THJ19HFZW)](https://codecov.io/gh/kensoz/FEC)  ![Node](https://img.shields.io/badge/Node.js-v18.7.0-fb7185.svg?logo=&style=flat-square)  ![npm](https://img.shields.io/badge/npm-v0.3.0-84CC16.svg?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-0284C7.svg?logo=&style=flat-square)
+![github](https://github.com/kensoz/FEC/actions/workflows/dispatch.yml/badge.svg)  [![codecov](https://codecov.io/gh/kensoz/FEC/branch/main/graph/badge.svg?token=2THJ19HFZW)](https://codecov.io/gh/kensoz/FEC)  ![Node](https://img.shields.io/badge/Node.js-v18.7.0-fb7185.svg?logo=&style=flat-square)  ![npm](https://img.shields.io/badge/npm-v0.3.0-84CC16.svg?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-0284C7.svg?logo=&style=flat-square)
 
 [简体中文](https://github.com/kensoz/FEC/blob/main/.github/doc/readme/zh.md) ・ [English](https://github.com/kensoz/FEC/blob/main/.github/doc/readme/en.md)
 
@@ -14,7 +14,7 @@ Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)で
 
 ## スタック
 
-- ⚡️ **Next.js + TypeScript**：SSGの静的Web サイト作成
+- ⚡️ **Next.js + TypeScript**：多言語対応のSSGの静的Web サイト作成
 - 🎨 **TailwindCSS**：レスポンシブ、ダックモードに対応
 - 📑 **ESLint + Prettier**：コードチェックと整形
 - 🔌 **Jest + Testing Library**：自動Unitテスト、カバレッジ80%以上
