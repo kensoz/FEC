@@ -102,7 +102,7 @@ const Card = (props: ICard): JSX.Element => {
               <div className='xl:star_translate absolute right-2 top-[-10px] rounded-full border border-gray-200 bg-white py-0.5 px-1 text-xl text-yellow-300 shadow-sm dark:border-gray-500 dark:bg-slate-700'>
                 <button
                   type='button'
-                  className='fec-clear-input opacity-100 active:animate-ping xl:hover:opacity-70'
+                  className='fec-clear-input opacity-100 xl:hover:opacity-70'
                   onClick={() => onClick({ id: e.id, name: e.name, groupId: e.groupId, groupName: e.groupName, businessEX: '-', personalEX: '-' })}
                 >
                   <FontAwesomeIcon icon={globalList.findIndex((i): boolean => i.id === e.id) !== -1 ? faStar : faRStar} />
