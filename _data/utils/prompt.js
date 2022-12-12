@@ -1,5 +1,5 @@
 // inquirer.js prompt
-import { nameValidate, colorValidate, urlValidate, textValidate } from './validate.js'
+import { nameValidate, colorValidate, urlValidate, textValidate } from './verify.js'
 
 const choicesList = [
   '1.JavaScript & JSframework',

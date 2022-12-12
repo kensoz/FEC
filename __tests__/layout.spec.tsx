@@ -52,7 +52,7 @@ describe('Layoutテスト', () => {
     })
 
     expect(screen.getByPlaceholderText('検索')).toBeInTheDocument()
-    expect(screen.getByText('エクスポート')).toBeInTheDocument()
+    expect(screen.getByText('マイスキル')).toBeInTheDocument()
   })
 
   it('navbar.tsx', (): void => {

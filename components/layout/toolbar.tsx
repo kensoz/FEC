@@ -93,7 +93,7 @@ const Toolbar = (): JSX.Element => {
         <span className='absolute inset-0 h-full w-full rounded-md bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 transition duration-200 ease-out'></span>
         <span className='relative'>
           <FontAwesomeIcon className='text-yellow-400 ' icon={isShow ? faStar : faRStar} />
-          <span className='ml-2 hidden text-xs font-bold text-white md:inline'>{GET_LOCALS_TEXT(locale, 'download')}</span>
+          <span className='ml-2 hidden text-xs font-bold text-white md:inline'>{GET_LOCALS_TEXT(locale, 'downloadTitle')}</span>
         </span>
 
         <Transition
