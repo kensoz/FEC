@@ -3,7 +3,7 @@ import { faStar, faArrowDownWideShort, faArrowUpShortWide, faMagnifyingGlass } f
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useRecoilValue, useRecoilState } from 'recoil'
 import GET_LOCALS_TEXT from '../../locales'
 import { sortIDState, listState } from '../../scripts/recoil'
@@ -22,6 +22,7 @@ const Toolbar = (): JSX.Element => {
   // ---------- 関数 ----------
   // Modal
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const isOpenMeno = useMemo(() => isOpen, [isOpen])
 
   // 検索フォーム
   const [query, setQuery] = useState<string>('')
@@ -113,7 +114,7 @@ const Toolbar = (): JSX.Element => {
 
       {/* Modal コンポーネント */}
       <Modal
-        isOpen={isOpen}
+        isOpen={isOpenMeno}
         mode={'star'}
         closeModal={() => {
           setIsOpen(false)

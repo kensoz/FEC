@@ -3,7 +3,7 @@ import { faCodePullRequest, faEnvelopeCircleCheck, faScaleBalanced } from '@fort
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { TwitterShareButton } from 'react-share'
 import Modal from '../../components/widgets/modal'
 import GET_LOCALS_TEXT from '../../locales'
@@ -18,6 +18,7 @@ const Footer = (): JSX.Element => {
   // ---------- 関数 ----------
   // Modal
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const isOpenMeno = useMemo(() => isOpen, [isOpen])
 
   // ---------- TSX ----------
   return (
@@ -75,7 +76,7 @@ const Footer = (): JSX.Element => {
 
       {/* Modal コンポーネント */}
       <Modal
-        isOpen={isOpen}
+        isOpen={isOpenMeno}
         mode={'disclaimer'}
         closeModal={() => {
           setIsOpen(false)

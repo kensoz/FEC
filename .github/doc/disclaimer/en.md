@@ -1,9 +1,5 @@
 # Disclaimer
 
-2022-12-11
-
-
-
 ### Your Behavior
 
 This site asks that its users read this disclaimer. When you visit this  site, it means that you have agreed and accepted all the information on  this page. (Since automatic translation is used, please use Japanese or  Chinese as the standard)
@@ -18,7 +14,7 @@ Text, icon and URL published by the Front-End-Collection(FEC) is collected  from
 
 ### Content information
 
-FEC use the icons from [Simple Icons](https://simpleicons.org) and follow the site License. Technical descriptions come from the official websites of each technology(including its machine translation), Wikipedia, MDN. The associated URL comes from the search engine.
+FEC use the icons from [Simple Icons](https://simpleicons.org) and follow the site License. Technical descriptions come from the official websites of each technology, Wikipedia, MDN, BaiduBaike (including machine translation). The associated URL comes from the search engine.
 
 
 

@@ -18,7 +18,7 @@ Front-End-Collection（FEC）刊载的所有内容，包括文字、图标、网
 
 ### 内容来源信息
 
-本站所使用图标包括其颜色来源于 [Simple Icons](https://simpleicons.org) 并遵守其协议内容。技术描述来源于各个技术的官方网站（含其机器翻译），Wikipedia，MDN。关联网址来源于搜索引擎搜索的结果。
+本站所使用图标包括其颜色来源于 [Simple Icons](https://simpleicons.org) 并遵守其协议内容。技术描述来源于各个技术的官方网站，Wikipedia，MDN，百度百科（含机器翻译）。关联网址来源于搜索引擎搜索的结果。
 
 
 

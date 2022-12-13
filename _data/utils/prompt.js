@@ -80,7 +80,7 @@ const prompt = [
   {
     type: 'input',
     name: 'urlZh',
-    message: 'Enter the homepage URL in Chinese.',
+    message: 'Enter the homepage URL (Chinese Site) in Chinese.',
     validate: (input) => urlValidate('any', input),
   },
   // 英語関連サイト
