@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import { TwitterShareButton } from 'react-share'
 import { getNavCollection } from '../firebase/api'
 import GET_LOCALS_TEXT from '../locales'
@@ -22,7 +22,6 @@ const Nav = (): JSX.Element => {
   // ---------- 関数 ----------
   // Modal
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const isOpenMeno = useMemo(() => isOpen, [isOpen])
 
   // navデータ取得
   const [nav, setNav] = useState<INav[]>([])
@@ -110,7 +109,7 @@ const Nav = (): JSX.Element => {
 
       {/* Modal コンポーネント */}
       <Modal
-        isOpen={isOpenMeno}
+        isOpen={isOpen}
         mode={'disclaimer'}
         closeModal={() => {
           setIsOpen(false)
