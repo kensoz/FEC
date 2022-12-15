@@ -54,6 +54,12 @@ docker run --name fec -p 8011:8011 -d fec
 
 
 
+## Architecture
+
+![architecture](https://raw.githubusercontent.com/kensoz/FEC/main/.github/doc/public/architecture.jpg)
+
+
+
 ## 免责声明
 
 - 内容，著作权等请参考[免责声明](https://github.com/kensoz/FEC/blob/main/.github/doc/disclaimer/zh.md)

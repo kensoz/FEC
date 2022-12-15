@@ -54,6 +54,12 @@ HOST：http://localhost:8011
 
 
 
+## Architecture
+
+![architecture](https://raw.githubusercontent.com/kensoz/FEC/main/.github/doc/public/architecture.jpg)
+
+
+
 ## Disclaimer
 
 - For content, copyright, etc., please see [Disclaimer](https://github.com/kensoz/FEC/blob/main/.github/doc/disclaimer/en.md).
