@@ -60,3 +60,9 @@ docker run --name fec -p 8011:8011 -d fec
 
 - コンテンツ、著作権など詳しくは[免責事項](https://github.com/kensoz/FEC/tree/main/.github/doc/disclaimer)にてご確認お願いいたします
 - FECソースコードのライセンス：MIT
+
+
+
+## Architecture
+
+![]()
