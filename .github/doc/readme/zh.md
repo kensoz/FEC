@@ -4,7 +4,7 @@
 
 ![example workflow](https://github.com/kensoz/FEC/actions/workflows/dispatch.yml/badge.svg)  [![codecov](https://codecov.io/gh/kensoz/FEC/branch/main/graph/badge.svg?token=2THJ19HFZW)](https://codecov.io/gh/kensoz/FEC)  ![Node](https://img.shields.io/badge/Node.js-v18.7.0-fb7185.svg?logo=&style=flat-square)  ![npm](https://img.shields.io/badge/npm-v0.3.0-84CC16.svg?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-0284C7.svg?logo=&style=flat-square)
 
-前端技术收集网站Front-End-Collection (FEC)，有助于您的学习和研究，并且可以生成用在简历中的专属的技能清单，详细就在下面的网站中体验吧。
+超过200个前端技术收集网站Front-End-Collection (FEC)，有助于您的学习和研究，并且可以生成用在简历中的专属的技能清单，详细就在下面的网站中体验吧。
 
 🍋 [FEC Site](https://fec-tau.vercel.app/)
 

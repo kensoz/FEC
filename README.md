@@ -6,7 +6,7 @@
 
 [简体中文](https://github.com/kensoz/FEC/blob/main/.github/doc/readme/zh.md) ・ [English](https://github.com/kensoz/FEC/blob/main/.github/doc/readme/en.md)
 
-Webフロントエンド技術まとめサイトのFront-End-Collection (FEC)です。モダンな技術を探し、経験した技術を出力することが可能で、学習、就活や転職の様々なシーンで活用できます。詳しくは[サイト](https://fec-tau.vercel.app/)にて確認しましょう！
+200以上のWebフロントエンド技術まとめサイトのFront-End-Collection (FEC)です。モダンな技術を探し、経験した技術を出力することが可能で、学習、就活や転職の様々なシーンで活用できます。詳しくは[サイト](https://fec-tau.vercel.app/)にて確認しましょう！
 
 🍋 [FEC Site](https://fec-tau.vercel.app/)
 
