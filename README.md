@@ -56,6 +56,15 @@ docker run --name fec -p 8011:8011 -d fec
 
 
 
+## TODO List
+
+- [ ] 独自ドメイン
+- [ ] データ永続化
+- [ ] ワンクリックでコピー
+- [ ] etc
+
+
+
 ## Architecture
 
 ![architecture](https://raw.githubusercontent.com/kensoz/FEC/main/.github/doc/public/architecture.jpg)
