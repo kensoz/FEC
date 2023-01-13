@@ -4255,5 +4255,37 @@
     "related": [],
     "relatedZh": [],
     "relatedJa": []
+  },
+  {
+    "id": "265",
+    "groupId": 1,
+    "groupName": "javascript",
+    "name": "Riot.js",
+    "color": "",
+    "description": "Simple and elegant component-based UI library",
+    "descriptionZh": "基于组件化的简单易用的构建用户界面库",
+    "descriptionJa": "シンプルでエレガントな コンポーネントベースの UI ライブラリ",
+    "url": "https://riot.js.org/",
+    "urlZh": "",
+    "urlJa": "https://riot.js.org/ja/",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
+  },
+  {
+    "id": "266",
+    "groupId": 8,
+    "groupName": "mixed",
+    "name": "NativeScript",
+    "color": "3655FF",
+    "description": "Empower JavaScriptwith native APIs. Liberate your development by using platform APIs directly without leaving your of JavaScript",
+    "descriptionZh": "使用本机 API 为 JavaScript 赋能。 通过直接使用平台 API 来解放您的开发，而无需离开您的 JavaScript",
+    "descriptionJa": "ネイティブ API で JavaScript を強化します。 JavaScript から離れることなく、プラットフォーム API を直接使用して開発を解放します",
+    "url": "https://nativescript.org/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
   }
 ]
