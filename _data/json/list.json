@@ -4287,5 +4287,37 @@
     "related": [],
     "relatedZh": [],
     "relatedJa": []
+  },
+  {
+    "id": "267",
+    "groupId": 6,
+    "groupName": "deploy",
+    "name": "Terraform",
+    "color": "7B42BC",
+    "description": "An open-source infrastructure as code software tool that enables you to safely and predictably create, change, and improve infrastructur",
+    "descriptionZh": "一种开源工具，使您能够安全且可预测地创建、更改和改进基础架构",
+    "descriptionJa": "インフラストラクチャを安全かつ予測どおりに作成、変更、改善できるオープンソース ツール",
+    "url": "https://www.terraform.io/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
+  },
+  {
+    "id": "268",
+    "groupId": 1,
+    "groupName": "javascript",
+    "name": "Jamstack",
+    "color": "F0047F",
+    "description": "An architectural approach that decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability",
+    "descriptionZh": "一种将 Web 体验层与数据和业务逻辑分离的架构方法，提高了灵活性、可扩展性、性能和可维护性",
+    "descriptionJa": "Web エクスペリエンス レイヤーをデータとビジネス ロジックから切り離し、柔軟性、スケーラビリティ、パフォーマンス、保守性を向上させるアーキテクチャ アプローチ",
+    "url": "https://jamstack.org/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
   }
 ]
