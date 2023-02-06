@@ -4319,5 +4319,21 @@
     "related": [],
     "relatedZh": [],
     "relatedJa": []
+  },
+  {
+    "id": "269",
+    "groupId": 1,
+    "groupName": "javascript",
+    "name": "Bit",
+    "color": "73398D",
+    "description": "An open-source toolchain for component-driven software",
+    "descriptionZh": "用于组件驱动软件的开源工具链",
+    "descriptionJa": "コンポーネント駆動型ソフトウェア用のオープンソース ツールチェーン",
+    "url": "https://bit.dev/",
+    "urlZh": "",
+    "urlJa": "",
+    "related": [],
+    "relatedZh": [],
+    "relatedJa": []
   }
 ]
