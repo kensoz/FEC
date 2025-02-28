@@ -29,7 +29,7 @@ describe('Layoutテスト', () => {
   it('footer.tsx', (): void => {
     render(<Footer />)
 
-    expect(screen.getByText('© 2022 renhou Front-End-Collection')).toBeInTheDocument()
+    expect(screen.getByText('© 2025 renhou Front-End-Collection')).toBeInTheDocument()
     expect(screen.getByText('免責事項')).toBeInTheDocument()
     expect(screen.getByText('お問い合わせ')).toBeInTheDocument()
     expect(screen.getByText('Report Issues')).toBeInTheDocument()

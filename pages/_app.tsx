@@ -1,7 +1,6 @@
 // * ------------------------------
 // *
 // * FEC
-// * 2022-11-01 renhou　新規作成
 // *
 // * ------------------------------
 import { config } from '@fortawesome/fontawesome-svg-core'
