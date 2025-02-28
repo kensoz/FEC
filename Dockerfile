@@ -1,6 +1,6 @@
 # ----- FEC -----
 # Node.jsイメージ指定
-FROM node:18.7.0
+FROM node:22.14.0
 
 # 作者指定
 LABEL maintainer="renhou"
