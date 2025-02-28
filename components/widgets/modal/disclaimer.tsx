@@ -59,7 +59,7 @@ const Disclaimer = (props: IModalContent): JSX.Element => {
         <div className='border-b-2 border-gray-200 font-bold dark:border-gray-600'>{GET_LOCALS_TEXT(locale, 'dtAbout')}</div>
         <div className='pt-2 text-xs leading-4'>{GET_LOCALS_TEXT(locale, 'dcAbout')}</div>
         <ul className='list-inside list-disc pt-2 text-xs'>
-          <li>Copyright © 2023 renhou Front-End-Collection（FEC）</li>
+          <li>Copyright © 2025 renhou Front-End-Collection（FEC）</li>
           <li>Code License：MIT</li>
           <li>Link Free</li>
         </ul>
