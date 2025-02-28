@@ -23,7 +23,16 @@
 
   /* ----- FECベース ----- */
   .fec-layout {
-    @apply flex grow flex-col overflow-y-auto;
+    @apply flex grow flex-col overflow-y-auto invisible-scrollbar;
+  }
+
+  .invisible-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .invisible-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
   }
 
   .fec-main {
