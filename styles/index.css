@@ -14,7 +14,7 @@
   /* ----- html,body ----- */
   html,
   body {
-    @apply flex items-center justify-center  bg-slate-50 dark:bg-slate-800;
+    @apply flex items-center justify-center bg-slate-50 dark:bg-slate-800;
   }
 
   body {
@@ -36,7 +36,6 @@
   }
 
   .fec-main {
-    max-width: 2000px; /* セーフエリア距離 */
     @apply flex h-screen w-screen overflow-hidden font-fec text-sm font-medium text-gray-600 dark:text-gray-200;
   }
 
